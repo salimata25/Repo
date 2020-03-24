@@ -1,0 +1,56 @@
+.or-spacer {
+	position:relative;
+    .mask {
+      overflow:hidden; height:25px;
+      &:after {
+      content:'';
+      display:block; margin:-26px auto 0; height:26px;
+      border-radius:125px / 12px;
+      box-shadow:0 0 12px black;
+    }
+  }
+}
+
+form input{
+	border-radius: 2em;
+  text-align: center;
+  background-color: #ffffff
+}
+/***********************************************************************
+ **************************** TYPE OF DEVICES **************************
+ ***********************************************************************/
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media (max-width: 499.98px) { 
+
+
+
+}
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media (min-width: 500px) and (max-width: 799.98px) { 
+
+  
+  
+  }
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media (min-width: 800px) and (max-width: 1199.98px) { 
+    
+   
+  }
+  
+  /*  Extra large devices (large desktops, 1200px and up) 
+    OK
+  */
+  @media (min-width: 1200px) { 
+  
+  
+  
+  }

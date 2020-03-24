@@ -1,0 +1,28 @@
+.submenu{
+  border-radius:10px; 
+  width: 31.5%; 
+  margin: .5rem;
+  color: white;
+}
+
+input[type='checkbox']:checked:after {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 5px solid #bf912c;
+}
+
+input[type='checkbox']:after {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid #b1b1b0;
+}

@@ -1,0 +1,16 @@
+<div class="col-12 displayDesktop">
+  <div class="row" style="margin: 0 auto; text-align: center;">
+
+    <ng-container *ngFor="let item of navItems; let i = index">
+      <div *ngIf="item.habilitation" [ngStyle]="{'width':item.width?item.width:'13%', 'margin':item.margin?item.margin:'6px'}">
+        <div [ngStyle]="{'background-color':item.isClick===true ? '#f1efef' : '#bababa', 'border-radius':'10px 10px 0px 0px', 'cursor':'pointer' }" (click)="navMenuItems(item.url)">
+            <div class="card-body">
+                <p class="card-title"><img src="assets/decoupage/{{item.img}}" alt="Card image cap"></p>
+                <h6 class="card-subtitle mb-2 text-muted">{{ item.name }}</h6>
+            </div>
+        </div>
+      </div>
+    </ng-container>
+    
+  </div>
+</div>

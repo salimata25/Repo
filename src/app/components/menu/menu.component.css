@@ -1,0 +1,102 @@
+/***********************************************************************
+ **************************** TYPE OF DEVICES **************************
+ ***********************************************************************/
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media only screen and (max-width: 575.98px) { 
+
+  .displayMinimalMobile{
+    display: none;
+  }
+  .displayMobile{
+    display: none;
+  }
+  .displayMinimalDesktop{
+    display: none;
+  }
+  .displayDesktop{
+    display: none;
+  }
+
+
+
+  *{
+    color: green;
+  }
+
+
+  
+
+}
+
+
+
+/*  Medium devices (tablets, 768px and up) 
+  Diminuer La taille
+*/
+@media only screen and (min-width: 576px) and (max-width: 767.98px) { 
+  
+  .displayMinimalMobile{
+    display: none;
+  }
+  .displayMobile{
+    display: none;
+  }
+  .displayMinimalDesktop{
+    display: none;
+  }
+  .displayDesktop{
+    display: none;
+  }
+
+  *{
+    color: yellow;
+  }
+
+}
+
+/*  Medium devices (tablets, 768px and up) 
+  Diminuer La taille
+*/
+@media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
+  
+  .displayMinimalMobile{
+    display: none;
+  }
+  .displayMobile{
+    display: none;
+  }
+  .displayMinimalDesktop{
+    display: none;
+  }
+  .displayDesktop{
+    display: none;
+  }
+
+  *{
+    color: blue;
+  }
+
+}
+
+/*  Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1025px) { 
+
+  .displayMinimalMobile{
+    display: none;
+  }
+  .displayMobile{
+    display: none;
+  }
+  .displayMinimalDesktop{
+    display: none;
+  }
+  .displayDesktop{
+    display: block;
+  }
+
+}
+
+
