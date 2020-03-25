@@ -45,7 +45,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
   
 
-  ngOnDestroy() {  }
+  ngOnDestroy() {  } 
   
 
   navMenuItems(urlBase: string){

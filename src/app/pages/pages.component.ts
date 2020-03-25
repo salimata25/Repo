@@ -19,20 +19,20 @@ export class PagesComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private sessPrv: SessionService) {  }
 
   ngOnInit() {
-    console.log("PagesComponent ngOnInit")
-    this.uinfo = this.sessPrv.parseSession();
-    if (this.uinfo.role) {
-      this.funcNavItems(this.uinfo.role);
-    }
-    else {
-      this.router.navigate(['/login']);
-    }
+    // console.log("PagesComponent ngOnInit")
+    // this.uinfo = this.sessPrv.parseSession();
+    // if (this.uinfo.role) {
+    //   this.funcNavItems(this.uinfo.role);
+    // }
+    // else {
+    //   this.router.navigate(['/login']);
+    // }
   }
 
   onLogout() {
-    console.log("PagesComponent onLogout")
-    this.sessPrv.deleteSession();
-    this.router.navigate(['/login']);
+    // console.log("PagesComponent onLogout")
+    // this.sessPrv.deleteSession();
+    // this.router.navigate(['/login']);
   }
 
   funcNavItems(urlBase: string){

@@ -1,35 +1,6 @@
-<div class="container-fluid">
-  
-  <div class="row displayDesktop fixed-top " style="height: 190px; background: linear-gradient(#76562e, #c0922c);">
-    <div class="col-sm-12">
-      <div class="row align-items-center">
-        <div style="width: 18%; text-align: right;">
-          <img src="assets/decoupage/devis_senegal.png" alt="Card image cap" height="80" style="margin: 0.5rem;">
-        </div>
-        <div style="width: 20%; border-left: #e0e0df solid 3px; border-right: #e0e0df solid 3px; margin: 0 auto; text-align: center;">
-          <img src="assets/decoupage/impot_domaine.png" alt="Card image cap" width="90%">
-        </div>
-        <div class="align-self-center" style="width: 45%; text-align: left;">
-          <div style="color: white; font-size: 2rem">Timbre Fiscal Electronique</div>
-          <div style="color: #D2AF31; font-size: larger">Achat de timbres fiscaux électroniques</div>
-        </div>
-        <div class="align-self-center" style="width:15%; text-align: left;">
-          <div class="btn-group small" dropdown>
-            <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle" aria-controls="dropdown-basic">
-              <!--<i class="fa fa-user-circle" aria-hidden="true"></i> {{ uinfo.role }} <span class="caret"></span>-->
-            </button>
-            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu small" role="menu" aria-labelledby="button-basic">
-              <li role="menuitem" class="small"><a class="dropdown-item" [routerLink]="" (click)="onLogout()"><i class="fa fa-lock"></i> Se déconnecter</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-12">
-      <app-menu></app-menu>
-    </div>
-    <div class="row" style="height: 19px; background-color: #373737; text-align: right; margin-top: -40px;"></div>
-  </div>
+<div>
+  <app-header></app-header>
+</div>
 
   
   <div class="row classPages">
@@ -41,7 +12,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <footer style="margin: 0 auto; text-align: center;">
   <span><a href="https://coreui.io">DGID</a> &copy; 2019.</span>

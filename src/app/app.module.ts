@@ -21,6 +21,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { TransactionsProvider } from './services/transactions-service';
 
 import { NgxSpinnerModule } from "ngx-spinner";
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     LoginComponent,
     PagesComponent,
     MenuComponent,
+    HeaderComponent,
   ],
   bootstrap: [AppComponent],
   providers: [
