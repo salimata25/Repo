@@ -1,17 +1,29 @@
 <nav class="navbar navbar-expand-sm fixed-top">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 ">
-                <div id="logo_dgid" >
-                    <img src="assets\decoupage\agent_bg_logo.png " alt="Card image cap" width="90%">
+            <div class=" navbar-brand col-sm-12 ">
+                <div>
+                    <img id="logo_dgid" src="assets\decoupage\agent_bg_logo.png " alt="Card image cap" >
+                    <span id="bordure"></span>
+                    Timbre Fiscal
                 </div>
+                
             </div>
             <div class="col-sm-12">
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto">
-                    <li><a routerLink="/marchand" class="nav-link border border-primary rounded-top"><i class="fas fa-shopping-cart">Vendre</i></a></li>
-                    <li><a routerLink="/comsumer" class="nav-link">Consommer</a></li>
-                    <li><a routerLink="/historique" class="nav-link">Historique</a></li>
+                <div class="">
+                    <ul class="d-flex flex-row navbar-nav ml-auto">
+                    <li class="p-2 menu_item"><a routerLink="/marchand" class="nav-link ;">
+                      <div class="icone"><fa-icon icon="shopping-cart" size="3x" [styles]="{'color': 'black'}"></fa-icon></div>
+                      <div class="text_item">Vente</div></a>
+                    </li>
+                    <li class="p-2 menu_item"><a routerLink="/comsumer" class="nav-link">
+                      <div><fa-icon icon="stamp" size="3x" [styles]="{'color': 'black'}"></fa-icon></div>
+                      <div class="text_item">Consommation</div></a>
+                    </li>
+                    <li class="p-2 menu_item"><a routerLink="/historique" class="nav-link">
+                      <div><fa-icon icon="chart-line" size="3x" [styles]="{'color': 'black'}"></fa-icon></div>
+                      <div class="text_item">Historique</div></a>
+                    </li>
                     </ul>
                 </div>
             </div>

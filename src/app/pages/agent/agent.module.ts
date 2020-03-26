@@ -13,6 +13,7 @@ import { AgentProvider } from '../../services/agent-service';
 import { AgentMarchandComponent } from './agent-marchand/agent-marchand.component';
 import { AgentConsumerComponent } from './agent-consumer/agent-consumer.component';
 import { AuthProvider } from '../../services/auth-service';
+import { AgentVendeurComponent } from './agent-vendeur/agent-vendeur.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { AuthProvider } from '../../services/auth-service';
     AgentMarchandComponent,
     AgentConsumerComponent,
     AgentHistoriqueComponent,
-    AgentDashboardComponent
+    AgentDashboardComponent,
+    AgentVendeurComponent
   ],
   providers: [
     AgentAuthGuard,

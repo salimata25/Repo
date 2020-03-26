@@ -14,6 +14,8 @@ import { PagesComponent } from './pages/pages.component';
 import { ChartsModule } from 'ng2-charts';
 //import { AuthGuard } from './guard/auth.guard';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faShoppingCart, faStamp, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -22,6 +24,7 @@ import { TransactionsProvider } from './services/transactions-service';
 
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HeaderComponent } from './header/header.component';
+import { AgentVendeurComponent } from './pages/agent/agent-vendeur/agent-vendeur.component';
 
 
 @NgModule({
@@ -36,6 +39,7 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
+    FontAwesomeModule,
     ChartsModule,
     NgxSpinnerModule,
     
@@ -47,6 +51,7 @@ import { HeaderComponent } from './header/header.component';
     PagesComponent,
     MenuComponent,
     HeaderComponent,
+    AgentVendeurComponent
   ],
   bootstrap: [AppComponent],
   providers: [
@@ -62,7 +67,11 @@ import { HeaderComponent } from './header/header.component';
     { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true }
   ]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faShoppingCart, faStamp, faChartLine);
+  }
+}
 
 
 

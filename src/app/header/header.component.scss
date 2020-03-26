@@ -3,7 +3,40 @@ nav {
 }
 
 #logo_dgid {
-    width: 25%; 
-    border-right: #e0e0df solid 2px; 
+    width: 15%; 
+}
+
+ul {
+    margin-left: 60px;
+}
+
+li {
+    border-radius: 10px 10px 0 0;
+    background: #aa8007;
     margin-right: 6px;
+}
+
+.text_item {
+    text-align: center; 
+    color: darken($color: #000000, $amount: 0);
+}
+
+.menu_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 120px;
+    /*padding: 10px;
+    display: inline-block;
+    vertical-align: middle*/
+}
+
+.icone {
+    justify-content: center;
+}
+
+#bordure { 
+    margin-left: 3px;
+    margin-right: 3px;
+    border-right: #e0e0df solid 2px; 
 }
