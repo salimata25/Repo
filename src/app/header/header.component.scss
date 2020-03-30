@@ -1,9 +1,18 @@
-nav {
+.entete {
     background-color: #634420;
 }
 
+.logo {
+    margin-left: 20px;
+}
+
+.menu {
+    margin-left: 60px;
+    margin-top: 5px;
+}
+
 #logo_dgid {
-    width: 15%; 
+    width: 7%; 
 }
 
 ul {
@@ -12,31 +21,48 @@ ul {
 
 li {
     border-radius: 10px 10px 0 0;
-    background: #aa8007;
-    margin-right: 6px;
+    background: rgba(184, 144, 43, 0.8);
+    margin-right: 10px;
+    width: 30px;
 }
 
-.text_item {
-    text-align: center; 
-    color: darken($color: #000000, $amount: 0);
+li:active {
+    background: #f1eff0;
+    color: #000;
+}
+
+.centrer_img {
+    text-align: center;
+    //margin-top: 5px;
+    margin-bottom: 0;
+}
+
+figure {
+    justify-content: center;
+}
+
+figcaption {
+    color: darken($color: #ffffff, $amount: 0);
+}
+
+.taille-img {
+    width: 30%;
 }
 
 .menu_item {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 120px;
+    width: 140px;
     /*padding: 10px;
     display: inline-block;
     vertical-align: middle*/
 }
 
-.icone {
-    justify-content: center;
-}
-
-#bordure { 
-    margin-left: 3px;
-    margin-right: 3px;
-    border-right: #e0e0df solid 2px; 
+#bordure {
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-right:#f1eff0 solid 2px; 
 }

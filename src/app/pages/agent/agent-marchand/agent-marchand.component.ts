@@ -18,22 +18,22 @@ export class AgentMarchandComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.spinner.show();
-    this.apiInfoUser.getUserInfo().subscribe(
-      resp => {
-        console.log('data  ', resp)
-        /*if(resp === null){
-          this.router.navigate(['/login']);
-        }
-        else if(resp.isMarchandQuittance === false){
-          this.router.navigate(['/login']);
-        }*/
-      },
-      error => {
-        this.router.navigate(['/login']);
-      },
-      () => this.spinner.hide()
-    );
+    // this.spinner.show();
+    // this.apiInfoUser.getUserInfo().subscribe(
+    //   resp => {
+    //     console.log('data  ', resp)
+    //     /*if(resp === null){
+    //       this.router.navigate(['/login']);
+    //     }
+    //     else if(resp.isMarchandQuittance === false){
+    //       this.router.navigate(['/login']);
+    //     }*/
+    //   },
+    //   error => {
+    //     this.router.navigate(['/login']);
+    //   },
+    //   () => this.spinner.hide()
+    // );
     
   }
   

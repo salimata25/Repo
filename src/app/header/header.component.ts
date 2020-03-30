@@ -8,7 +8,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  //faCoffee = faCoffee;
+  
   constructor() {
     
    } 

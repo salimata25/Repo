@@ -25,6 +25,7 @@ import { TransactionsProvider } from './services/transactions-service';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HeaderComponent } from './header/header.component';
 import { AgentVendeurComponent } from './pages/agent/agent-vendeur/agent-vendeur.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { AgentVendeurComponent } from './pages/agent/agent-vendeur/agent-vendeur
     PagesComponent,
     MenuComponent,
     HeaderComponent,
-    AgentVendeurComponent
+    AgentVendeurComponent,
+    FooterComponent
   ],
   bootstrap: [AppComponent],
   providers: [

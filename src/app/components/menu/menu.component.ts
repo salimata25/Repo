@@ -19,33 +19,33 @@ export class MenuComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private sessPrv: SessionService, private apiInfoUser: AuthProvider) {  }
 
   ngOnInit() {
-    console.log("PagesComponent ")
-    this.uinfo = this.sessPrv.parseSession();
+    // console.log("PagesComponent ")
+    // this.uinfo = this.sessPrv.parseSession();
     
-    this.apiInfoUser.getUserInfo().subscribe(
-      resp => {
-        console.log('data  ', resp)
-        this.userInfo = resp;
-      },
-      error => {
-        this.userInfo = null;
-        console.log('error  ', error)
-      },
-      () => {
-        if (this.uinfo.role && this.userInfo && this.userInfo.etat === 0) {
-          console.log("ROLE_ ", this.uinfo.role)
-          this.funcNavItems(this.uinfo.role);
-        }
-        else {
-          this.router.navigate(['/login']);
-        }
-      }
-    );
+    // this.apiInfoUser.getUserInfo().subscribe(
+    //   resp => {
+    //     console.log('data  ', resp)
+    //     this.userInfo = resp;
+    //   },
+    //   error => {
+    //     this.userInfo = null;
+    //     console.log('error  ', error)
+    //   },
+    //   () => {
+    //     if (this.uinfo.role && this.userInfo && this.userInfo.etat === 0) {
+    //       console.log("ROLE_ ", this.uinfo.role)
+    //       this.funcNavItems(this.uinfo.role);
+    //     }
+    //     else {
+    //       this.router.navigate(['/login']);
+    //     }
+    //   }
+    // );
     
   }
   
 
-  ngOnDestroy() {  } 
+  ngOnDestroy() {  }  
   
 
   navMenuItems(urlBase: string){
