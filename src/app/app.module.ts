@@ -15,7 +15,7 @@ import { ChartsModule } from 'ng2-charts';
 //import { AuthGuard } from './guard/auth.guard';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faShoppingCart, faStamp, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -71,7 +71,7 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppModule { 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faShoppingCart, faStamp, faChartLine);
+    library.addIcons(faAngleRight);
   }
 }
 

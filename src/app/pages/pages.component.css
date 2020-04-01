@@ -5,7 +5,7 @@
 /*  Extra small devices (portrait phones, less than 576px) 
   Mobile
 */
-@media only screen and (max-width: 575.98px) { 
+/* @media only screen and (max-width: 575.98px) { 
 
     .displayMinimalMobile{
       display: none;
@@ -23,19 +23,17 @@
     .classPages{
       text-align: center; 
       background-color: #e0e0df; 
-      margin-top:170px;
       display: none;
     }
 
-  
-  }
+  } */
   
   
   
   /*  Medium devices (tablets, 768px and up) 
     Diminuer La taille
   */
-  @media only screen and (min-width: 576px) and (max-width: 767.98px) { 
+  /* @media only screen and (min-width: 576px) and (max-width: 767.98px) { 
     
     .displayMinimalMobile{
       display: none;
@@ -53,17 +51,15 @@
     .classPages{
       text-align: center; 
       background-color: #e0e0df; 
-      margin-top:170px;
       display: none;
     }
     
-  
-  }
+  } */
   
   /*  Medium devices (tablets, 768px and up) 
     Diminuer La taille
   */
-  @media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
+  /* @media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
     
     .displayMinimalMobile{
       display: none;
@@ -81,15 +77,13 @@
     .classPages{
       text-align: center; 
       background-color: #e0e0df; 
-      margin-top:170px;
       display: none;
     }
     
-  
-  }
+  } */
   
   /*  Extra large devices (large desktops, 1200px and up) */
-  @media only screen and (min-width: 1025px) { 
+  /* @media only screen and (min-width: 1025px) { 
   
     .displayMinimalMobile{
       display: none;
@@ -103,14 +97,38 @@
     .displayDesktop{
       display: block;
     }
-    
     .classPages{
       text-align: center; 
       background-color: #f1efef; 
-      margin-top:170px;
     }
     
-  
+  } */
+
+  .classPages{
+    text-align: center; 
+    background-color: #f1efef; 
+  }
+
+  p {
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 30px;
+    color: #75552e;
+  }
+
+  /* p::before {
+    content: "\2022"; 
+    color:#c0911b;
+    width: 50px;
+  } */
+
+  .puce {
+    margin-top: 8px;
+    margin-left: 40px;
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background: #c0911b;
   }
   
   

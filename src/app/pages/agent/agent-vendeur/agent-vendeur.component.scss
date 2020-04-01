@@ -1,3 +1,61 @@
-.boxe {
-    border: green;
+.vente-timbres {
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
+
+.timbre {
+    background: #e0e0e0;
+    border-radius: 30px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.timbre:hover {
+    background: #c0911b;
+}
+
+.timbre:hover span {
+    color: white;
+}
+
+.timbre:hover p {
+    color: white;
+}
+
+.timbre:hover button {
+    background: #76552c;
+    color: white;
+}
+
+.timbre-passport {
+    background: #c0911b;
+    border-radius: 30px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+
+.montant {
+    margin-top: 5px;
+    font-size: 30px;
+    font-style: bold;
+}
+
+.border-3 {
+    border-style:solid;
+    border-width: 3px;
+    border-color: rgb(196, 194, 194);
+}
+
+.ajouter {
+    background: #c0911b;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.fleche {
+    margin-left: 20px;
+}
+

@@ -1,21 +1,22 @@
-<div>
-  <app-header></app-header>
-</div>
-
-<div>
-  
-</div>
-  <div class="row classPages">
-    <div class="col-12" style="margin-top: 3rem">
-      <div class="row" style="margin: 1rem;">
-        <div class="col-12" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem;">
-          <!-- <router-outlet></router-outlet>
-          <app-agent-vendeur></app-agent-vendeur> -->
-        </div>
+<div class="container col-12"> 
+  <div>
+    <app-header></app-header>
+  </div>
+    <div class="container-fluid">
+    <div class="row classPages">
+      <div class="d-flex flex-row align-items-center">
+        <span class="p-2 puce"></span>
+        <p class="p-2">VENTE DE TIMBRE FISCAL ET QUITTANCE</p>
+     </div>
+      <div class="col-11" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+            
+        <router-outlet></router-outlet>
+        <app-agent-vendeur></app-agent-vendeur>
       </div>
     </div>
   </div>
 
-<footer >
-  <app-footer></app-footer>
-</footer>
+  <footer >
+    <app-footer></app-footer>
+  </footer>
+</div>
