@@ -8,6 +8,7 @@
     border-radius: 30px;
     width: 200px;
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 .timbre:hover {
@@ -26,6 +27,17 @@
     background: #76552c;
     color: white;
 }
+
+// button .img-top {
+//     display: none;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: 99;
+// }
+// .timbre:hover button .img-top {
+//     display: inline;
+// }
 
 .timbre-passport {
     background: #c0911b;
