@@ -1,0 +1,41 @@
+.tableau {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    margin-left: 100px;
+    text-align: left;
+}
+
+.puce {
+    height: 30px;
+    margin-top: 15px;
+    margin-right: 10px;
+    border-right:#c0911b solid 5px; 
+}
+
+hr {
+    height: 2px;
+    color: #ebe7e7;
+}
+
+#table {
+    border: 1px solid #ddd;
+}
+
+#table th, #table td{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+#table th {
+    text-align: center;
+    background-color: #e0e0e0;
+    color: black;
+}
+
+#table td {
+    text-align: center;
+    color: #c0911b;
+}

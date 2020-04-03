@@ -26,6 +26,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { HeaderComponent } from './header/header.component';
 import { AgentVendeurComponent } from './pages/agent/agent-vendeur/agent-vendeur.component';
 import { FooterComponent } from './footer/footer.component';
+import { ValidationComponent } from './pages/agent/agent-vendeur/validation/validation.component';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -35,7 +37,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-
+    DataTablesModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
@@ -53,7 +55,8 @@ import { FooterComponent } from './footer/footer.component';
     MenuComponent,
     HeaderComponent,
     AgentVendeurComponent,
-    FooterComponent
+    FooterComponent,
+    ValidationComponent
   ],
   bootstrap: [AppComponent],
   providers: [

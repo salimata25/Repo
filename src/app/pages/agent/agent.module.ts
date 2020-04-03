@@ -14,6 +14,7 @@ import { AgentMarchandComponent } from './agent-marchand/agent-marchand.componen
 import { AgentConsumerComponent } from './agent-consumer/agent-consumer.component';
 import { AuthProvider } from '../../services/auth-service';
 import { AgentVendeurComponent } from './agent-vendeur/agent-vendeur.component';
+import { ValidationComponent } from './agent-vendeur/validation/validation.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { AgentVendeurComponent } from './agent-vendeur/agent-vendeur.component';
     AgentConsumerComponent,
     AgentHistoriqueComponent,
     AgentDashboardComponent,
-    AgentVendeurComponent
+    AgentVendeurComponent,
+    ValidationComponent
   ],
   providers: [
     AgentAuthGuard,

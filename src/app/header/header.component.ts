@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +8,17 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   
-  constructor() {
+  modalRef: BsModalRef;
+  constructor( private modalService: BsModalService) {
     
    } 
 
   ngOnInit() {
+  }
+
+  openModal(template: TemplateRef<any>) {
+
+    this.modalRef = this.modalService.show(template, {class: 'modal-dialog-centered'});
   }
 
 }
