@@ -1,0 +1,57 @@
+.puce {
+    height: 30px;
+    margin-top: 15px;
+    margin-right: 10px;
+    border-right:#c0911b solid 5px; 
+}
+
+hr {
+    height: 2px;
+    color: #ebe7e7;
+    margin-top: 10px;
+}
+
+.recapitulatif {
+    text-align: start;
+}
+
+p {
+    line-height: 10px;
+}
+
+#table {
+    border: 0;
+}
+
+#table th, #table td{
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    font-size: larger;
+}
+
+#table td {
+    line-height: 4px;
+    font-weight: bold;
+}
+
+#table th{  
+    font-style: italic;
+}
+
+.retour { 
+    background: #b1b1b1;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.valider {
+    background: #c0911b;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 30px;
+}

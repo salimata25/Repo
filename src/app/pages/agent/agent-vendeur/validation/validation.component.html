@@ -15,6 +15,7 @@
             <th>CIN N°</th>
             <th>N° Tel.</th>
             <th>Montant</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +25,10 @@
             <td>2088 1990 03792</td>
             <td>77 326 68 14</td>
             <td>20.000</td>
+            <td>
+                <fa-icon icon="edit" [styles]="{'color': 'blue'}"></fa-icon>
+                <fa-icon icon="trash-alt" [styles]="{'color': 'red'}"></fa-icon>
+            </td>
         </tr>
         <tr >
             <td>Diamanka</td>
@@ -31,20 +36,90 @@
             <td>2088 1990 03792</td>
             <td>77 326 68 14</td>
             <td>20.000</td>
+            <td>
+                <fa-icon icon="edit" [styles]="{'color': 'blue'}"></fa-icon>
+                <fa-icon icon="trash-alt" [styles]="{'color': 'red'}"></fa-icon>
+            </td>
         </tr>
         <tr >
-            <td>Diamanka</td>
-            <td>Salimata</td>
-            <td>2088 1990 03792</td>
-            <td>77 326 68 14</td>
-            <td>20.000</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td style="background-color: #b5b5b3; color: black;" colspan="3">Total</td>
-                <td style="background-color: #c0911b; color: white;" colspan="2">Somme</td>
+                <td style="background-color: #b5b5b3; color: black;" colspan="3">TOTAL</td>
+                <td style="background-color: #c0911b; color: white;" colspan="3">Somme</td>
             </tr>
         </tfoot>
     </table>
 </div>
+<div class="d-flex flex-row justify-content-center" style="margin-top: 40px; margin-bottom: 20px;">
+    <button type="submit" class="p-2 btn retour">
+      <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+      Retour
+    </button>
+    <button type="submit" class="p-2 btn ajouter_autre" (click)="openModal(paramUser)">
+        Ajouter un autre
+        <img style="padding-left: 10px;" src="assets\decoupage\fleche_haut.PNG" alt="arrow right">
+    </button>
+    <button type="submit" class="p-2 btn valider">
+      Valider
+      <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
+    </button>
+  </div>
+
+  <ng-template #paramUser>
+    <div class="modal-header">
+      <h5 class="modal-title ">Veuillez remplir ces informations</h5>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <input type="text" class="form-control" id="nom" placeholder="Nom">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="prenom" placeholder="Prénom">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="cni" placeholder="CNI N° (NIN du tuteur pour mineur)">
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-control" id="tel" placeholder="N° Tel">
+        </div>
+        <div class="d-flex">
+          <button type="submit" class="p-2 mr-auto btn retour">
+            <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+            Retour
+          </button>
+          <button type="submit" class="p-2 btn valider">
+            valider
+            <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
+          </button>
+        </div>
+      </form>
+    </div>
+  </ng-template>

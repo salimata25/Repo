@@ -30,12 +30,45 @@ hr {
 }
 
 #table th {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    border-top: 0;
+    border-bottom: 0;
     text-align: center;
     background-color: #e0e0e0;
     color: black;
 }
 
 #table td {
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-top: 0;
+    border-bottom: 0;
     text-align: center;
     color: #c0911b;
+}
+
+.retour { 
+    background: #b1b1b1;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.valider {
+    background: #c0911b;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.ajouter_autre {
+    background: #76552c;
+    color: white;
+    font-size: 20px;
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
 }

@@ -1,0 +1,40 @@
+.puce {
+    height: 30px;
+    margin-top: 15px;
+    margin-right: 10px;
+    border-right:#c0911b solid 5px; 
+}
+
+hr {
+    height: 2px;
+    color: #ebe7e7;
+    margin-top: 10px;
+}
+
+.finalisation {
+    text-align: start;
+}
+
+p {
+    line-height: 10px;
+}
+
+.retour { 
+    background: #b1b1b1;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.valider {
+    background: #c0911b;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 30px;
+}
+
+form input {
+    border-radius: 20px;
+}

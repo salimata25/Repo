@@ -15,7 +15,7 @@ import { ChartsModule } from 'ng2-charts';
 //import { AuthGuard } from './guard/auth.guard';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -28,6 +28,9 @@ import { AgentVendeurComponent } from './pages/agent/agent-vendeur/agent-vendeur
 import { FooterComponent } from './footer/footer.component';
 import { ValidationComponent } from './pages/agent/agent-vendeur/validation/validation.component';
 import { DataTablesModule } from 'angular-datatables';
+import { FinalisationComponent } from './pages/agent/agent-vendeur/finalisation/finalisation.component';
+import { RecapitulatifComponent } from './pages/agent/agent-vendeur/recapitulatif/recapitulatif.component';
+import { AgentConsommateurComponent } from './pages/agent/agent-consommateur/agent-consommateur.component';
 
 
 @NgModule({
@@ -56,7 +59,10 @@ import { DataTablesModule } from 'angular-datatables';
     HeaderComponent,
     AgentVendeurComponent,
     FooterComponent,
-    ValidationComponent
+    ValidationComponent,
+    FinalisationComponent,
+    RecapitulatifComponent,
+    AgentConsommateurComponent
   ],
   bootstrap: [AppComponent],
   providers: [
@@ -74,7 +80,7 @@ import { DataTablesModule } from 'angular-datatables';
 })
 export class AppModule { 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faAngleRight);
+    library.addIcons(faTrashAlt, faEdit);
   }
 }
 

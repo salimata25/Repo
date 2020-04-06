@@ -15,6 +15,9 @@ import { AgentConsumerComponent } from './agent-consumer/agent-consumer.componen
 import { AuthProvider } from '../../services/auth-service';
 import { AgentVendeurComponent } from './agent-vendeur/agent-vendeur.component';
 import { ValidationComponent } from './agent-vendeur/validation/validation.component';
+import { FinalisationComponent } from './agent-vendeur/finalisation/finalisation.component';
+import { RecapitulatifComponent } from './agent-vendeur/recapitulatif/recapitulatif.component';
+import { AgentConsommateurComponent } from './agent-consommateur/agent-consommateur.component';
 
 @NgModule({
   imports: [
@@ -33,7 +36,10 @@ import { ValidationComponent } from './agent-vendeur/validation/validation.compo
     AgentHistoriqueComponent,
     AgentDashboardComponent,
     AgentVendeurComponent,
-    ValidationComponent
+    ValidationComponent,
+    FinalisationComponent,
+    RecapitulatifComponent,
+    AgentConsommateurComponent
   ],
   providers: [
     AgentAuthGuard,
