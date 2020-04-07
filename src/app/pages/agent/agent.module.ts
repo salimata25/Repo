@@ -18,6 +18,10 @@ import { ValidationComponent } from './agent-vendeur/validation/validation.compo
 import { FinalisationComponent } from './agent-vendeur/finalisation/finalisation.component';
 import { RecapitulatifComponent } from './agent-vendeur/recapitulatif/recapitulatif.component';
 import { AgentConsommateurComponent } from './agent-consommateur/agent-consommateur.component';
+import { ConsommationComponent } from './agent-consommateur/consommation/consommation.component';
+import { TypeConsommationComponent } from './agent-consommateur/type-consommation/type-consommation.component';
+import { NumeroTimbreComponent } from './agent-consommateur/numero-timbre/numero-timbre.component';
+import { DossierTimbreComponent } from './agent-consommateur/dossier-timbre/dossier-timbre.component';
 
 @NgModule({
   imports: [
@@ -39,7 +43,11 @@ import { AgentConsommateurComponent } from './agent-consommateur/agent-consommat
     ValidationComponent,
     FinalisationComponent,
     RecapitulatifComponent,
-    AgentConsommateurComponent
+    AgentConsommateurComponent,
+    ConsommationComponent,
+    TypeConsommationComponent,
+    NumeroTimbreComponent,
+    DossierTimbreComponent
   ],
   providers: [
     AgentAuthGuard,

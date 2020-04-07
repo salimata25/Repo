@@ -31,6 +31,10 @@ import { DataTablesModule } from 'angular-datatables';
 import { FinalisationComponent } from './pages/agent/agent-vendeur/finalisation/finalisation.component';
 import { RecapitulatifComponent } from './pages/agent/agent-vendeur/recapitulatif/recapitulatif.component';
 import { AgentConsommateurComponent } from './pages/agent/agent-consommateur/agent-consommateur.component';
+import { ConsommationComponent } from './pages/agent/agent-consommateur/consommation/consommation.component';
+import { TypeConsommationComponent } from './pages/agent/agent-consommateur/type-consommation/type-consommation.component';
+import { NumeroTimbreComponent } from './pages/agent/agent-consommateur/numero-timbre/numero-timbre.component';
+import { DossierTimbreComponent } from './pages/agent/agent-consommateur/dossier-timbre/dossier-timbre.component';
 
 
 @NgModule({
@@ -62,7 +66,11 @@ import { AgentConsommateurComponent } from './pages/agent/agent-consommateur/age
     ValidationComponent,
     FinalisationComponent,
     RecapitulatifComponent,
-    AgentConsommateurComponent
+    AgentConsommateurComponent,
+    ConsommationComponent,
+    TypeConsommationComponent,
+    NumeroTimbreComponent,
+    DossierTimbreComponent
   ],
   bootstrap: [AppComponent],
   providers: [
