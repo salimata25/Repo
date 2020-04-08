@@ -15,7 +15,7 @@ import { ChartsModule } from 'ng2-charts';
 //import { AuthGuard } from './guard/auth.guard';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faEdit, faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -35,6 +35,7 @@ import { ConsommationComponent } from './pages/agent/agent-consommateur/consomma
 import { TypeConsommationComponent } from './pages/agent/agent-consommateur/type-consommation/type-consommation.component';
 import { NumeroTimbreComponent } from './pages/agent/agent-consommateur/numero-timbre/numero-timbre.component';
 import { DossierTimbreComponent } from './pages/agent/agent-consommateur/dossier-timbre/dossier-timbre.component';
+import { ImpressionComponent } from './pages/agent/agent-consommateur/impression/impression.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { DossierTimbreComponent } from './pages/agent/agent-consommateur/dossier
     ConsommationComponent,
     TypeConsommationComponent,
     NumeroTimbreComponent,
-    DossierTimbreComponent
+    DossierTimbreComponent,
+    ImpressionComponent
   ],
   bootstrap: [AppComponent],
   providers: [
@@ -88,7 +90,7 @@ import { DossierTimbreComponent } from './pages/agent/agent-consommateur/dossier
 })
 export class AppModule { 
   constructor(library: FaIconLibrary) {
-    library.addIcons(faTrashAlt, faEdit);
+    library.addIcons(faTrashAlt, faEdit, faAngleRight, faArrowRight);
   }
 }
 

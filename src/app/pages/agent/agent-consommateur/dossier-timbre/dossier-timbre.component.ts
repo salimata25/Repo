@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dossier-timbre.component.scss']
 })
 export class DossierTimbreComponent implements OnInit {
-
+  contenu = 0;
   constructor() { }
+
+  onSelected (contenu) {
+    this.contenu = contenu;
+  }
 
   ngOnInit() {
   }

@@ -22,6 +22,7 @@ import { ConsommationComponent } from './agent-consommateur/consommation/consomm
 import { TypeConsommationComponent } from './agent-consommateur/type-consommation/type-consommation.component';
 import { NumeroTimbreComponent } from './agent-consommateur/numero-timbre/numero-timbre.component';
 import { DossierTimbreComponent } from './agent-consommateur/dossier-timbre/dossier-timbre.component';
+import { ImpressionComponent } from './agent-consommateur/impression/impression.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { DossierTimbreComponent } from './agent-consommateur/dossier-timbre/doss
     ConsommationComponent,
     TypeConsommationComponent,
     NumeroTimbreComponent,
-    DossierTimbreComponent
+    DossierTimbreComponent,
+    ImpressionComponent
   ],
   providers: [
     AgentAuthGuard,
