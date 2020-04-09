@@ -23,16 +23,33 @@ import { TypeConsommationComponent } from './agent-consommateur/type-consommatio
 import { NumeroTimbreComponent } from './agent-consommateur/numero-timbre/numero-timbre.component';
 import { DossierTimbreComponent } from './agent-consommateur/dossier-timbre/dossier-timbre.component';
 import { ImpressionComponent } from './agent-consommateur/impression/impression.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faTrashAlt, faEdit, faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { RouterModule } from '@angular/router';
+import { HeaderModule } from '../../header/header.module';
+import { FooterModule } from '../../footer/footer.module';
 
 @NgModule({
-  imports: [
+  imports: [ 
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-
-    AgentRoutingModule,
+    FontAwesomeModule,
+    //AgentRoutingModule,
     DataTablesModule,
     ChartsModule,
+    HeaderModule,
+    FooterModule,
+    RouterModule.forChild([
+      {path: 'validation', component: ValidationComponent},
+      {path: 'finalisation', component: FinalisationComponent},
+      {path: 'recapitulatif', component: RecapitulatifComponent},
+      {path: 'consommation', component: ConsommationComponent},
+      {path: 'type-consommation', component: TypeConsommationComponent},
+      {path: 'numero-timbre', component: NumeroTimbreComponent},
+      {path: 'dossier-timbre', component: DossierTimbreComponent},
+      {path: 'impression', component: ImpressionComponent},
+    ])
   ],
   declarations: [
     AgentComponent,
@@ -57,4 +74,8 @@ import { ImpressionComponent } from './agent-consommateur/impression/impression.
     AuthProvider
   ]
 })
-export class AgentModule { }
+export class AgentModule { 
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faTrashAlt, faEdit, faAngleRight, faArrowRight);
+  }
+} 

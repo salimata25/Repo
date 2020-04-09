@@ -1,85 +1,108 @@
-
-    <div class="d-flex flex-wrap  vente-timbres">
-        <div class="p-2 border-3 timbre">
-            <span >Timbre</span> <br>
-            <span class="montant">1.000 FCFA</span> <br>
-            <p>----------------</p>
-            <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
-                Ajouter
-                <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+<div class="container col-12"> 
+  <div>
+    <app-header></app-header>
+  </div>
+    <div class="container-fluid">
+      
+    <div class="row justify-content-center classPages">
+      <div class="d-flex flex-row align-items-center">
+        <span class="p-2 puce"></span> 
+        <p class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</p>
+     </div>
+      
+      <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+            
+        <router-outlet></router-outlet>
+        <div class="d-flex flex-wrap  vente-timbres">
+          <div class="p-2 border-3 timbre">
+              <span >Timbre</span> <br>
+              <span class="montant">1.000 FCFA</span> <br>
+              <p>----------------</p>
+              <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
+                  Ajouter
+                  <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+              </button>
+          </div>
+          <div class="p-2 border-3 timbre">
+              <span >Timbre</span> <br>
+              <span class="montant">2.000 FCFA</span>
+              <p>----------------</p>
+              <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
+                  Ajouter
+                  <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+              </button>
+          </div>
+          <div class="p-2 border-3 timbre">
+              <span class="style-timbre">Timbre</span> <br>
+              <span class="montant">5.000 FCFA</span>
+              <p>----------------</p>
+              <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
+                  Ajouter
+                  <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+              </button>
+          </div>
+          <div class="p-2 border-3 timbre">
+              <span class="style-timbre">Timbre</span> <br>
+              <span class="montant">10.000 FCFA</span>
+              <p>----------------</p>
+              <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
+                  Ajouter
+                  <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+              </button>
+          </div> <br>
+          <div class="p-2 border-3 timbre">
+              <span>Timbre</span> <br>
+              <span style="font-size: 20px;">Passport</span> <br>
+              <span class="montant">20.000 FCFA</span> 
+              <p>----------------</p>
+              <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
+                  Ajouter
+                  <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+              </button>
+          </div>
+      </div>
+  
+      <ng-template #paramUser>
+          <div class="modal-header">
+            <h5 class="modal-title ">Veuillez remplir ces informations</h5>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
             </button>
-        </div>
-        <div class="p-2 border-3 timbre">
-            <span >Timbre</span> <br>
-            <span class="montant">2.000 FCFA</span>
-            <p>----------------</p>
-            <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
-                Ajouter
-                <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
-            </button>
-        </div>
-        <div class="p-2 border-3 timbre">
-            <span class="style-timbre">Timbre</span> <br>
-            <span class="montant">5.000 FCFA</span>
-            <p>----------------</p>
-            <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
-                Ajouter
-                <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
-            </button>
-        </div>
-        <div class="p-2 border-3 timbre">
-            <span class="style-timbre">Timbre</span> <br>
-            <span class="montant">10.000 FCFA</span>
-            <p>----------------</p>
-            <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
-                Ajouter
-                <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
-            </button>
-        </div> <br>
-        <div class="p-2 border-3 timbre">
-            <span>Timbre</span> <br>
-            <span style="font-size: 20px;">Passport</span> <br>
-            <span class="montant">20.000 FCFA</span> 
-            <p>----------------</p>
-            <button type="button" class="btn text-center ajouter" (click)="openModal(paramUser)">
-                Ajouter
-                <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
-            </button>
-        </div>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" id="nom" placeholder="Nom">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="prenom" placeholder="Prénom">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="cni" placeholder="CNI N° (NIN du tuteur pour mineur)">
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control" id="tel" placeholder="N° Tel">
+              </div>
+              <div class="d-flex">
+                <button type="submit" class="p-2 mr-auto btn retour">
+                  <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+                  Retour
+                </button>
+                <button type="submit" class="p-2 btn valider" (click)="valider()">
+                  valider
+                  <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
+                </button>
+              </div>
+            </form>
+          </div>
+        </ng-template>
+      </div>
     </div>
+  </div>
 
-    <ng-template #paramUser>
-        <div class="modal-header">
-          <h5 class="modal-title ">Veuillez remplir ces informations</h5>
-          <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" id="nom" placeholder="Nom">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="prenom" placeholder="Prénom">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="cni" placeholder="CNI N° (NIN du tuteur pour mineur)">
-            </div>
-            <div class="form-group">
-              <input type="tel" class="form-control" id="tel" placeholder="N° Tel">
-            </div>
-            <div class="d-flex">
-              <button type="submit" class="p-2 mr-auto btn retour">
-                <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-                Retour
-              </button>
-              <button type="submit" class="p-2 btn valider">
-                valider
-                <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
-              </button>
-            </div>
-          </form>
-        </div>
-      </ng-template>
+  <footer >
+    <app-footer></app-footer>
+  </footer>
+</div>
+    
 

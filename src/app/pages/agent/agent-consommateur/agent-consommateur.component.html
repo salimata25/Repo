@@ -1,30 +1,53 @@
-<div class="enregistrement">
-    <div class="d-flex flex-row justify-content-center">
-        <p class="p-2 col-sm-4 banière">ENREGISTREMENT</p>
+<div class="container col-12"> 
+    <div>
+      <app-header></app-header>
     </div>
-    
-    <div class="d-flex flex-row justify-content-around">
-        <a class="p-2 col-sm-3 premier_lien" href="">Timbre de connaissements</a>
-        <a class="p-2 col-sm-3 premier_lien" href="">Actes juridictionnels et arbitraux</a>
-        <a class="p-2 col-sm-3 premier_lien" href="">Pari mutuel</a>
+      <div class="container-fluid">
+        
+      <div class="row justify-content-center classPages">
+        <div class="d-flex flex-row align-items-center">
+          <span class="p-2 puce_titre"></span> 
+          <p class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</p>
+       </div>
+        
+        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+              
+          <router-outlet></router-outlet>
+
+            <div class="enregistrement">
+                <div class="d-flex flex-row justify-content-center">
+                    <p class="p-2 col-sm-4 banière">ENREGISTREMENT</p>
+                </div>
+                
+                <div class="d-flex flex-row justify-content-around">
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Timbre de connaissements</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Actes juridictionnels et arbitraux</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Pari mutuel</a>
+                </div>
+                <div class="d-flex flex-row justify-content-around ">
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Timbre de dimension</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Domaines privé non affecté de l'état</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Documents et perceptions diverses</a>
+                </div>
+                <div class="d-flex flex-row justify-content-around ">
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Droits de timbre de 10.000 FCFA</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Droits de timbre de 20.000 FCFA</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Passports</a>
+                </div>
+                <div class="d-flex flex-row justify-content-around ">
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Passports étrangers </a>
+                </div>
+                <button type="submit" class="col-sm-2 btn retour">
+                    <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+                    Retour
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="d-flex flex-row justify-content-around ">
-        <a class="p-2 col-sm-3 premier_lien" href="">Timbre de dimension</a>
-        <a class="p-2 col-sm-3 premier_lien" href="">Domaines privé non affecté de l'état</a>
-        <a class="p-2 col-sm-3 premier_lien" href="">Documents et perceptions diverses</a>
     </div>
-    <div class="d-flex flex-row justify-content-around ">
-        <a class="p-2 col-sm-3 premier_lien" href="">Droits de timbre de 10.000 FCFA</a>
-        <a class="p-2 col-sm-3 premier_lien" href="">Droits de timbre de 20.000 FCFA</a>
-        <a class="p-2 col-sm-3 premier_lien" href="">Passports</a>
-    </div>
-    <div class="d-flex flex-row justify-content-around ">
-        <a class="p-2 col-sm-3 premier_lien" href="">Passports étrangers </a>
-    </div>
-    <button type="submit" class="col-sm-2 btn retour">
-        <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-        Retour
-    </button>
+     <footer >
+      <app-footer></app-footer>
+    </footer>
 </div>
 
 

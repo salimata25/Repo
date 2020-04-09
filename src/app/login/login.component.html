@@ -14,16 +14,15 @@
             </div>
             <div class="card-body text-center">
               <img src="assets/decoupage/agent_bg_logo.png" class="img-fluid">
-              <form [formGroup]="UserconnexionForm" (ngSubmit)="connexion()" style="margin-top: 3rem">
-                <div *ngIf="error" class="alert alert-danger"> {{message}} </div>
+              <form  style="margin-top: 3rem">
                 <div class="input-group mb-3">
-                  <input type="text" formControlName="login" class="form-control text-center" placeholder="Login" autocomplete="login" required>
+                  <input type="text" class="form-control text-center" placeholder="Login" autocomplete="login" required>
                 </div>
                 <div class="input-group mb-4 ">
-                  <input type="password" formControlName="password"  class="form-control text-center" placeholder="Mot de passe" autocomplete="current-password" required>
+                  <input type="password"  class="form-control text-center" placeholder="Mot de passe" autocomplete="current-password" required>
                 </div>
                 <div class="text-center" style="margin-top: 4rem; margin-bottom: 2rem">
-                  <button type="submit" [disabled]="!UserconnexionForm.valid" class="btn px-4  text-center" style="margin: auto 0 ; text-align: center;border-radius: 10%; background-color: #ebc164; color: white">Connecter</button>
+                  <button type="submit" (click)="connexion()"  class="btn px-4  text-center" style="margin: auto 0 ; text-align: center;border-radius: 10%; background-color: #ebc164; color: white">Connecter</button>
                 </div>
               </form>
             </div>

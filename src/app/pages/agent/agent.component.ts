@@ -19,6 +19,7 @@ export class AgentComponent  implements OnInit, OnDestroy {
   navMenuItems(urlBase: string){
     this.router.navigate(['/agent'+urlBase]);
   }
+  
 
   ngOnDestroy() {
   }

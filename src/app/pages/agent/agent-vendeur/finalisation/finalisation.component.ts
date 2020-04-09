@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-finalisation',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinalisationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  retour() {
+    this.router.navigate(['/validation']);
+  }
+
+  valider () {
+    this.router.navigate(['/recapitulatif']);
+  }
 
   ngOnInit() {
   }

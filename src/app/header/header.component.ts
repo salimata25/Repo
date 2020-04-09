@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,13 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class HeaderComponent implements OnInit {
   
   modalRef: BsModalRef;
-  constructor( private modalService: BsModalService) {
+  constructor( private modalService: BsModalService, private route: Router) {
     
    } 
+
+   vendeur() {
+      this.route.navigate(['/vendeur']);
+   }
 
   ngOnInit() {
   }

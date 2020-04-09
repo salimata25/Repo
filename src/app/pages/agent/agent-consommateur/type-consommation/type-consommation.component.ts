@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-type-consommation',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TypeConsommationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  retour() {
+    this.router.navigate(['/consommation']);
+  }
+
+  saisirNumero() {
+    this.router.navigate(['/numero-timbre']);
+  }
 
   ngOnInit() {
   }

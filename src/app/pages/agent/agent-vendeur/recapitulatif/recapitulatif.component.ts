@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recapitulatif',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecapitulatifComponent implements OnInit {
 
-  constructor() { } 
+  contenu = 0;
+  constructor(private router: Router) { } 
+
+  onSelected (contenu) {
+    this.contenu = contenu;
+  }
+
+  retour() {
+    this.router.navigate(['/finalisation']);
+  }
 
   ngOnInit() {
   }

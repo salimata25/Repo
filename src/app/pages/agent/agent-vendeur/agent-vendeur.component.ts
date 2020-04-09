@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agent-vendeur',
@@ -9,9 +10,13 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 export class AgentVendeurComponent implements OnInit {
 
   modalRef: BsModalRef;
-  constructor( private modalService: BsModalService) {
+  constructor( private modalService: BsModalService, private router: Router) {
     
    } 
+
+  valider() {
+    this.router.navigate(['/validation']);
+  }
 
   ngOnInit() {
   }

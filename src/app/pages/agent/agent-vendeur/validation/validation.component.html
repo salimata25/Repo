@@ -1,3 +1,19 @@
+<div class="container col-12"> 
+  <div>
+    <app-header></app-header>
+  </div>
+    <div class="container-fluid">
+      
+    <div class="row justify-content-center classPages">
+      <div class="d-flex flex-row align-items-center">
+        <span class="p-2 puce_titre"></span> 
+        <p class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</p>
+     </div>
+      
+      <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+            
+        <router-outlet></router-outlet>
+
 <!-- <div class="row justify-content-start"  > -->
     <div class="d-flex flex-row justify-content-start">
         <span class="p-2 puce"></span> 
@@ -75,7 +91,7 @@
     </table>
 </div>
 <div class="d-flex flex-row justify-content-center" style="margin-top: 40px; margin-bottom: 20px;">
-    <button type="submit" class="p-2 btn retour">
+    <button type="submit" class="p-2 btn retour" (click)="retour()">
       <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
       Retour
     </button>
@@ -83,7 +99,7 @@
         Ajouter un autre
         <img style="padding-left: 10px;" src="assets\decoupage\fleche_haut.PNG" alt="arrow right">
     </button>
-    <button type="submit" class="p-2 btn valider">
+    <button type="submit" class="p-2 btn valider" (click)="valider()">
       Valider
       <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
     </button>
@@ -111,7 +127,7 @@
           <input type="tel" class="form-control" id="tel" placeholder="N° Tel">
         </div>
         <div class="d-flex">
-          <button type="submit" class="p-2 mr-auto btn retour">
+          <button type="submit" class="p-2 mr-auto btn retour" (click)="retour()">
             <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
             Retour
           </button>
@@ -123,3 +139,13 @@
       </form>
     </div>
   </ng-template>
+
+      </div>
+    </div>
+    </div>
+    
+
+  <footer >
+    <app-footer></app-footer>
+  </footer>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dossier-timbre',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DossierTimbreComponent implements OnInit {
   contenu = 0;
-  constructor() { }
+
+  constructor (private router: Router) { }
+
+  retour() {
+    this.router.navigate(['/numero-timbre']);
+  }
+
+  valider() {
+    this.router.navigate(['/impression']);
+  }
 
   onSelected (contenu) {
     this.contenu = contenu;

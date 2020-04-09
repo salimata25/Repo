@@ -1,9 +1,35 @@
-<div class="d-flex flex-row flex-wrap justify-content-center" >
-    <button class="p-2 btn col-sm-2 choix" type="button">N° de timbre</button>
-    <button class="p-2 btn col-sm-2 choix" type="button">Scan Qr code</button>
-</div>
+<div class="container col-12"> 
+    <div>
+      <app-header></app-header>
+    </div>
+      <div class="container-fluid">
+        
+      <div class="row justify-content-center classPages">
+        <div class="d-flex flex-row align-items-center">
+          <span class="p-2 puce_titre"></span> 
+          <p class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</p>
+       </div>
+        
+        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 20px; margin: 1rem;">
+              
+          <router-outlet></router-outlet>
 
-<button type="button" class="col-sm-2 btn retour">
-    <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-    Retour
-</button>
+
+            <div class="d-flex flex-row flex-wrap justify-content-center" >
+                <button class="p-2 btn col-sm-2 choix" type="button" (click)="saisirNumero()">N° de timbre</button>
+                <button class="p-2 btn col-sm-2 choix" type="button">Scan Qr code</button>
+            </div>
+
+            <button type="button" class="col-sm-2 btn retour" (click)="retour()">
+                <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+                Retour
+            </button>
+
+
+</div>
+</div>
+</div>
+ <footer >
+  <app-footer></app-footer>
+</footer>
+</div>

@@ -1,47 +1,81 @@
-<div class="d-flex flex-row justify-content-start" >
-    <span class="p-2 puce"></span> 
-    <p style="font-size: 30px; margin-top: 15px;" class="p-2 ">Récapitulatif</p>
-</div>
-<hr  width="99%" color="#ebe7e7" size="3">
+<div class="container col-12"> 
+  <div>
+    <app-header></app-header>
+  </div>
+    <div class="container-fluid">
+      
+    <div class="row justify-content-center classPages">
+      <div class="d-flex flex-row align-items-center">
+        <span class="p-2 puce_titre"></span> 
+        <p class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</p>
+     </div>
+      
+      <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+            
+        <router-outlet></router-outlet>
 
-<div class="recapitulatif">
-    <p>Achat de timbre pour le montant de : </p><br>
-    <p style="color: #c0911b; font-size: 40px;">40.000 FCFA</p>
-    <table id="table" class="table">
-        <thead>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Montant</th>
-        </thead>
-        <tbody>
-            <tr >
-                <td>Diamanka</td>
-                <td>Salimata</td>
-                <td>20.000</td>
-            </tr>
-            <tr >
-                <td>Diamanka</td>
-                <td>Salimata</td>
-                <td>20.000</td>
-            </tr>
-        </tbody>
-    </table>
-    <form>
-        <div class="form-group row" style="font-size: larger;">
-          <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par mail :</label>
-          <div class="col-sm-6">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="sdiamanka@diotali.com" style="font-size: larger;">
+          <div *ngIf="contenu==0 || contenu==1">
+          <div class="d-flex flex-row justify-content-start" >
+              <span class="p-2 puce"></span> 
+              <p style="font-size: 30px; margin-top: 15px;" class="p-2 ">Récapitulatif</p>
+          </div>
+          <hr  width="99%" color="#ebe7e7" size="3">
+
+          <div class="recapitulatif">
+              <p>Achat de timbre pour le montant de : </p><br>
+              <p style="color: #c0911b; font-size: 40px;">40.000 FCFA</p>
+              <table id="table" class="table">
+                  <thead>
+                      <th>Nom</th>
+                      <th>Prénom</th>
+                      <th>Montant</th>
+                  </thead>
+                  <tbody>
+                      <tr >
+                          <td>Diamanka</td>
+                          <td>Salimata</td>
+                          <td>20.000</td>
+                      </tr>
+                      <tr >
+                          <td>Diamanka</td>
+                          <td>Salimata</td>
+                          <td>20.000</td>
+                      </tr>
+                  </tbody>
+              </table>
+              <form>
+                  <div class="form-group row" style="font-size: larger;">
+                    <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par mail :</label>
+                    <div class="col-sm-6">
+                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="sdiamanka@diotali.com" style="font-size: larger;">
+                    </div>
+                  </div>
+              </form>
+              <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
+                  <button type="submit" class="p-2 btn retour" (click)="retour()">
+                    <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+                    Retour
+                  </button>
+                  <button type="submit" class="p-2 btn valider" (click)="onSelected(2)">
+                    Valider
+                    <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
+                  </button>
+                </div>
           </div>
         </div>
-    </form>
-    <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
-        <button type="submit" class="p-2 btn retour">
-          <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-          Retour
-        </button>
-        <button type="submit" class="p-2 btn valider">
-          Valider
-          <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
-        </button>
-      </div>
+
+        <div *ngIf="contenu==2">
+          <img style="margin-right: 20px;" src="assets\decoupage\success.png" alt="arrow right">
+          <button type="submit" class="p-2 btn retour" (click)="onSelected(1)">
+            <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+            Retour
+          </button>
+        </div>
+
+</div>
+</div>
+</div>
+ <footer >
+  <app-footer></app-footer>
+</footer>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-numero-timbre',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NumeroTimbreComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  retour() {
+    this.router.navigate(['/type-consommation']);
+  }
+
+  valider() {
+    this.router.navigate(['/dossier-timbre']);
+  }
 
   ngOnInit() {
   }
