@@ -1,63 +1,37 @@
 <div class="entete">
   <div class="row logo">
       <div class=" navbar-brand col-sm-12 ">
-          <div class="d-flex">
-              <img class="p-2" id="logo_dgid" src="assets\decoupage\agent_bg_logo.png " alt="Card image cap" >
+        
+          <div class="d-flex align-items-start">
+            <img class="" id="logo_dgid" src="assets\decoupage\agent_bg_logo.png " alt="Card image cap" >
               <span class="p-2" id="bordure"></span>
               <div class="p-2 mr-auto">
-                <p style="color: #f1eff0; font-size: 30px; margin-bottom: 0;">Timbre Fiscal</p>
-                <p style="color: #aa8007; font-size: 20px; margin-top: 0;">Bloc Fiscal</p>
-                <!-- <span class="p-2" style="color: #f1eff0; font-size: 30px; margin-bottom: 0;">Timbre Fiscal</span>
-                <span class="p-2" style="color: #aa8007; font-size: 20px; margin-top: 0;">Bloc Fiscal</span> -->
+                <p style="color: #f1eff0; font-size: 30px; margin-bottom: 0; font-weight: bold;">Timbre Fiscal</p>
+                <p style="color: #e3ae0d; font-size: 20px; margin-top: 0;">Bloc Fiscal</p>
               </div>
 
-
-              <!-- <div class="p-2 btn-group" dropdown >
-                <button style="border-radius: 40px; background:#aa8007; height: 30px;" id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
-                        aria-controls="dropdown-basic">
-                  
-                </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                    role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"><a class="dropdown-item" href="#" >Paramètres</a></li>
-                  <li class="divider dropdown-divider"></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">Déconnexion</a>
-                  </li>
-                </ul>
-              </div> -->
-
-              
-
-              <!-- <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">HTML</a></li>
-                  <li><a href="#">CSS</a></li>
-                  <li><a href="#">JavaScript</a></li>
-                </ul>
-              </div> -->
-              <div class="p-2" dropdown>
-                <span style="color: #f1eff0; font-size: 17px;">Matricule agent </span>
-                <button class="btn dropdown-toggle" dropdown-toggle style="border-radius: 20px; background:#aa8007 ;" type="button" data-toggle="dropdown" >
+              <div class="p-2" dropdown style="margin-right: 60px; margin-top: 15px;">
+                <span id="matricule">Matricule agent &nbsp;&nbsp;&nbsp;</span>
+                <button class="btn dropdown-toggle" dropdown-toggle style="border-radius: 20px; background:#e3ae0d; color: white;" type="button" data-toggle="dropdown" >
                   
                 </button>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">Paramètres compte</a>
-                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Déconnexion</a>
                 </div>
               </div>
               
           </div> 
+        
       </div>
     </div>
 
     <div class="row menu"> 
         <div class="col-sm-12">
             
-                <ul class="d-flex flex-row navbar-nav ml-auto">
-                <li class=" active p-2 menu_item"  (click)="vendeur()"><a routerLink="/vendeur">
+                <ul class="d-flex flex-row ml-auto">
+                <li class="active p-2 menu_item"  (click)="vendeur()"><a routerLink="/vendeur">
                   <div class="centrer_img">
                     <figure>
                       <img class="taille-img" src="assets\decoupage\agent_bg_achat_1.png" alt="Shopping cart">

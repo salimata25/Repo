@@ -16,6 +16,15 @@ export class AgentVendeurComponent implements OnInit {
 
   valider() {
     this.router.navigate(['/validation']);
+    this.modalRef.hide();
+  }
+
+  ajouter() {
+    this.router.navigate(['/validation']);
+  }
+
+  retour() {
+    this.modalRef.hide();
   }
 
   ngOnInit() {

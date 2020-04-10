@@ -1,17 +1,20 @@
 .classPages{
     text-align: center; 
     background-color: #f1efef; 
+    min-height: 800px;
   }
   
   .titre {
     margin-top: 20px;
     margin-left: 5px;
-    font-size: 30px;
-    color: #75552e;
+    //font-size: 30px;
+    color: #75552e; 
+    font-weight: bolder;
+    line-height: 5px;
   }
   
   .puce {
-    margin-top: 8px;
+    margin-top: 25px;
     margin-left: 40px;
     width: 15px;
     height: 15px;
@@ -29,49 +32,43 @@
     border-radius: 30px;
     width: 200px;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 
-.timbre:hover {
-    background: #c0911b;
-}
-
-.timbre:hover span {
+.timbre_passport span {
     color: white;
 }
 
-.timbre:hover p {
+.timbre_passport p {
     color: white;
 }
 
-.timbre:hover button {
+.timbre_passport button {
     background: #76552c;
     color: white;
+    border-radius: 20px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
-// button .img-top {
-//     display: none;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     z-index: 99;
-// }
-// .timbre:hover button .img-top {
-//     display: inline;
-// }
+.bouton_fleche {
+    width: 50px;
+}
 
-.timbre-passport {
+.timbre_passport {
     background: #c0911b;
     border-radius: 30px;
     width: 200px;
     margin-bottom: 10px;
+    margin-right: 30px;
 }
 
 
 .montant {
     margin-top: 5px;
     font-size: 30px;
-    font-style: bold;
+    font-weight: bold;
 }
 
 .border-3 {
@@ -86,10 +83,18 @@
     font-size: 20px;
     width: 150px;
     border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 0px;
 }
 
 .fleche {
     margin-left: 20px;
+    width: 25px;
+}
+
+.fleche_gauche {
+    margin-right: 20px;
+    width: 25px;
 }
 
 input {
@@ -115,5 +120,13 @@ h5 {
     font-size: 20px;
     width: 150px;
     border-radius: 30px;
+}
+
+.style-timbre {
+    font-weight: bold;
+}
+
+.pointillet {
+    font-weight: bold;
 }
 
