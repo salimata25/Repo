@@ -1,28 +1,28 @@
-<div class="container col-12"> 
+<div class="container-fluid"> 
   <div>
     <app-header></app-header>
   </div>
-    <div class="container-fluid">
-      
-    <div class="row justify-content-center classPages">
-      <div class="d-flex flex-row align-items-center">
+  <div class="classPages">
+      <div class="d-flex flex-row justify-content-start ligne" style="margin-left: 30px;">
         <span class="p-2 puce_titre"></span> 
-        <p class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</p>
-     </div>
+        <span class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</span>
+      </div>
+      <div class="row justify-content-center ligne">
       
-      <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+      
+        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
             
         <router-outlet></router-outlet>
 
-<!-- <div class="row justify-content-start"  > -->
+
     <div class="d-flex flex-row justify-content-start">
         <span class="p-2 puce"></span> 
-        <p style="font-size: 30px;" class="p-2 ">Validation</p>
+        <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Validation</p> 
      </div>
-<!-- </div> -->
+
 <hr  width="99%" color="#ebe7e7" size="3">
 <div class="tableau">
-    <p>Timbre pour passport :</p>
+    <p style="font-weight: bold;">Timbre pour passport :</p>
     <table id="table" class="table" >
         <thead>
         <tr>
@@ -127,11 +127,11 @@
           <input type="tel" class="form-control" id="tel" placeholder="N° Tel">
         </div>
         <div class="d-flex">
-          <button type="submit" class="p-2 mr-auto btn retour" (click)="retour()">
+          <button type="submit" class="p-2 mr-auto btn retour" (click)="retourTalbleau()">
             <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
             Retour
           </button>
-          <button type="submit" class="p-2 btn valider">
+          <button type="submit" class="p-2 btn valider" (click)="ajouterAutre()">
             Valider
             <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
           </button>
@@ -146,6 +146,6 @@
     
 
   <footer >
-    <app-footer></app-footer>
+    
   </footer>
 </div>

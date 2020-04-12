@@ -1,28 +1,29 @@
-<div class="container col-12"> 
+<div class="container-fluid"> 
   <div>
     <app-header></app-header>
   </div>
-    <div class="container-fluid classPages">
-      <div class="d-flex flex-row justify-content-start" style="margin-left: 30px;">
+  <div class="classPages">
+      <div class="d-flex flex-row justify-content-start ligne" style="margin-left: 30px;">
         <span class="p-2 puce_titre"></span> 
-        <p class="p-2 h5 titre" >VENTE DE TIMBRE FISCAL ET QUITTANCE</p>
+        <span class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</span>
       </div>
-
-      <div class="row justify-content-center" style="margin-top: 1px; min-height: 800px;">
-        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin: 1rem;">
-              
+      <div class="row justify-content-center ligne">
+      
+      
+        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+                
           <router-outlet></router-outlet>
 
             <div *ngIf="contenu==0 || contenu==1">
             <div class="d-flex flex-row justify-content-start" >
                 <span class="p-2 puce"></span> 
-                <p style="font-size: 30px; margin-top: 15px;" class="p-2 ">Récapitulatif</p>
+                <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Récapitulatif</p>
             </div>
             <hr  width="99%" color="#ebe7e7" size="3">
 
             <div class="recapitulatif">
-                <p>Achat de timbre pour le montant de : </p><br>
-                <p style="color: #c0911b; font-size: 40px;">40.000 FCFA</p>
+                <p style="font-weight: bold;">Achat de timbre pour le montant de : </p><br>
+                <p style="color: #c0911b; font-size: 40px; font-weight: bold;">40.000 FCFA</p>
                 <table id="table" class="table">
                     <thead>
                         <th>Nom</th>
@@ -46,7 +47,7 @@
                     <div class="form-group row" style="font-size: larger;">
                       <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par mail :</label>
                       <div class="col-sm-6">
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="sdiamanka@diotali.com" style="font-size: larger;">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="sdiamanka@diotali.com" style="font-size: larger; font-weight: bold; color: black;">
                       </div>
                     </div>
                 </form>
@@ -59,7 +60,7 @@
                       Valider
                       <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
                     </button>
-                  </div>
+                </div>
             </div>
           </div>
 
@@ -72,6 +73,18 @@
             </button>
           </div>
         </div>
+
+        <!-- <ng-template #paramUser>
+          <div class="modal-header">
+            <h5 class="modal-title ">Confirmation</h5>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+        </ng-template> -->
 
 </div>
 </div>

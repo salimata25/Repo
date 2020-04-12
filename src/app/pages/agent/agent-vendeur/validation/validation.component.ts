@@ -26,8 +26,15 @@ export class ValidationComponent implements OnInit {
   }
 
   openModal(template: TemplateRef<any>) {
-
     this.modalRef = this.modalService.show(template, {class: 'modal-dialog-centered'});
+  }
+
+  ajouterAutre() {
+    this.modalRef.hide();
+  }
+
+  retourTalbleau() {
+    this.modalRef.hide();
   }
 
 }

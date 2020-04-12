@@ -1,22 +1,22 @@
-<div class="container col-12"> 
+<div class="container-fluid"> 
     <div>
       <app-header></app-header>
     </div>
-      <div class="container-fluid">
-        
-      <div class="row justify-content-center classPages">
-        <div class="d-flex flex-row align-items-center">
+    <div class="classPages">
+        <div class="d-flex flex-row justify-content-start ligne" style="margin-left: 30px;">
           <span class="p-2 puce_titre"></span> 
-          <p class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</p>
-       </div>
+          <span class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</span>
+        </div>
+        <div class="row justify-content-center ligne">
         
-        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
-              
+        
+          <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+                  
           <router-outlet></router-outlet>
 
             <div class="enregistrement">
                 <div class="d-flex flex-row justify-content-center">
-                    <p class="p-2 col-sm-4 banière">Droits de timbre de 10.000 FCFA</p>
+                    <p class="p-2 col-sm-4 banière">Droits de timbre de 10.000 FCFA</p> 
                 </div>
                 
                 <div class="d-flex flex-row flex-wrap justify-content-around">
@@ -39,16 +39,21 @@
                     <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Changements de carrosserie</a>
                     <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Changements de source d'énergie</a>
                 </div>
-                <button type="submit" class="col-sm-2 btn retour" (click)="retour()">
-                    <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-                    Retour
-                </button>
+
+                <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
+                    <button type="submit" class="p-2 btn retour" (click)="retour()">
+                      <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+                      Retour
+                    </button>
+                    <p  class="p-2">
+                    </p>
+                </div>
             </div>
 
         </div>
     </div>
     </div>
      <footer >
-      <app-footer></app-footer>
+      
     </footer>
 </div>

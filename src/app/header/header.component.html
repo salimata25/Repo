@@ -6,11 +6,11 @@
             <img class="" id="logo_dgid" src="assets\decoupage\agent_bg_logo.png " alt="Card image cap" >
               <span class="p-2" id="bordure"></span>
               <div class="p-2 mr-auto">
-                <p style="color: #f1eff0; font-size: 30px; margin-bottom: 0; font-weight: bold;">Timbre Fiscal</p>
-                <p style="color: #e3ae0d; font-size: 20px; margin-top: 0;">Bloc Fiscal</p>
+                <p id="timbre_fiscal">Timbre Fiscal</p>
+                <p id="bloc_fiscal">Bloc Fiscal</p>
               </div>
 
-              <div class="p-2" dropdown style="margin-right: 60px; margin-top: 15px;">
+              <div class="p-2 mat_agent" dropdown>
                 <span id="matricule">Matricule agent &nbsp;&nbsp;&nbsp;</span>
                 <button class="btn dropdown-toggle" dropdown-toggle style="border-radius: 20px; background:#e3ae0d; color: white;" type="button" data-toggle="dropdown" >
                   
@@ -59,72 +59,7 @@
             
         </div>
     </div>
-  </div>
-  <router-outlet></router-outlet>
-
-<!--<nav class="navbar navbar-expand-sm fixed-top">
-<div class="container-fluid">
-    <div class="row">
-        <div class=" navbar-brand col-sm-12 ">
-            <div>
-                <img id="logo_dgid" src="assets\decoupage\agent_bg_logo.png " alt="Card image cap" >
-                <span id="bordure"></span>
-                Timbre Fiscal
-            </div>
-            
-        </div>
-        <div class="col-sm-12">
-            <div class="">
-                <ul class="d-flex flex-row navbar-nav ml-auto">
-                <li class="p-2 menu_item"><a routerLink="/marchand" class="nav-link ;">
-                  <div class="icone"><fa-icon icon="shopping-cart" size="3x" [styles]="{'color': 'black'}"></fa-icon></div>
-                  <div class="text_item">Vente</div></a>
-                </li>
-                <li class="p-2 menu_item"><a routerLink="/comsumer" class="nav-link">
-                  <div><fa-icon icon="stamp" size="3x" [styles]="{'color': 'black'}"></fa-icon></div>
-                  <div class="text_item">Consommation</div></a>
-                </li>
-                <li class="p-2 menu_item"><a routerLink="/historique" class="nav-link">
-                  <div><fa-icon icon="chart-line" size="3x" [styles]="{'color': 'black'}"></fa-icon></div>
-                  <div class="text_item">Historique</div></a>
-                </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+  
 </div>
-</nav>-->
+<router-outlet></router-outlet>
 
-
-<!-- <div class="container-fluid">
-
-<div class="row displayDesktop fixed-top " style="height: 190px; background: linear-gradient(#76562e, #c0922c);">
-  <div class="col-sm-12">
-    <div class="row align-items-center">
-      <div style="width: 18%; text-align: right;">
-        <img src="assets/decoupage/devis_senegal.png" alt="Card image cap" height="80" style="margin: 0.5rem;">
-      </div>
-      <div style="width: 20%; border-left: #e0e0df solid 3px; border-right: #e0e0df solid 3px; margin: 0 auto; text-align: center;">
-        <img src="assets/decoupage/impot_domaine.png" alt="Card image cap" width="90%">
-      </div>
-      <div class="align-self-center" style="width: 45%; text-align: left;">
-        <div style="color: white; font-size: 2rem">Timbre Fiscal Electronique</div>
-        <div style="color: #D2AF31; font-size: larger">Achat de timbres fiscaux électroniques</div>
-      </div>
-      <div class="align-self-center" style="width:15%; text-align: left;">
-        <div class="btn-group small" dropdown>
-          <button id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle" aria-controls="dropdown-basic">
-            <i class="fa fa-user-circle" aria-hidden="true"></i> {{ uinfo.role }} <span class="caret"></span>
-          </button>
-          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu small" role="menu" aria-labelledby="button-basic">
-            <li role="menuitem" class="small"><a class="dropdown-item" [routerLink]="" (click)="onLogout()"><i class="fa fa-lock"></i> Se déconnecter</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-12">
-    
-  </div>
-  <div class="row" style="height: 19px; background-color: #373737; text-align: right; margin-top: -40px;"></div>
-</div> -->

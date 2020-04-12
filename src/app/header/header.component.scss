@@ -1,6 +1,266 @@
+/***********************************************************************
+ **************************** TYPE OF DEVICES **************************
+ ***********************************************************************/
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media only screen and (max-width: 575.98px) { 
+
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    #timbre_fiscal { 
+        font-size: 18px;
+        margin-top: 11px;
+    }
+
+    #bloc_fiscal { 
+        font-size: 13px;
+    }
+
+    #matricule { 
+        font-size: 13px;
+    }
+
+    .mat_agent {
+        margin-right: 20px;
+        margin-top: 15px;
+    }
+
+    #logo_dgid {
+        width: 60px;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+
+    ul {
+        margin-bottom: 0px;
+    }
+
+    .menu {
+      margin-left: 0px;
+      margin-top: 5px;
+    }
+
+    #bordure {
+      height: 50px;
+      margin-top: 19px;
+      margin-left: 40px;
+      margin-right: 30px;
+      border-right:#c7c5c5 solid 2px; 
+    }
+
+  }
+  
+  
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 576px) and (max-width: 767.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    #timbre_fiscal { 
+        font-size: 22px;
+        margin-top: 11px;
+    }
+
+    #bloc_fiscal { 
+        font-size: 15px;
+    }
+
+    #matricule { 
+        font-size: 15px;
+    }
+
+    .mat_agent {
+        margin-right: 40px;
+        margin-top: 15px;
+    }
+
+    #logo_dgid {
+        width: 70px;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+
+    ul {
+        margin-bottom: 0px;
+    }
+
+    .menu {
+      margin-left: 30px;
+      margin-top: 5px;
+    }
+
+    #bordure {
+      height: 60px;
+      margin-top: 20px;
+      margin-left: 40px;
+      margin-right: 30px;
+      border-right:#c7c5c5 solid 2px; 
+    }
+    
+  } 
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    #timbre_fiscal { 
+        font-size: 30px;
+        margin-top: 8px;
+    }
+
+    #bloc_fiscal { 
+        font-size: 20px;
+        
+    }
+
+    #matricule { 
+        font-size: 18px;
+    }
+
+    .mat_agent {
+        margin-right: 40px;
+        margin-top: 20px;
+    }
+
+    #logo_dgid {
+        width: 80px;
+        margin-top: 15px;
+        margin-left: 40px;
+    }
+
+    ul {
+        margin-bottom: 0px;
+    }
+
+    .menu {
+      margin-left: 40px;
+      margin-top: 5px;
+    }
+
+    #bordure {
+      height: 75px;
+      margin-top: 20px;
+      margin-left: 40px;
+      margin-right: 30px;
+      border-right:#c7c5c5 solid 2px; 
+    }
+    
+  }
+  
+  /*  Extra large devices (large desktops, 1200px and up) */
+  @media only screen and (min-width: 1025px) { 
+  
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: block;
+    }
+
+    #timbre_fiscal { 
+        font-size: 30px;
+        margin-top: 8px;
+    }
+
+    #bloc_fiscal { 
+        font-size: 20px;
+    }
+
+    #matricule { 
+        font-size: 20px;
+    }
+
+    .mat_agent {
+        margin-right: 60px;
+        margin-top: 15px;
+    }
+
+    #logo_dgid {
+        width: 80px;
+        margin-top: 15px;
+        margin-left: 40px;
+    }
+
+    ul {
+        margin-left: 80px;
+        margin-bottom: 0px;
+    }
+
+    .menu {
+      margin-left: 40px;
+      margin-top: 5px;
+    }
+
+    #bordure {
+      height: 75px;
+      margin-top: 18px;
+      margin-left: 40px;
+      margin-right: 30px;
+      border-right:#c7c5c5 solid 2px; 
+    }
+    
+  } 
+
+#timbre_fiscal {
+    color: #f1eff0;
+    margin-bottom: 0; 
+    font-weight: bold;
+}
+
+#bloc_fiscal {
+    color: #e3ae0d; 
+    margin-top: 0;
+}
+
 #matricule {
-    color: #f1eff0; 
-    font-size: 20px;
+    color: #f1eff0;
 }
 
 .entete {
@@ -11,21 +271,6 @@
     margin-left: 20px;
 }
 
-.menu {
-    margin-left: 60px;
-    margin-top: 5px;
-}
-
-#logo_dgid {
-    width: 80px;
-    margin-top: 15px;
-    margin-left: 40px;
-}
-
-ul {
-    margin-left: 40px;
-    margin-bottom: 0px;
-}
 
 li {
     border-radius: 10px 10px 0 0;
@@ -55,7 +300,17 @@ figure {
 }
 
 figcaption {
-    color: darken($color: #ffffff, $amount: 0);
+    color: white;
+}
+
+figure:hover {
+  justify-content: center;
+  margin-bottom: 0px;
+  font-weight: normal;
+}
+
+figcaption:hover {
+  color: black;
 }
 
 .taille-img {
@@ -72,10 +327,3 @@ figcaption {
     vertical-align: middle*/
 }
 
-#bordure {
-    height: 60px;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 30px;
-    border-right:#c7c5c5 solid 3px; 
-}

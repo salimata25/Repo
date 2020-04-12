@@ -1,23 +1,136 @@
+/***********************************************************************
+ **************************** TYPE OF DEVICES **************************
+ ***********************************************************************/
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media only screen and (max-width: 575.98px) { 
+
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    .titre {
+        font-size: 14px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+
+  }
+  
+  
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 576px) and (max-width: 767.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    .titre {
+        font-size: 15px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+    
+  } 
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    .titre {
+        font-size: 20px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  }
+  
+  /*  Extra large devices (large desktops, 1200px and up) */
+  @media only screen and (min-width: 1025px) { 
+  
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: block;
+    }
+
+    .titre {
+        font-size: 22px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  } 
+
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .classPages{
     text-align: center; 
     background-color: #f1efef; 
-  }
+}
   
-  .titre {
-    margin-top: 20px;
-    margin-left: 5px;
-    font-size: 30px;
+.titre {
     color: #75552e;
-  }
+    font-weight: bolder;
+    line-height: 5px;
+}
   
-  .puce_titre {
-    margin-top: 8px;
+.puce_titre {
+    margin-top: 25px;
     margin-left: 40px;
     width: 15px;
     height: 15px;
     border-radius: 20px;
     background: #c0911b;
-  }
+}
 
 .tableau {
     margin-top: 30px;
@@ -29,7 +142,7 @@
 
 .puce {
     height: 30px;
-    margin-top: 15px;
+    margin-top: 14px;
     margin-right: 10px;
     border-right:#c0911b solid 5px; 
 }
@@ -37,6 +150,10 @@
 hr {
     height: 2px;
     color: #ebe7e7;
+    margin-top: 10px;
+}
+p {
+    line-height: 10px;
 }
 
 #table {
@@ -67,6 +184,7 @@ hr {
     border-bottom: 0;
     text-align: center;
     color: #c0911b;
+    font-weight: bold;
 }
 
 .retour {  
@@ -75,6 +193,7 @@ hr {
     font-size: 20px;
     width: 150px;
     border-radius: 30px;
+    font-weight: bold;
 }
 
 .valider {
@@ -83,6 +202,7 @@ hr {
     font-size: 20px;
     width: 150px;
     border-radius: 30px;
+    font-weight: bold;
 }
 
 .ajouter_autre {
@@ -92,6 +212,7 @@ hr {
     border-radius: 30px;
     margin-left: 10px;
     margin-right: 10px;
+    font-weight: bold;
 }
 
 .fleche {
@@ -102,4 +223,19 @@ hr {
 .fleche_gauche {
     margin-right: 20px;
     width: 25px;
+}
+
+.modal-header {
+    background-color: white;
+    text-align: center;
+}
+  
+.modal-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+input {
+    text-align: center;
+    border-radius: 20px;
 }
