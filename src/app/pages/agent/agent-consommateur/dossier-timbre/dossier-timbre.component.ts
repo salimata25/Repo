@@ -20,7 +20,7 @@ export class DossierTimbreComponent implements OnInit {
   }
 
   onSelected (contenu) {
-    this.contenu = contenu;
+    this.contenu = contenu; 
   }
 
   ngOnInit() {

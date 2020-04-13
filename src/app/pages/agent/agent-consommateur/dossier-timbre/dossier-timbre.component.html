@@ -1,63 +1,63 @@
-<div class="container col-12"> 
+<div class="container-fluid"> 
   <div>
     <app-header></app-header>
   </div>
-    <div class="container-fluid">
-      
-    <div class="row justify-content-center classPages">
-      <div class="d-flex flex-row align-items-center">
+  <div class="classPages">
+      <div class="d-flex flex-row justify-content-start ligne" style="margin-left: 30px;">
         <span class="p-2 puce_titre"></span> 
-        <p class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</p>
-     </div>
+        <span class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</span>
+      </div>
+      <div class="row justify-content-center ligne">
       
-      <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
-            
+      
+        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+                 
         <router-outlet></router-outlet>
 
           <div style="margin-top: 20px;">
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center">
               <span class="p-2 col-sm-3">N° de timbre :</span>
-              <span class="p-2 col-sm-3">0000 0000 0000 0000</span>
+              <span class="p-2 col-sm-3" style="font-weight: bold;">0000 0000 0000 0000</span>
           </div>
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center">
               <span class="p-2 col-sm-3">N° de transaction :</span>
-              <span class="p-2 col-sm-3">0000 0000 0000</span>
+              <span class="p-2 col-sm-3" style="font-weight: bold;">0000 0000 0000</span>
           </div>
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center">
               <span class="p-2 col-sm-3">Montant :</span>
-              <span class="p-2 col-sm-3">10.000 FCFA</span> <br>
+              <span class="p-2 col-sm-3" style="font-weight: bold;">10.000 FCFA</span> <br>
           </div>
           </div>
 
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center" style="margin-top: 15px;">
-              <span class="p-2 col-sm-3" style="color: #76552c; font-size: 20px;">Informations d'achat</span>
+              <span class="p-2 col-sm-3" style="color: #76552c; font-size: 20px; font-weight: bold;">Informations d'achat</span>
               <span class="p-2 col-sm-3"></span>
           </div>
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center">
-              <span class="p-2 col-sm-3">Code vendeur :</span>
-              <span class="p-2 col-sm-3">0000 0000 0000</span>
+              <span class="p-2 col-sm-3" style="font-weight: bold;">Code vendeur :</span>
+              <span class="p-2 col-sm-3" style="font-weight: bold;">0000 0000 0000</span>
           </div>
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center">
-              <span class="p-2 col-sm-3">Date d'achat :</span>
-              <span class="p-2 col-sm-3">08/04/2020</span> <br>
+              <span class="p-2 col-sm-3" style="font-weight: bold;">Date d'achat :</span>
+              <span class="p-2 col-sm-3" style="font-weight: bold;">08/04/2020</span> <br>
           </div>
 
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center" style="margin-top: 15px;">
-            <span class="p-2 col-sm-3" style=" font-size: 20px;">10.000 FCFA</span>
+            <span class="p-2 col-sm-3" style=" font-size: 20px; font-weight: bold;">10.000 FCFA</span>
             <span class="p-2 col-sm-3"></span>
           </div>
           <div class="p-2 d-flex flex-row flex-wrap justify-content-center">
             <span class="p-2 col-sm-3">Transaction :</span>
-            <span class="p-2 col-sm-3">0000 0000 0000</span>
+            <span class="p-2 col-sm-3" style="font-weight: bold;">0000 0000 0000</span>
           </div>
 
 
           <div *ngIf="contenu==0 || contenu==1">
             <div class="col-sm-10 mx-auto affecter_dossier">
-                <hr class="col-sm-10 mx-auto" color="#e4ae0e">
+                <hr width="90%" color="#e4ae0e">
                 <form class="form-inline mx-auto justify-content-around">
-                    <button type="submit" class="btn col-sm-2">
-                      <span style="margin-right: 20px;">Affecter à</span> 
+                    <button type="submit" class="btn">
+                      <span style="margin-right: 20px; font-weight: bold;">Affecter à</span> 
                       <fa-icon icon="angle-right" [styles]="{'color': 'white'}"></fa-icon>
                     </button>
                     <div class="form-group row">
@@ -70,33 +70,33 @@
             </div>
 
             <div class="d-flex flex-row justify-content-around flex_bouton">
-              <button type="submit" class="p-2 col-sm-2 btn retour" (click)="retour()">
-                <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+              <button type="submit" class="p-2 btn retour" (click)="retour()">
+                <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
                 Retour
               </button>
-              <button type="submit" class="p-2 col-sm-2 btn valider" (click)="onSelected(2)">
+              <button type="submit" class="p-2 btn valider" (click)="onSelected(2)">
                 Valider
-                <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
+                <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
               </button>
             </div>
           </div>
 
           <div *ngIf="contenu==2">
             <div class="col-sm-6 mx-auto recapitulatif">
-              <p style="margin-top: 20px;">N° Dossier : 0000 0000 0000</p>
-              <p>Salimata Diamanka</p>
-              <p>Délivrance des permis de conduire</p>
-              <p>10.000 FCFA</p>
+              <p style="margin-top: 20px; font-weight: bold;">N° Dossier : 0000 0000 0000</p>
+              <p style="font-weight: bold;">Salimata Diamanka</p>
+              <p style="font-weight: bold;">Délivrance des permis de conduire</p>
+              <p style="margin-bottom: 20px; font-weight: bold;">10.000 FCFA</p>
             </div>
 
             <div class="d-flex flex-row justify-content-around flex_bouton">
-              <button type="submit" class="p-2 col-sm-2 btn retour" (click)="onSelected(1)">
-                <img style="margin-right: 20px;" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+              <button type="submit" class="p-2 btn retour" (click)="onSelected(1)">
+                <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
                 Retour
               </button>
-              <button type="submit" class="p-2 col-sm-2 btn valider" (click)="valider()">
+              <button type="submit" class="p-2 btn valider" (click)="valider()">
                 Valider
-                <img style="padding-left: 20px;" src="assets\decoupage\fleche.PNG" alt="arrow right">
+                <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
               </button>
             </div>
           </div>
@@ -107,7 +107,7 @@
 </div>
 </div>
  <footer >
-  <app-footer></app-footer>
+  
 </footer>
 </div>
 

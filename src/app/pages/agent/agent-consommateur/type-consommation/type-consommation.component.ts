@@ -18,6 +18,10 @@ export class TypeConsommationComponent implements OnInit {
     this.router.navigate(['/numero-timbre']);
   }
 
+  scanner() {
+    this.router.navigate(['/scanner']);
+  }
+
   ngOnInit() {
   }
 

@@ -28,6 +28,7 @@ import { faTrashAlt, faEdit, faAngleRight, faArrowRight } from '@fortawesome/fre
 import { RouterModule } from '@angular/router';
 import { HeaderModule } from '../../header/header.module';
 import { FooterModule } from '../../footer/footer.module';
+import { ScannerComponent } from './agent-consommateur/scanner/scanner.component';
 
 @NgModule({
   imports: [ 
@@ -49,6 +50,7 @@ import { FooterModule } from '../../footer/footer.module';
       {path: 'numero-timbre', component: NumeroTimbreComponent},
       {path: 'dossier-timbre', component: DossierTimbreComponent},
       {path: 'impression', component: ImpressionComponent},
+      {path: 'scanner', component: ScannerComponent}
     ])
   ],
   declarations: [
@@ -66,7 +68,8 @@ import { FooterModule } from '../../footer/footer.module';
     TypeConsommationComponent,
     NumeroTimbreComponent,
     DossierTimbreComponent,
-    ImpressionComponent
+    ImpressionComponent,
+    ScannerComponent
   ],
   providers: [
     AgentAuthGuard,

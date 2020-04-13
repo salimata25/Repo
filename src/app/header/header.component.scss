@@ -278,14 +278,27 @@ li {
     margin-right: 10px;
 }
 
-a {
-    text-decoration: none;
+// a {
+//     text-decoration: none;
+// }
+
+.lien_actif {
+  background: #f1eff0;
+  color: #000;
 }
 
 li:hover {
     background: #f1eff0;
     color: #000;
 }
+
+// a {
+//   background : url('../../assets/decoupage/agent_bg_achat_1.png');
+//   background-repeat: no-repeat;
+// }
+// a:hover {
+//   background : url('../../assets/decoupage/agent_bg_timbre_1.png');
+// }
 
 .centrer_img {
     text-align: center;

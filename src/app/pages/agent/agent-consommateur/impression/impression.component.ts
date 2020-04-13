@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-impression',
@@ -6,8 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./impression.component.scss']
 })
 export class ImpressionComponent implements OnInit {
-  contenu = 0;
-  constructor() { }
+  
+  constructor (private router: Router) { }
+
+  retour() {
+    this.router.navigate(['/dossier-timbre']);
+  }
 
   ngOnInit() {
   }

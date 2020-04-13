@@ -1,17 +1,129 @@
+/***********************************************************************
+ **************************** TYPE OF DEVICES **************************
+ ***********************************************************************/
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media only screen and (max-width: 575.98px) { 
+
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+  
+    .titre {
+        font-size: 14px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+  
+  }
+  
+  
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 576px) and (max-width: 767.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+  
+    .titre {
+        font-size: 15px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+    
+  } 
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+  
+    .titre {
+        font-size: 20px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  }
+  
+  /*  Extra large devices (large desktops, 1200px and up) */
+  @media only screen and (min-width: 1025px) { 
+  
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: block;
+    }
+  
+    .titre {
+        font-size: 22px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  }
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .classPages{
     text-align: center; 
     background-color: #f1efef; 
   }
   
   .titre {
-    margin-top: 20px;
-    margin-left: 5px;
-    font-size: 30px;
     color: #75552e;
+    font-weight: bolder;
+    line-height: 5px;
   }
   
   .puce_titre {
-    margin-top: 8px;
+    margin-top: 25px;
     margin-left: 40px;
     width: 15px;
     height: 15px;
@@ -39,7 +151,7 @@ span {
     text-align: start;
 }
 
-img {
+fieldset img {
     margin-top: 20px;
 }
 
@@ -76,7 +188,12 @@ input {
     background: #b1b1b1;
     color: white;
     font-size: 20px;
+    font-weight: bold;
     width: 150px;
     border-radius: 30px;
-    margin-bottom: 30px;
+}
+
+.fleche_gauche {
+    margin-right: 20px;
+    width: 25px;
 }
