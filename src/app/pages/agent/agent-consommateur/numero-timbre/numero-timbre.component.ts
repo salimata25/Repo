@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { TransactionsProvider } from '../../../../services/transactions-service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { OperationService } from '../../../../services/operationService';
+//import { iOperation } from '../../../../interfaces/iOperation';
+
 
 @Component({
   selector: 'app-numero-timbre',
@@ -7,15 +13,65 @@ import { Router } from '@angular/router';
   styleUrls: ['./numero-timbre.component.scss']
 })
 export class NumeroTimbreComponent implements OnInit {
+  error =  false;
+  message =  "";
+  TimbreForm:FormGroup;
+  dataOperation: any = {};
 
-  constructor(private router: Router) { }
+  constructor(private spinner: NgxSpinnerService, private router: Router, private formBuilder: FormBuilder, public api: TransactionsProvider, private opPrv: OperationService) {
+    this.opPrv.deleteOperation();
+    this.dataOperation = this.opPrv.parseOperation();
+    this.TimbreForm = this.formBuilder.group({ 
+      numeroTransaction: [ '', Validators.required ]
+    })
+  }
+
+  findTimbre() {
+    this.error = false;
+    console.log(" this.TimbreForm.valu", this.TimbreForm.value);
+    if(this.TimbreForm.valid) {
+      this.spinner.show();
+      this.api.findTimbre(this.TimbreForm.value)
+        .subscribe(
+          data => {
+            console.log("findTimbre ",data);
+            if(data==null || data.status!=0){
+              console.log('error  ', data)
+              this.error = true;
+              this.message = data.message
+            }else{
+              //stock
+              this.dataOperation.codeVendeur = data.codeVendeur.substring(1,data.codeVendeur.length)
+              this.dataOperation.expirationDate = data.expirationDate
+              this.dataOperation.libelle = data.libelle
+              this.dataOperation.numero = data.numero.substring(1,data.numero.length)
+              this.dataOperation.numeroTransaction = data.numeroTransaction
+              this.dataOperation.prixU = data.prixU
+              this.dataOperation.quantite = data.quantite
+              this.dataOperation.transactionDate = data.transactionDate.split(" ")[0]
+              console.log("dataOperation ",this.dataOperation);
+              this.opPrv.setOperation(this.dataOperation);
+              this.router.navigate(['/dossier-timbre']);
+            }
+          },
+          error => {
+            console.log('error  ', error)
+            this.error = true;
+            this.message = "Erreur server. veuillez reessayer ulterieurement"
+          },
+          () => this.spinner.hide()
+        );
+    }else{
+      alert("Veuillez remplir correctement les champs");
+    }
+  }
 
   retour() {
     this.router.navigate(['/type-consommation']);
   }
 
   valider() {
-    this.router.navigate(['/dossier-timbre']);
+    
   }
 
   ngOnInit() {

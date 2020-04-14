@@ -12,7 +12,7 @@ export class AgentVendeurComponent implements OnInit {
   modalRef: BsModalRef;
   constructor( private modalService: BsModalService, private router: Router) {
     
-   } 
+  } 
 
   valider() {
     this.router.navigate(['/validation']);
@@ -32,7 +32,7 @@ export class AgentVendeurComponent implements OnInit {
 
   openModal(template: TemplateRef<any>) {
 
-    this.modalRef = this.modalService.show(template, {class: 'modal-dialog-centered rounded'});
+    this.modalRef = this.modalService.show(template, {class: 'modal-dialog-centered'});
   }
 
 }

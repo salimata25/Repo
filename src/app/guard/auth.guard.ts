@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
     canActivate() {
         console.log("--------AuthGuard canActivate-----------")
         const uinfo = this.sessPrv.parseSession();
-        if (uinfo && uinfo.role.length!=0) {
+        if (uinfo && uinfo.role=="agentcentre") {
             console.log("--------AuthGuard canActivate isLoggedin-----------")
             return true;
         }

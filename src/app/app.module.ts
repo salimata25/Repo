@@ -12,14 +12,13 @@ import { AuthProvider } from './services/auth-service';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesComponent } from './pages/pages.component';
 import { ChartsModule } from 'ng2-charts';
-//import { AuthGuard } from './guard/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTrashAlt, faEdit, faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { MenuComponent } from './components/menu/menu.component';
 import { TransactionsProvider } from './services/transactions-service';
 
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -27,6 +26,7 @@ import { HeaderModule } from './header/header.module';
 import { DataTablesModule } from 'angular-datatables';
 import { AgentModule } from './pages/agent/agent.module';
 import { FooterModule } from './footer/footer.module';
+import { OperationService } from './services/operationService';
 
 
 @NgModule({
@@ -51,19 +51,19 @@ import { FooterModule } from './footer/footer.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    PagesComponent,
-    MenuComponent
+    PagesComponent
     
   ],
   bootstrap: [AppComponent],
   providers: [
     AppService,
-    //AuthGuard,
+    AuthGuard,
     AuthProvider,
     HttpClientModule,
     TransactionsProvider,
     AppService,
     SessionService,
+    OperationService,
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     AppConfig,
     { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true }

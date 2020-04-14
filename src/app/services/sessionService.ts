@@ -33,6 +33,11 @@ export class SessionService {
     return guid ? JSON.parse(guid).token : null;
   }
 
+  getTokenAndLogin(): any {
+    let guid = localStorage.getItem('guid');
+    return guid ? {token:JSON.parse(guid).token, login: JSON.parse(guid).login} : {};
+  }
+
   getSession(): Observable<iSession> {
     let guid = localStorage.getItem('guid');
     if (guid) {

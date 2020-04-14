@@ -10,11 +10,25 @@ import { AppService } from '../app-service';
 
 @Injectable()
 export class TransactionsProvider extends AppService {
-
-  _api: string = this._url + "stat/";
+ 
+  _api: string = this._url + "agent/";
 
   constructor( public http: HttpClient, private sessPrv: SessionService ) { 
     super();
+  }
+
+  findTimbre(body: any): Observable<any> {
+    body.token = this.sessPrv.getTokenAndLogin().token;
+    body.login = this.sessPrv.getTokenAndLogin().login;
+    console.log("findTimbre ", body)
+    return this.http.post<any>(this._api+"find/timbre", body, { headers: this._headers }).pipe(
+      tap((data:any) => {
+        console.log("Test 3 findTimbre", data)
+      }),
+      map(res => {
+        return res;
+      })
+    )
   }
   
   listTransactionUsagerGlobal(body: any): Observable<any> {
