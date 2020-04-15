@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Router } from '@angular/router';
+import { SessionService } from '../services/sessionService';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  
+
   modalRef: BsModalRef;
-  constructor( private modalService: BsModalService, private route: Router) {
-    
+  dataUser: any = {};
+
+  constructor( private modalService: BsModalService, private route: Router, private sessPrv: SessionService) {
+    this.dataUser = this.sessPrv.parseSession();
+    console.log("donnees utilisayeur", this.dataUser);
    } 
 
    vendeur() {

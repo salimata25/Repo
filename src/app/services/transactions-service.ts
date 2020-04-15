@@ -30,6 +30,20 @@ export class TransactionsProvider extends AppService {
       })
     )
   }
+
+  consommerTimbre(body: any): Observable<any> {
+    body.token = this.sessPrv.getTokenAndLogin().token;
+    body.login = this.sessPrv.getTokenAndLogin().login;
+    console.log("findTimbre ", body)
+    return this.http.post<any>(this._api+"consommer/timbre", body, { headers: this._headers }).pipe(
+      tap((data:any) => {
+        console.log("Test 3 findTimbre", data)
+      }),
+      map(res => {
+        return res;
+      })
+    )
+  }
   
   listTransactionUsagerGlobal(body: any): Observable<any> {
     body.token = this.sessPrv.getTheToken();

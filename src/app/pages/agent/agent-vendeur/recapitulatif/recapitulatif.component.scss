@@ -113,16 +113,20 @@
 }
 
 .classPages{
-    text-align: center; 
-    background-color: #f1efef; 
-    min-height: 800px;
-  }
+  text-align: center; 
+  background-color: #f1efef; 
+  min-height: 800px;
+}
+
+.ligne {
+min-height: 650px;
+}
   
-  .titre {
+.titre {
     color: #75552e;
     font-weight: bolder;
     line-height: 5px;
-  }
+}
   
   .puce_titre {
     margin-top: 25px;

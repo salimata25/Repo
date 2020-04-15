@@ -7,5 +7,7 @@ export interface iSession {
     login: string;
     role: string;
     token: string;
+    firstName: string;
+    lastName: string;
 }
   

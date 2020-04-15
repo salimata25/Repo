@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../../../services/sessionService';
 
 @Component({
   selector: 'app-agent-consommateur',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgentConsommateurComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sessPrv: SessionService) {
+
+   }
 
   ngOnInit() {
+    console.log("donnees user",this.sessPrv.parseSession());
   }
 
 }

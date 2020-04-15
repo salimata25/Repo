@@ -3,14 +3,14 @@
       <app-header></app-header>
     </div>
     <div class="classPages">
-        <div class="d-flex flex-row justify-content-start ligne" style="margin-left: 30px;">
+        <div class="d-flex flex-row justify-content-start" style="margin-left: 30px; padding-top: 20px;">
           <span class="p-2 puce_titre"></span> 
           <span class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</span>
         </div>
-        <div class="row justify-content-center ligne">
+        <div class="row justify-content-center ">
         
         
-          <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
+          <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
                   
           <router-outlet></router-outlet>
 
@@ -20,27 +20,39 @@
                 </div>
                 
                 <div class="d-flex flex-row flex-wrap justify-content-around">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Délivrance ou propagation de validité des certificats</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Mention d'inscription de gage sur vente à crédit d'un véhicule</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Droit d'examen pour obtension d'un permis</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation" 
+                        (click)="fctLibelle('Délivrance ou propagation de validité des certificats')">Délivrance ou propagation de validité des certificats</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation" 
+                        (click)="fctLibelle('Mention d\'inscription de gage sur vente à crédit d\'un véhicule')">Mention d'inscription de gage sur vente à crédit d'un véhicule</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Droit d\'examen pour obtension d\'un permis')">Droit d'examen pour obtension d'un permis</a>
                 </div>
                 <div class="d-flex flex-row flex-wrap justify-content-around ">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Délivrance des permis de conduire</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Délivrance duplicata de permis de chasse</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Délivrance de permis de construire</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Délivrance des permis de conduire')">Délivrance des permis de conduire</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Délivrance duplicata de permis de chasse')">Délivrance duplicata de permis de chasse</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Délivrance de permis de construire')">Délivrance de permis de construire</a>
                 </div>
                 <div class="d-flex flex-row flex-wrap justify-content-around ">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Délivrance du permis d'organiser des manifestations</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Récépissés de déclaration de mise à la consommation des remorques et semi-remorques</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Renouvellement et duplicata de carte grise</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Délivrance du permis d\'organiser des manifestations')">Délivrance du permis d'organiser des manifestations</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Récépissés de déclaration de mise à la consommation des remorques et semi-remorques')">Récépissés de déclaration de mise à la consommation des remorques et semi-remorques</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Renouvellement et duplicata de carte grise')">Renouvellement et duplicata de carte grise</a>
                 </div>
                 <div class="d-flex flex-row flex-wrap justify-content-around ">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Changements de catégorie</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Changements de carrosserie</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation">Changements de source d'énergie</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Changements de catégorie')">Changements de catégorie</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Changements de carrosserie')">Changements de carrosserie</a>
+                    <a class="p-2 col-sm-3 premier_lien" routerLink="/type-consommation"
+                        (click)="fctLibelle('Changements de source d\'énergie')">Changements de source d'énergie</a>
                 </div>
 
-                <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
+                <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 91px;">
                     <button type="submit" class="p-2 btn retour" (click)="retour()">
                       <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
                       Retour

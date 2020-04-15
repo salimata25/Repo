@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { AuthProvider } from '../services/auth-service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { SessionService } from '../services/sessionService';
 
 
 @Component({
@@ -15,8 +16,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   error =  false;
   message =  "";
   UserconnexionForm:FormGroup;
+  // dataUser: any = {};
 
-  constructor(private spinner: NgxSpinnerService, private router: Router, private formBuilder: FormBuilder,public api: AuthProvider) {
+
+  constructor(private spinner: NgxSpinnerService, private router: Router, private formBuilder: FormBuilder,public api: AuthProvider, private sessPrv: SessionService) {
+    // this.dataUser = this.sessPrv.parseSession();
     this.UserconnexionForm = this.formBuilder.group({ 
       login: [ '', Validators.required ],
       password: [ '', Validators.required ] 
@@ -54,6 +58,9 @@ export class LoginComponent implements OnInit, OnDestroy {
             }else{
               console.log('data  ', data)
               if (data.role && data.role ==="agentcentre") {
+                // this.dataUser.firstname = data.firstname;
+                // this.dataUser.lastname = data.lastname;
+                // this.sessPrv.setSession(this.dataUser);
                 this.router.navigate(['/agent']);
               }
               else {

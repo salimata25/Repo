@@ -22,11 +22,15 @@ export class AuthProvider extends AppService {
       tap((auth:iSession) => {
         this.sessPrv.setSession({
           status: auth.status, 
-          message:auth.message, 
-          login:auth.login, 
-          role:auth.role, 
+          message: auth.message, 
+          login: auth.login, 
+          role: auth.role,
+          firstName: auth.firstName,
+          lastName: auth.lastName,
           token: auth.token 
         });
+
+        console.log("signin", this.sessPrv.parseSession())
       }),
       map(res => {
         return res;

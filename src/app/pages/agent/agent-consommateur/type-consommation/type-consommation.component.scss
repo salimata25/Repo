@@ -113,9 +113,14 @@
 }
 
 .classPages{
-    text-align: center; 
-    background-color: #f1efef; 
-  }
+  text-align: center; 
+  background-color: #f1efef; 
+  min-height: 800px;
+}
+
+.ligne {
+min-height: 650px;
+}
   
   .titre {
     color: #75552e;
@@ -141,7 +146,8 @@
     background: #77562b;
     color: white;
     font-size: 20px;
-    height: 130px;
+    font-weight: bold;
+    height: 150px;
     border-radius: 30px;
     margin-left: 50px;
     margin-top: 20px;

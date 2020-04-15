@@ -5,7 +5,6 @@ export interface iOperation {
     status: number;
     message: string;
     numeroTransaction: string;
-    numeroDossier: string ;
     codeVendeur : string ;
     expirationDate : string ;
     libelle : string ;
@@ -13,5 +12,7 @@ export interface iOperation {
     prixU : number ;
     quantite : number ;
     transactionDate : string ;
+    numeroDossier: string ;
+    libelleDossier: string;
 }
   

@@ -15,7 +15,7 @@ import { OperationService } from '../../../../services/operationService';
 export class NumeroTimbreComponent implements OnInit {
   error =  false;
   message =  "";
-  TimbreForm:FormGroup;
+  TimbreForm: FormGroup;
   dataOperation: any = {};
 
   constructor(private spinner: NgxSpinnerService, private router: Router, private formBuilder: FormBuilder, public api: TransactionsProvider, private opPrv: OperationService) {
