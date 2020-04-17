@@ -42,15 +42,15 @@
     <div class="p-2 col-sm-7 envoyer_mail">
         <span style="line-height: 3px;" style="text-align: start; font-size: larger; font-weight: bold;">Envoyer par mail</span><br> 
         <hr class="col-sm-10 float-left" color="#e4ae0e">
-        <form>
+        <form [formGroup]="EmailForm" (ngSubmit)="envoiMail()">
             <div class="form-group">
-              <input type="text" class="form-control col-sm-6" id="nom" placeholder="Insérer l'adresse e-mail ">
+              <input formControlName="receptionRecuConsumer" type="text" class="form-control col-sm-6" id="nom" placeholder="Insérer l'adresse e-mail ">
             </div>
             <button type="submit" class="btn envoyer">
                 <span style="font-size: large; font-weight: bold;" class="p-2">Envoyer</span> 
                 <fa-icon class="p-2" icon="arrow-right" [styles]="{'color': '#e4ae0e'}"></fa-icon>
             </button>
-          </form>
+        </form>
           <hr class="col-sm-10 float-left" color="#e4ae0e">
           <button type="submit" class="btn envoyer">
             <span style="font-size: large; font-weight: bold;" class="p-2">Imprimer</span> 

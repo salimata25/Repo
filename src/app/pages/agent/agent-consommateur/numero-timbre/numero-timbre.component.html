@@ -15,7 +15,7 @@
         <router-outlet></router-outlet>
 
         <form [formGroup]="TimbreForm" (ngSubmit)="findTimbre()">
-          <div *ngIf="error" class="alert alert-danger"> {{message}} </div>
+          <div *ngIf="error" class="alert alert-danger"> {{message}} </div> 
             <div class="form-group">
               <label for="numeroTimbre" style="font-weight: bold;">Insérer le numéro de timbre</label>
               <input type="text" formControlName="numeroTransaction" class="col-sm-4 mx-auto form-control" id="numeroTimbre" placeholder="N° timbre" required>

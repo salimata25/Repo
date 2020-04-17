@@ -22,19 +22,20 @@
 
  <div class="finalisation">
      <p style="margin-bottom: 30px; margin-top: 20px;">Montant global de votre achat :</p>
-     <p style="color: #76552c; font-size: 40px; font-weight: bold;">40.000 FCFA</p>
-     <p style="color: #76552c; font-size: 20px; font-weight: bold;">Timbre pour passport</p> <br>
+     <p style="color: #76552c; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
+     <p style="color: #76552c; font-size: 20px; font-weight: bold;">{{dataVente.transactionType}}</p> <br>
      <p>Réception de la quittance et du justificatif :</p>
+
      <div class="form-check">
-        <input class="form-check-input" type="radio" name="envoiQuittance" id="email" value="option1" checked>
+        <input class="form-check-input" ng-model="isChecked" type="radio" name="envoiQuittance" id="email" value="option1" (click)="parEmail()">
         <label class="form-check-label" for="email">
-          Evoyer quittance et justificatif par <span style="font-weight: bold;">E-mail</span>.
+          Envoyer quittance et justificatif par <span style="font-weight: bold;">E-mail</span>.
         </label>
         <form>
             <div class="form-group row">
               <label for="inputEmail" class="col-sm-3 col-form-label">Saisir l'adresse mail :</label>
               <div class="col-sm-7">
-                <input type="email" class="form-control" id="inputEmail">
+                <input type="email" [(ngModel)]="emailReception" ng-disabled="isChecked=='false'" class="form-control" id="emailReception" name="emailReception">
               </div>
             </div>
             <div class="form-group row">
@@ -46,15 +47,15 @@
           </form>
      </div>
      <div class="form-check" style="margin-bottom: 100px;">
-        <input class="form-check-input" type="radio" name="envoiQuittance" id="sms" value="option2">
+        <input class="form-check-input" type="radio" name="envoiQuittance" id="sms" value="option2" (click)="parSMS()">
         <label class="form-check-label" for="sms">
-            Evoyer quittance et justificatif par <span style="font-weight: bold;">SMS</span>.
+            Envoyer quittance et justificatif par <span style="font-weight: bold;">SMS</span>.
         </label>
-        <form>
+        <form>  
             <div class="form-group row">
               <label for="inputTel" class="col-sm-3 col-form-label">Saisir le N° de téléphone :</label>
               <div class="col-sm-7">
-                <input type="tel" class="form-control" id="inputTel" >
+                <input type="tel" [(ngModel)]="telReception" class="form-control" id="telReception" name="telReception">
               </div>
             </div>
             <div class="form-group row">

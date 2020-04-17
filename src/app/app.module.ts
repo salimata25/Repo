@@ -27,6 +27,8 @@ import { DataTablesModule } from 'angular-datatables';
 import { AgentModule } from './pages/agent/agent.module';
 import { FooterModule } from './footer/footer.module';
 import { OperationService } from './services/operationService';
+import { TimbreService } from './services/timbreService';
+import { VenteService } from './services/venteService';
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { OperationService } from './services/operationService';
     AppService,
     SessionService,
     OperationService,
+    TimbreService,
+    VenteService,
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     AppConfig,
     { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [AppConfig], multi: true }

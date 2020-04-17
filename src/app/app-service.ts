@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
 import { AppConfig } from './app.config';
-import { Transaction } from './model/Transaction';
 import { Session } from './model/Session';
 
 @Injectable({

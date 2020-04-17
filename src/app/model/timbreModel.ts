@@ -3,6 +3,6 @@ export class TimbreModel {
     libelle:string;
     prixU:number;
     quantite:number;
-    prixTotal: number;
+    prixTotal: number; 
     
 }

@@ -4,6 +4,7 @@ import { OperationService } from '../../../../services/operationService';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TransactionsProvider } from '../../../../services/transactions-service';
 import { SessionService } from '../../../../services/sessionService';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-impression',
@@ -13,39 +14,51 @@ import { SessionService } from '../../../../services/sessionService';
 export class ImpressionComponent implements OnInit {
   error =  false;
   message =  "";
-  receptionRecu: string;
+  
+  EmailForm: FormGroup;
+
+  moyenReceptionRecuConsumer: "email";
   dataOperation: any = {};
   dataUser: any = {};
   
-  constructor (private spinner: NgxSpinnerService, private router: Router, private opPrv: OperationService, public api: TransactionsProvider, private sessPrv: SessionService) {
+  constructor (private spinner: NgxSpinnerService, private formBuilder: FormBuilder, private router: Router, private opPrv: OperationService, public api: TransactionsProvider, private sessPrv: SessionService) {
     this.dataOperation = this.opPrv.parseOperation();
+    this.EmailForm = this.formBuilder.group({ 
+      receptionRecuConsumer: [ '', Validators.required ]
+    })
    }
 
-   affecterDossier() {
-    console.log("numeroDossier", this.receptionRecu)
+   envoiMail() {
+    console.log("emailForm", this.EmailForm.value)
     this.error = false;
-    this.spinner.show();
-    this.api.envoyerMail({numeroTransaction: this.dataOperation.numeroTransaction})
-      .subscribe(
-        data => {
-          console.log("consommerTimbre ",data);
-          if(data==null || data.status!=0) {
-            console.log('error  ', data);
+    if(this.EmailForm.valid) {
+      this.spinner.show();
+      this.api.envoyerMail({receptionRecuConsumer: this.EmailForm.value[0], numeroTransaction: this.dataOperation.numeroTransaction, moyenReceptionRecuConsumer: this.moyenReceptionRecuConsumer})
+        .subscribe(
+          data => {
+            console.log("envoyerEmail ",data);
+            if(data==null || data.status!=0) {
+              console.log('error  ', data);
+              this.error = true;
+              this.message = data.message;
+            }else {
+              // this.dataOperation.receptionRecuConsumer = this.EmailForm.value;
+              // this.dataOperation.moyenReceptionRecuConsumer = this.moyenReceptionRecuConsumer;
+
+              console.log("dataOperation ",this.dataOperation);
+              //this.opPrv.setOperation(this.dataOperation);
+            }
+          },
+          error => {
+            console.log('error  ', error)
             this.error = true;
-            this.message = data.message;
-          }else {
-            
-            this.router.navigate(['/impression']);
-            
-          }
-        },
-        error => {
-          console.log('error  ', error)
-          this.error = true;
-          this.message = "Erreur server. veuillez reessayer ulterieurement"
-        },
-        () => this.spinner.hide()
-      );
+            this.message = "Erreur server. veuillez reessayer ulterieurement"
+          },
+          () => this.spinner.hide()
+        );
+    }else{
+      alert("Veuillez remplir correctement les champs");
+    }
   }
 
   retour() {

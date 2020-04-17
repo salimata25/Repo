@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 1000);
-    this.api.signout()
+    //this.api.signout()
   }
 
   connexion(){

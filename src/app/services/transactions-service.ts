@@ -1,4 +1,4 @@
-/**
+/** 
  * Created by PC on 28/03/2019.
  */
 import { Injectable } from '@angular/core';
@@ -34,10 +34,38 @@ export class TransactionsProvider extends AppService {
   consommerTimbre(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
-    console.log("findTimbre ", body)
+    console.log("consommerTimbre ", body)
     return this.http.post<any>(this._api+"consommer/timbre", body, { headers: this._headers }).pipe(
       tap((data:any) => {
         console.log("Test 3 findTimbre", data)
+      }),
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  vendreTimbre(body: any): Observable<any> {
+    body.token = this.sessPrv.getTokenAndLogin().token;
+    body.login = this.sessPrv.getTokenAndLogin().login;
+    console.log("vendreTimbre ", body)
+    return this.http.post<any>(this._api+"acheter/timbre", body, { headers: this._headers }).pipe(
+      tap((data:any) => {
+        console.log("Test 3 vendreTimbre", data)
+      }),
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  vendreQuittance(body: any): Observable<any> {
+    body.token = this.sessPrv.getTokenAndLogin().token;
+    body.login = this.sessPrv.getTokenAndLogin().login;
+    console.log("vendreQuittance ", body)
+    return this.http.post<any>(this._api+"acheter/quittance", body, { headers: this._headers }).pipe(
+      tap((data:any) => {
+        console.log("Test 3 vendreQuittance", data)
       }),
       map(res => {
         return res;

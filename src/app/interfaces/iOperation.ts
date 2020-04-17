@@ -14,5 +14,7 @@ export interface iOperation {
     transactionDate : string ;
     numeroDossier: string ;
     libelleDossier: string;
+    receptionRecuConsumer: string;
+    moyenReceptionRecuConsumer: string;
 }
   
