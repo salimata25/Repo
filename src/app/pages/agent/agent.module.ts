@@ -24,6 +24,7 @@ import { RouterModule } from '@angular/router';
 import { HeaderModule } from '../../header/header.module';
 import { FooterModule } from '../../footer/footer.module';
 import { ScannerComponent } from './agent-consommateur/scanner/scanner.component';
+import { ListTimbresComponent } from './agent-vendeur/list-timbres/list-timbres.component';
 
 @NgModule({
   imports: [ 
@@ -36,9 +37,9 @@ import { ScannerComponent } from './agent-consommateur/scanner/scanner.component
     HeaderModule,
     FooterModule,
     RouterModule.forChild([
-      {path: 'validation', component: ValidationComponent},
-      {path: 'finalisation', component: FinalisationComponent},
-      {path: 'recapitulatif', component: RecapitulatifComponent},
+      // {path: 'validation', component: ValidationComponent},
+      // {path: 'finalisation', component: FinalisationComponent},
+      // {path: 'recapitulatif', component: RecapitulatifComponent},
       {path: 'consommation', component: ConsommationComponent},
       {path: 'type-consommation', component: TypeConsommationComponent},
       {path: 'numero-timbre', component: NumeroTimbreComponent},
@@ -59,7 +60,8 @@ import { ScannerComponent } from './agent-consommateur/scanner/scanner.component
     NumeroTimbreComponent,
     DossierTimbreComponent,
     ImpressionComponent,
-    ScannerComponent
+    ScannerComponent,
+    ListTimbresComponent
   ],
   providers: [
     AgentAuthGuard,

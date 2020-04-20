@@ -15,6 +15,8 @@ export class FinalisationComponent implements OnInit {
   dataQuittance: any = {};
   EmailForm: FormGroup;
   SmsForm: FormGroup;
+  isChecked = false;
+  typeTimbre: string;
 
   emailReception: string;
   telReception: string;
@@ -23,6 +25,7 @@ export class FinalisationComponent implements OnInit {
   constructor(private router: Router, private timbreServ: TimbreService, private venteServ: VenteService, ) { 
     this.dataTimbre = this.timbreServ.parseTimbre();
     this.dataVente = this.venteServ.parseTransaction();
+    this.typeTimbre = this.dataVente.transactionType;
 
     // this.EmailForm = this.formBuilder.group({ 
     //   emailReception: [ '', Validators.required ],
@@ -34,6 +37,7 @@ export class FinalisationComponent implements OnInit {
   }
 
   parEmail() {
+    this.isChecked = true;
     this.dataVente.moyenReception = "email";
     
     console.log("dataVente ",this.dataVente);
@@ -41,6 +45,7 @@ export class FinalisationComponent implements OnInit {
   }
 
   parSMS() {
+    this.isChecked = true;
     this.dataVente.moyenReception = "sms";
     
     console.log("dataVente ",this.dataVente);
@@ -48,7 +53,7 @@ export class FinalisationComponent implements OnInit {
   }
 
   retour() {
-    this.router.navigate(['/validation']);
+    this.router.navigate(['/vendeur/validation']);
   }
 
   valider () {
@@ -62,7 +67,7 @@ export class FinalisationComponent implements OnInit {
     this.dataVente.moyenPaiement = "CACH";
     console.log("dataVente ",this.dataVente);
     this.venteServ.setTransaction(this.dataVente);
-    this.router.navigate(['/recapitulatif']);
+    this.router.navigate(['/vendeur/recapitulatif']);
   }
 
   ngOnInit() {

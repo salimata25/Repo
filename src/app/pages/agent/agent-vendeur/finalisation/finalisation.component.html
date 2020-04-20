@@ -1,4 +1,4 @@
-<div class="container-fluid"> 
+<!-- <div class="container-fluid"> 
   <div>
     <app-header></app-header>
   </div>
@@ -12,7 +12,7 @@
       
         <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
                 
-        <router-outlet></router-outlet>
+        <router-outlet></router-outlet> -->
 
 <div class="d-flex flex-row justify-content-start" >
     <span class="p-2 puce"></span> 
@@ -24,11 +24,15 @@
      <p style="margin-bottom: 30px; margin-top: 20px;">Montant global de votre achat :</p>
      <p style="color: #76552c; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
      <p style="color: #76552c; font-size: 20px; font-weight: bold;">{{dataVente.transactionType}}</p> <br>
-     <p>Réception de la quittance et du justificatif :</p>
+     <p *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'">Réception du justificatif :</p>
+     <p *ngIf="typeTimbre=='Timbres pour passeport'">Réception de la quittance et du justificatif :</p>
 
      <div class="form-check">
-        <input class="form-check-input" ng-model="isChecked" type="radio" name="envoiQuittance" id="email" value="option1" (click)="parEmail()">
-        <label class="form-check-label" for="email">
+        <input class="form-check-input"  type="radio" name="envoiQuittance" id="email" value="option1" (click)="parEmail()">
+        <label *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'" class="form-check-label" for="email">
+          Envoyer justificatif par <span style="font-weight: bold;">E-mail</span>.
+        </label>
+        <label *ngIf="typeTimbre=='Timbres pour passeport'" class="form-check-label" for="email">
           Envoyer quittance et justificatif par <span style="font-weight: bold;">E-mail</span>.
         </label>
         <form>
@@ -48,9 +52,12 @@
      </div>
      <div class="form-check" style="margin-bottom: 100px;">
         <input class="form-check-input" type="radio" name="envoiQuittance" id="sms" value="option2" (click)="parSMS()">
-        <label class="form-check-label" for="sms">
-            Envoyer quittance et justificatif par <span style="font-weight: bold;">SMS</span>.
+        <label *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'" class="form-check-label" for="sms">
+            Envoyer justificatif par <span style="font-weight: bold;">SMS</span>.
         </label>
+        <label *ngIf="typeTimbre=='Timbres pour passeport'" class="form-check-label" for="sms">
+          Envoyer quittance et justificatif par <span style="font-weight: bold;">SMS</span>.
+      </label>
         <form>  
             <div class="form-group row">
               <label for="inputTel" class="col-sm-3 col-form-label">Saisir le N° de téléphone :</label>
@@ -77,12 +84,12 @@
         </button>
       </div>
     </div> 
-  </div>
+  <!-- </div>
 </div>
 </div>
  <footer >
   
 </footer>
-</div>
+</div> -->
 
  

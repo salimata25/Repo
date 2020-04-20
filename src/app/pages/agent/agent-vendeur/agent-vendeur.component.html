@@ -1,6 +1,6 @@
 <div class="container-fluid"> 
   <div>
-    <app-header></app-header>
+    <app-header imageMenu="agent_bg_achat.png"></app-header>
   </div>
   <div class="classPages">
       <div class="d-flex flex-row justify-content-start" style="margin-left: 30px; padding-top: 20px;">
@@ -11,8 +11,9 @@
       
         <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
             
+          
           <router-outlet></router-outlet>
-          <div class="d-flex flex-wrap  vente-timbres">
+          <!-- <div *ngIf="contenu===0" class="d-flex flex-wrap  vente-timbres">
             <div class="p-2 border-3 timbre">
                 <span class="style-timbre">Timbre</span> <br>
                 <span class="montant">1.000 FCFA</span> <br>
@@ -26,7 +27,7 @@
                 <span class="style-timbre">Timbre</span> <br>
                 <span class="montant">2.000 FCFA</span>
                 <p class="pointillet">----------------</p>
-                <button type="button" class="btn text-center ajouter"(click)="ajouterTimbre(2000)">
+                <button type="button" class="btn text-center ajouter" (click)="ajouterTimbre(2000)">
                     Ajouter
                     <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
                 </button>
@@ -59,9 +60,49 @@
                   <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
               </button>
             </div>
+
+            <div class="p-2 border-3 timbre_passport">
+              <label style="color: white; font-size: 25px; font-weight: bold;" >Droits d'enregistrement</label>
+              <p class="pointillet">----------------</p>
+              <button type="button" class="btn text-center" (click)="droitEnregistrement()">
+                  Ajouter
+                  <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+              </button>
+            </div>
+
+            <div class="p-2 border-3 timbre_passport">
+              <label style="color: white; font-size: 25px; font-weight: bold;" >Droits de mutation</label> 
+              <p class="pointillet">----------------</p>
+              <button type="button" class="btn text-center" (click)="droitMutation()">
+                  Ajouter
+                  <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+              </button>
+            </div>
           
           </div>
        
+          <div *ngIf="contenu===1">
+            <form >
+              <div *ngIf="error" class="alert alert-danger"> {{message}} </div> 
+                <div class="form-group">
+                  <label for="montant" style="font-weight: bold;">Veuillez inérer le montant</label>
+                  <input type="text" [(ngModel)]="montant" class="col-sm-4 mx-auto form-control" id="montant" name="montant" placeholder="Montant" required>
+                </div>
+            
+    
+              <div class="d-flex flex-row justify-content-around flex_bouton" style="margin-top: 460px; margin-bottom: 30px;">
+                  <button type="submit" class="p-2 btn retour" (click)="saisirMontant(0)">
+                    <img class="fleche_gauche"  src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+                    Retour
+                  </button>
+                  <button type="submit" class="p-2 btn valider" (click)="ajouterMontant(0)">
+                    Valider
+                    <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
+                  </button>
+              </div>
+    
+            </form>
+          </div>
   
           <ng-template #paramUser class="modal_info">
             <div class="modal-header">
@@ -96,7 +137,7 @@
                 </div>
               </form>
             </div>
-          </ng-template>
+          </ng-template> -->
         </div>
       </div>
   </div>

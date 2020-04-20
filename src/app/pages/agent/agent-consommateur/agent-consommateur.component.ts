@@ -13,7 +13,7 @@ export class AgentConsommateurComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log("donnees user",this.sessPrv.parseSession());
+    console.log("donnees user",this.sessPrv.parseSession()); 
   }
 
 }

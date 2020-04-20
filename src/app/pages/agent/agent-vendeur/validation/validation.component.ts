@@ -32,19 +32,19 @@ export class ValidationComponent implements OnInit {
   }
    
   retour() {
-    this.router.navigate(['/vendeur']);
+    this.router.navigate(['/vendeur/list-timbres']);
   }
 
   valider () {
     //this.dataVente.panierTimbre.push(this.dataTimbre);
     this.venteServ.setTransaction(this.dataVente);
-    this.router.navigate(['/finalisation']); 
+    this.router.navigate(['/vendeur/finalisation']); 
   }
 
   validerQuittance() {
     
     this.venteServ.setTransaction(this.dataVente);
-    this.router.navigate(['/finalisation']);
+    this.router.navigate(['/vendeur/finalisation']);
   }
 
   ngOnInit() {

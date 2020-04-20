@@ -12,6 +12,9 @@ import { VenteService } from '../../../services/venteService';
   styleUrls: ['./agent-vendeur.component.scss']
 })
 export class AgentVendeurComponent implements OnInit {
+  contenu = 0;
+  montant: number;
+
   dataTimbre: any = {};
   QuittanceForm: FormGroup; 
   dataVente: any = {};
@@ -36,6 +39,7 @@ export class AgentVendeurComponent implements OnInit {
     codeServer:null,
     messageServer:null
   }
+
   constructor(private formBuilder: FormBuilder, private modalService: BsModalService, private router: Router, private timbreServ: TimbreService, private venteServ: VenteService) {
     this.dataTimbre = this.timbreServ.parseTimbre();
     this.dataVente = this.venteServ.parseTransaction();
@@ -48,7 +52,9 @@ export class AgentVendeurComponent implements OnInit {
     })
   } 
 
-
+  saisirMontant(contenu) {
+    this.contenu = contenu;
+  }
   
 
   ajouterTimbre(prix) {
@@ -70,7 +76,7 @@ export class AgentVendeurComponent implements OnInit {
 
     this.venteServ.setTransaction(this.dataVente);
 
-    this.router.navigate(['/validation']);
+    this.router.navigate(['/vendeur/validation']);
   }
 
   retour() {
@@ -107,6 +113,49 @@ export class AgentVendeurComponent implements OnInit {
     }else{
       alert("Veuillez remplir correctement les champs");
     }
+  }
+
+  droitEnregistrement() {
+    this.dataTimbre.libelle = "Droits d'enregistrement";
+    this.dataTimbre.type = "Droits d'enregistrement";
+    this.dataTimbre.quantite = 1;
+    console.log("dataTimbre ",this.dataTimbre);
+    this.timbreServ.setTimbre(this.dataTimbre);
+
+    this.dataVente.transactionType = "Droits d'enregistrement";
+    this.venteServ.setTransaction(this.dataVente);
+
+    this.saisirMontant(1);
+  }
+
+  droitMutation() { 
+    this.dataTimbre.libelle = "Droits de mutation";
+    this.dataTimbre.type = "Droits de mutation";
+    this.dataTimbre.quantite = 1;
+    console.log("dataTimbre ",this.dataTimbre);
+    this.timbreServ.setTimbre(this.dataTimbre);
+
+    this.dataVente.transactionType = "Droits de mutation";
+    this.venteServ.setTransaction(this.dataVente);
+
+    this.saisirMontant(1);
+  }
+
+  ajouterMontant() {
+    if(this.dataVente.panierTimbre.length !== 0){
+      this.dataVente.panierTimbre.pop();
+    }
+    this.dataTimbre.prixU = this.montant;
+    this.dataTimbre.prixTotal = this.montant;
+    console.log("dataTimbre ",this.dataTimbre);
+    this.timbreServ.setTimbre(this.dataTimbre);
+
+    this.dataVente.montantTotal = this.montant;
+    this.dataVente.panierTimbre.push(this.dataTimbre);
+    console.log("dataQuittance ",this.dataVente);
+    this.venteServ.setTransaction(this.dataVente);
+
+    this.router.navigate(['/validation']);
   }
 
 }

@@ -1,4 +1,4 @@
-<div class="container-fluid"> 
+<!-- <div class="container-fluid"> 
   <div>
     <app-header></app-header>
   </div>
@@ -12,7 +12,7 @@
       
         <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
                 
-          <router-outlet></router-outlet>
+          <router-outlet></router-outlet> -->
 
             
             <div class="d-flex flex-row justify-content-start" >
@@ -20,10 +20,10 @@
                 <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Récapitulatif</p>
             </div>
             <hr  width="99%" color="#ebe7e7" size="3">
-          <div *ngIf="dataVente.transactionType=='Timbres pour fiscal'">
+          <div *ngIf="dataVente.transactionType==='Timbres pour fiscal' || dataVente.transactionType==='Droits d\'enregistrement' || dataVente.transactionType==='Droits de mutation'">
             <div class="recapitulatif">
                 <p style="font-weight: bold;">Achat de timbre pour le montant de : </p><br>
-                <p style="color: #c0911b; font-size: 40px; font-weight: bold;">1.000 FCFA</p>
+                <p style="color: #c0911b; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
                 <table id="table" class="table">
                     <thead>
                         <th>Libellé</th>
@@ -81,7 +81,7 @@
           <div *ngIf="dataVente.transactionType=='Timbres pour passeport'">
             <div class="recapitulatif">
                 <p style="font-weight: bold;">Achat de timbre pour le montant de : </p><br>
-                <p style="color: #c0911b; font-size: 40px; font-weight: bold;">40.000 FCFA</p>
+                <p style="color: #c0911b; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
                 <table id="table" class="table">
                     <thead>
                         <th>Nom</th>
@@ -92,7 +92,7 @@
                         <tr *ngFor="let quitance of dataVente.infoQuittance">
                             <td>{{quitance.lastName}}</td>
                             <td>{{quitance.firstName}}</td>
-                            <td>20000 XOF</td>
+                            <td>{{dataVente.montantTotal}} XOF</td>
                         </tr>
                     </tbody>
                 </table>
@@ -146,8 +146,8 @@
           </div>
         </ng-template>
 
-    </div>
+    <!-- </div>
   </div>
  </div>
  
-</div>
+</div> -->

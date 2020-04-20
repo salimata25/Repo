@@ -27,12 +27,12 @@ export class RecapitulatifComponent implements OnInit {
   } 
 
   retour() {
-    this.router.navigate(['/finalisation']);
+    this.router.navigate(['/vendeur/finalisation']);
   }
 
   retourAccueil() {
     this.modalRef.hide();
-    this.router.navigate(['/vendeur']);
+    this.router.navigate(['/vendeur/list-timbres']);
   }
 
   ngOnInit() {
@@ -41,7 +41,7 @@ export class RecapitulatifComponent implements OnInit {
   acheterTimbre(template: TemplateRef<any>) {
     console.log("RecapitulatifComponent donnees timbres", this.dataVente);
     this.error = false;
-    if(this.dataVente.transactionType === "Timbres pour fiscal"){
+    if(this.dataVente.transactionType === "Timbres pour fiscal" || this.dataVente.transactionType === "Droits d'enregistrement" || this.dataVente.transactionType === "Droits de mutation"){
       this.api.vendreTimbre(this.dataVente)
       .subscribe(
         data => {

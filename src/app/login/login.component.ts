@@ -44,8 +44,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     console.log(" this.UserconnexionForm.valu", this.UserconnexionForm.value);
     if(this.UserconnexionForm.valid){
       this.spinner.show();
-      this.router.navigate(['/agent']);
-      this.spinner.hide();
       this.api.signin(this.UserconnexionForm.value)
         .subscribe(
           data => {
@@ -61,7 +59,7 @@ export class LoginComponent implements OnInit, OnDestroy {
                 // this.dataUser.firstname = data.firstname;
                 // this.dataUser.lastname = data.lastname;
                 // this.sessPrv.setSession(this.dataUser);
-                this.router.navigate(['/agent']);
+                this.router.navigate(['/vendeur/list-timbres']);
               }
               else {
                 this.error = true;

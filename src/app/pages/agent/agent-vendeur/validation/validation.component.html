@@ -1,4 +1,4 @@
-<div class="container-fluid"> 
+<!-- <div class="container-fluid"> 
   <div>
     <app-header></app-header>
   </div>
@@ -11,8 +11,8 @@
       
       
         <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
-            
-        <router-outlet></router-outlet>
+             --> 
+        
 
 
     <div class="d-flex flex-row justify-content-start">
@@ -21,7 +21,7 @@
      </div>
 
 <hr  width="99%" color="#ebe7e7" size="3">
-<div *ngIf="typeTimbre=='Timbres pour fiscal'">
+<div *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'">
   <div  class="tableau">
       <p style="font-weight: bold;">Timbres pour fiscal :</p>
       <table id="table" class="table" >
@@ -162,15 +162,15 @@
   </div>
 
 
-  <div class="d-flex flex-row justify-content-center" style="margin-top: 40px; margin-bottom: 20px;">
+  <div class="d-flex flex-row justify-content-around" style="margin-top: 40px; margin-bottom: 20px;">
       <button type="submit" class="p-2 btn retour" (click)="retour()">
         <img class="fleche_gauche"  src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
         Retour
       </button>
-      <button type="submit" class="p-2 btn ajouter_autre" (click)="openModal(paramUser)">
+      <!-- <button type="submit" class="p-2 btn ajouter_autre" (click)="openModal(paramUser)">
           Ajouter un autre
           <img class="fleche" src="assets\decoupage\fleche_haut.PNG" alt="arrow right">
-      </button>
+      </button> -->
       <button type="submit" class="p-2 btn valider" (click)="validerQuittance()">
         Valider
         <img class="fleche"  src="assets\decoupage\fleche.PNG" alt="arrow right">
@@ -213,7 +213,7 @@
     </div>
   </ng-template>
 
-      </div>
+      <!-- </div>
     </div>
     </div>
     
@@ -221,4 +221,4 @@
   <footer >
     
   </footer>
-</div>
+</div> -->
