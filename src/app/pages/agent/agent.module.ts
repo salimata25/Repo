@@ -25,6 +25,7 @@ import { HeaderModule } from '../../header/header.module';
 import { FooterModule } from '../../footer/footer.module';
 import { ScannerComponent } from './agent-consommateur/scanner/scanner.component';
 import { ListTimbresComponent } from './agent-vendeur/list-timbres/list-timbres.component';
+import { ListEnregistrementsComponent } from './agent-consommateur/list-enregistrements/list-enregistrements.component';
 
 @NgModule({
   imports: [ 
@@ -40,12 +41,12 @@ import { ListTimbresComponent } from './agent-vendeur/list-timbres/list-timbres.
       // {path: 'validation', component: ValidationComponent},
       // {path: 'finalisation', component: FinalisationComponent},
       // {path: 'recapitulatif', component: RecapitulatifComponent},
-      {path: 'consommation', component: ConsommationComponent},
-      {path: 'type-consommation', component: TypeConsommationComponent},
-      {path: 'numero-timbre', component: NumeroTimbreComponent},
-      {path: 'dossier-timbre', component: DossierTimbreComponent},
-      {path: 'impression', component: ImpressionComponent},
-      {path: 'scanner', component: ScannerComponent}
+      // {path: 'consommation', component: ConsommationComponent},
+      // {path: 'type-consommation', component: TypeConsommationComponent},
+      // {path: 'numero-timbre', component: NumeroTimbreComponent},
+      // {path: 'dossier-timbre', component: DossierTimbreComponent},
+      // {path: 'impression', component: ImpressionComponent},
+      // {path: 'scanner', component: ScannerComponent}
     ])
   ],
   declarations: [
@@ -61,7 +62,8 @@ import { ListTimbresComponent } from './agent-vendeur/list-timbres/list-timbres.
     DossierTimbreComponent,
     ImpressionComponent,
     ScannerComponent,
-    ListTimbresComponent
+    ListTimbresComponent,
+    ListEnregistrementsComponent
   ],
   providers: [
     AgentAuthGuard,

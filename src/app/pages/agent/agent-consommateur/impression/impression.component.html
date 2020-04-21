@@ -1,22 +1,6 @@
-<div class="container-fluid"> 
-  <div>
-    <app-header></app-header>
-  </div>
-  <div class="classPages">
-      <div class="d-flex flex-row justify-content-start ligne" style="margin-left: 30px;">
-        <span class="p-2 puce_titre"></span> 
-        <span class="p-2 titre">CONSOMMATION DE TIMBRE FISCAL ET QUITTANCE</span>
-      </div>
-      <div class="row justify-content-center ligne">
-      
-      
-        <div class="col-11 align-self-center" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
-                 
-          <router-outlet></router-outlet>
-
-
 <div class="d-flex flex-row justify-content-around">
-    <form class="p-2 col-sm-3">
+  
+    <form id="imprimer" class="p-2 col-sm-3">
         <fieldset class="ticket">
             <img src="assets\decoupage\agent_bg_logo_1.png" alt=""> <br>
             <p style="margin-top: 20px; font-weight: bold; margin-left: 10px; margin-right: 10px;">CONFIRMATION DE CONSOMMATION DE TIMBRE FISCAL ELECTRONIQUE</p>
@@ -39,39 +23,46 @@
             <p style="font-size: small; margin-bottom: 60px; margin-left: 15px; margin-right: 15px; font-weight: bold;">ce timbre fiscal électrinique à été consommé pour le paiement de la taxe associée à la délivrance des permis de conduire</p>
         </fieldset>
     </form>
-    <div class="p-2 col-sm-7 envoyer_mail">
-        <span style="line-height: 3px;" style="text-align: start; font-size: larger; font-weight: bold;">Envoyer par mail</span><br> 
-        <hr class="col-sm-10 float-left" color="#e4ae0e">
-        <form [formGroup]="EmailForm" (ngSubmit)="envoiMail()">
-            <div class="form-group">
-              <input formControlName="receptionRecuConsumer" type="text" class="form-control col-sm-6" id="nom" placeholder="Insérer l'adresse e-mail ">
-            </div>
-            <button type="submit" class="btn envoyer">
-                <span style="font-size: large; font-weight: bold;" class="p-2">Envoyer</span> 
-                <fa-icon class="p-2" icon="arrow-right" [styles]="{'color': '#e4ae0e'}"></fa-icon>
-            </button>
-        </form>
-          <hr class="col-sm-10 float-left" color="#e4ae0e">
+  
+  <div class="p-2 col-sm-7 envoyer_mail">
+      <span style="line-height: 3px;" style="text-align: start; font-size: larger; font-weight: bold;">Envoyer par mail</span><br> 
+      <hr class="col-sm-10 float-left" color="#e4ae0e">
+      <form [formGroup]="EmailForm" (ngSubmit)="envoiMail()">
+          <div class="form-group">
+            <input formControlName="receptionRecuConsumer" type="text" class="form-control col-sm-6" id="nom" placeholder="Insérer l'adresse e-mail ">
+          </div>
           <button type="submit" class="btn envoyer">
-            <span style="font-size: large; font-weight: bold;" class="p-2">Imprimer</span> 
-            <fa-icon class="p-2" icon="arrow-right" [styles]="{'color': '#e4ae0e'}"></fa-icon>
+              <span style="font-size: large; font-weight: bold;" class="p-2">Envoyer</span> 
+              <fa-icon class="p-2" icon="arrow-right" [styles]="{'color': '#e4ae0e'}"></fa-icon>
           </button>
-    </div>
+      </form>
+        <hr class="col-sm-10 float-left" color="#e4ae0e">
+        <button  class="btn envoyer" (click)="print()">
+          <span style="font-size: large; font-weight: bold;" class="p-2">Imprimer</span> 
+          <fa-icon class="p-2" icon="arrow-right" [styles]="{'color': '#e4ae0e'}"></fa-icon>
+        </button>
+  </div>
 </div>
 
 <div class="d-flex justify-content-around" style="margin-bottom: 20px; ">
-  <button type="submit" class="p-2 btn retour" (click)="retour()">
-    <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right"> 
-    Retour
-  </button>
-  <p  class="p-2">
-  </p>
+<button type="submit" class="p-2 btn retour" (click)="retour()">
+  <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right"> 
+  Retour
+</button>
+<p  class="p-2">
+</p>
 </div>
 
-</div>
-</div>
-</div>
- <footer >
+
+<!-- <div style="display: none;">
   
-</footer>
-</div>
+  <div id="recuimpression"  *ngIf="itemImpression.numeroFacture">
+  
+  <br/>
+  <br/>
+  
+  <main style="margin-bottom: 20px;">
+   ici le coprs
+  </main>
+  </div>
+  </div> -->

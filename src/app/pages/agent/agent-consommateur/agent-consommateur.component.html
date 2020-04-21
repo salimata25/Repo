@@ -1,6 +1,6 @@
 <div class="container-fluid"> 
     <div>
-      <app-header></app-header>
+      <app-header imageMenuTimbre="agent_bg_timbre.png"></app-header>
     </div>
     <div class="classPages">
         <div class="d-flex flex-row justify-content-start " style="margin-left: 30px; padding-top: 20px;">
@@ -12,43 +12,10 @@
         
           <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
                   
-          <router-outlet></router-outlet>
-
-            <div class="enregistrement">
-                <div class="d-flex flex-row justify-content-center">
-                    <p class="p-2 col-sm-4 banière">ENREGISTREMENT</p>
-                </div>
-                
-                <div class="d-flex flex-row flex-wrap justify-content-around">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Timbre de connaissements</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Actes juridictionnels et arbitraux</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Pari mutuel</a>
-                </div>
-                <div class="d-flex flex-row flex-wrap justify-content-around ">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Timbre de dimension</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Domaines privé non affecté de l'état</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Documents et perceptions diverses</a>
-                </div>
-                <div class="d-flex flex-row flex-wrap justify-content-around ">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Droits de timbre de 10.000 FCFA</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Droits de timbre de 20.000 FCFA</a>
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Passports</a>
-                </div>
-                <div class="d-flex flex-row justify-content-around ">
-                    <a class="p-2 col-sm-3 premier_lien" routerLink="/consommation">Passports étrangers </a>
-                </div>
-
-                <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 130px;"> 
-                    <button type="submit" class="p-2 btn retour" (click)="retour()">
-                      <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-                      Retour
-                    </button>
-                    <p  class="p-2">
-                    </p>
-                </div>
-            </div>
+            <router-outlet></router-outlet>
+          
+          </div>
         </div>
-    </div>
     </div>
      <footer >
       

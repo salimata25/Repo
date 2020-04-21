@@ -1,25 +1,9 @@
-<!-- <div class="container-fluid"> 
-  <div>
-    <app-header></app-header>
-  </div>
-  <div class="classPages">
-      <div class="d-flex flex-row justify-content-start " style="margin-left: 30px; padding-top: 20px;">
-        <span class="p-2 puce_titre"></span> 
-        <span class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</span>
-      </div>
-      <div class="row justify-content-center ">
-      
-      
-        <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
-                
-          <router-outlet></router-outlet> -->
-
-            
-            <div class="d-flex flex-row justify-content-start" >
-                <span class="p-2 puce"></span> 
-                <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Récapitulatif</p>
-            </div>
-            <hr  width="99%" color="#ebe7e7" size="3">
+        <div *ngIf="contenu===0"> 
+          <div class="d-flex flex-row justify-content-start" >
+              <span class="p-2 puce"></span> 
+              <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Récapitulatif</p>
+          </div>
+          <hr  width="99%" color="#ebe7e7" size="3">
           <div *ngIf="dataVente.transactionType==='Timbres pour fiscal' || dataVente.transactionType==='Droits d\'enregistrement' || dataVente.transactionType==='Droits de mutation'">
             <div class="recapitulatif">
                 <p style="font-weight: bold;">Achat de timbre pour le montant de : </p><br>
@@ -43,7 +27,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div style="margin-bottom: 246px;">
+                <div style="margin-bottom: 284px;">
                   <!-- <div *ngIf="dataVente.moyenReception == 'email'">
                     <span style="width: 20px; margin-right: 20px;">Envoi de timbre par mail :</span>
                     <span style="width: 20px; font-weight: bold;">{{dataVente.emailReception}}</span>
@@ -65,7 +49,7 @@
                       </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
+                <div class="d-flex flex-row flex-wrap justify-content-around" style="margin-bottom: 20px;">
                     <button type="submit" class="p-2 btn retour" (click)="retour()">
                       <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
                       Retour
@@ -110,20 +94,33 @@
                     </div>
                   </div>
                 </div>
-                <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
+                <div class="d-flex flex-row flex-wrap justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
                     <button type="submit" class="p-2 btn retour" (click)="retour()">
                       <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
                       Retour
                     </button>
-                    <button type="submit" class="p-2 btn valider" (click)="acheterTimbre(paramUser)">
+                    <button type="submit" class="p-2 btn valider" (click)="acheterTimbre()">
                       Valider
                       <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
                     </button>
                 </div>
             </div>
           </div>
+        </div>
 
-        <ng-template #paramUser class="modal-dialog-centered">
+        <div *ngIf="contenu===1">
+          <figure>
+            <img class="col-sm-2 mx-auto" style=" margin-bottom: 20px; margin-top: 60px;" src="assets/decoupage/success.png" alt="Opération effectuée">
+            <figcaption style="font-weight: bold; font-size: x-large;">OPERATION EFFECTUEE</figcaption> <br>
+            <p *ngIf="dataVente.moyenReception === 'email' && dataVente.transactionType=='Timbres pour passeport'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
+            <p *ngIf="dataVente.moyenReception === 'sms' && dataVente.transactionType=='Timbres pour passeport'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p>
+            <p *ngIf="dataVente.moyenReception === 'email' && dataVente.transactionType !== 'Timbres pour passeport'" 
+                style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">Le justificatif a été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
+            <p *ngIf="dataVente.moyenReception === 'sms' && dataVente.transactionType !== 'Timbres pour passeport'" 
+                style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">Le justificatif a été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p>
+          </figure>
+        </div>
+        <!-- <ng-template #paramUser class="modal-dialog-centered">
           <div class="modal-header">
             <h5 class="modal-title ">Confirmation</h5>
             <button type="button" class="close pull-right" aria-label="Close" (click)="retourAccueil()">
@@ -144,10 +141,5 @@
               </button>
             </div>
           </div>
-        </ng-template>
+        </ng-template> -->
 
-    <!-- </div>
-  </div>
- </div>
- 
-</div> -->

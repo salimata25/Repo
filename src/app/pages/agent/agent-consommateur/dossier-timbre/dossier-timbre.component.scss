@@ -154,10 +154,12 @@
      border-radius: 20px;
  }
 
- button {
-     background-color: #e4ae0e;
+ form button {
+     background-color: #aa8007;
      color: white;
      border-radius: 20px;
+     margin-right: 20%;
+     //border: 1px solid #aa8007;
  }
 
  .affecter_dossier {
@@ -198,6 +200,7 @@
 
 .flex_bouton {
     margin-bottom: 30px;
+    margin-top: 11vh;
 }
 
 .fleche {

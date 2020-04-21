@@ -1,24 +1,8 @@
-<!-- <div class="container-fluid"> 
-  <div>
-    <app-header></app-header>
-  </div>
-  <div class="classPages">
-      <div class="d-flex flex-row justify-content-start " style="margin-left: 30px; padding-top: 20px;">
-        <span class="p-2 puce_titre"></span> 
-        <span class="p-2 titre">VENTE DE TIMBRE FISCAL ET QUITTANCE</span>
-      </div>
-      <div class="row justify-content-center">
-      
-      
-        <div class="col-11 align-self-center ligne" style="text-align: center; background-color: white; border-radius: 1rem; margin-bottom:3rem; margin-top: 3rem; margin: 1rem;">
-             --> 
-        
 
-
-    <div class="d-flex flex-row justify-content-start">
-        <span class="p-2 puce"></span> 
-        <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Validation</p> 
-     </div>
+<div class="d-flex flex-row justify-content-start">
+  <span class="p-2 puce"></span> 
+  <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Validation</p> 
+</div>
 
 <hr  width="99%" color="#ebe7e7" size="3">
 <div *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'">
@@ -27,10 +11,10 @@
       <table id="table" class="table" >
           <thead>
           <tr>
-              <th>Libellé</th>
-              <th>Quantité</th>
-              <th>Montant</th>
-              <th>Action</th>
+              <th scope="col">Libellé</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Montant</th>
+              <th scope="col">Action</th>
           </tr>
           </thead>
           <tbody>
@@ -77,7 +61,7 @@
       </table>
   </div>
 
-  <div class="d-flex flex-row justify-content-around" style="margin-top: 40px; margin-bottom: 20px;">
+  <div class="d-flex flex-row flex-wrap justify-content-around" style="margin-top: 40px; margin-bottom: 15px;">
     <button type="submit" class="p-2 btn retour" (click)="retour()">
       <img class="fleche_gauche"  src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
       Retour
@@ -162,7 +146,7 @@
   </div>
 
 
-  <div class="d-flex flex-row justify-content-around" style="margin-top: 40px; margin-bottom: 20px;">
+  <div class="d-flex flex-row flex-wrap justify-content-around" style="margin-top: 40px; margin-bottom: 20px;">
       <button type="submit" class="p-2 btn retour" (click)="retour()">
         <img class="fleche_gauche"  src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
         Retour
@@ -212,13 +196,3 @@
       </form>
     </div>
   </ng-template>
-
-      <!-- </div>
-    </div>
-    </div>
-    
-
-  <footer >
-    
-  </footer>
-</div> -->

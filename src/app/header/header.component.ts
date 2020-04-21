@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   dataUser: any = {};
 
   @Input() imageMenu: string = "agent_bg_achat_1.png";
+  @Input() imageMenuTimbre: string = "agent_bg_timbre_1.png";
 
   constructor(private sessPrv: SessionService) {
     this.dataUser = this.sessPrv.parseSession();
@@ -20,7 +21,7 @@ export class HeaderComponent implements OnInit {
    } 
 
   ngOnInit() {
-    console.log("HeaderComponent", this.imageMenu)
+    console.log("HeaderComponent", this.imageMenu);
   }
 
 }

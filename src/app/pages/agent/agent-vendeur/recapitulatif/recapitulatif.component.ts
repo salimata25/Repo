@@ -10,7 +10,7 @@ import { TransactionsProvider } from '../../../../services/transactions-service'
   styleUrls: ['./recapitulatif.component.scss']
 })
 export class RecapitulatifComponent implements OnInit {
-
+  contenu = 0;
   modalRef: BsModalRef;
   config = {
     ignoreBackdropClick: true
@@ -26,6 +26,10 @@ export class RecapitulatifComponent implements OnInit {
     console.log("RecapitulatifComponent", this.dataVente)
   } 
 
+  onSelected(contenu) {
+    this.contenu = contenu;
+  }
+
   retour() {
     this.router.navigate(['/vendeur/finalisation']);
   }
@@ -38,7 +42,7 @@ export class RecapitulatifComponent implements OnInit {
   ngOnInit() {
   }
 
-  acheterTimbre(template: TemplateRef<any>) {
+  acheterTimbre() {
     console.log("RecapitulatifComponent donnees timbres", this.dataVente);
     this.error = false;
     if(this.dataVente.transactionType === "Timbres pour fiscal" || this.dataVente.transactionType === "Droits d'enregistrement" || this.dataVente.transactionType === "Droits de mutation"){
@@ -52,11 +56,18 @@ export class RecapitulatifComponent implements OnInit {
             this.message = data.message;
           }else {
             
-            this.modalRef = this.modalService.show(
-              template, 
-              this.config
-              // {class: 'modal-dialog-centered'},
+            this.onSelected(1);
+            setTimeout(
+              () => {
+                this.router.navigate(['/vendeur/list-timbres']);
+              }, 3000
             );
+
+            // this.modalRef = this.modalService.show(
+            //   template, 
+            //   this.config
+            //   // {class: 'modal-dialog-centered'},
+            // );
             
           }
         },
@@ -76,12 +87,19 @@ export class RecapitulatifComponent implements OnInit {
             this.error = true;
             this.message = data.messageServer;
           }else {
-            
-            this.modalRef = this.modalService.show(
-              template, 
-              this.config
-              // {class: 'modal-dialog-centered'},
+
+            this.onSelected(1);
+            setTimeout(
+              () => {
+                this.router.navigate(['/vendeur/list-timbres']);
+              }, 10000
             );
+            
+            // this.modalRef = this.modalService.show(
+            //   template, 
+            //   this.config
+            //   // {class: 'modal-dialog-centered'},
+            // );
             
           }
         },

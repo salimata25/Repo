@@ -17,6 +17,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTrashAlt, faEdit, faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgxPrintModule} from 'ngx-print';
 
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TransactionsProvider } from './services/transactions-service';
@@ -45,6 +46,7 @@ import { VenteService } from './services/venteService';
     FontAwesomeModule,
     ChartsModule,
     NgxSpinnerModule,
+    NgxPrintModule,
     HeaderModule,
     FooterModule,
     AgentModule,

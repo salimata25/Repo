@@ -54,19 +54,19 @@ export class ValidationComponent implements OnInit {
     this.modalRef = this.modalService.show(template, {class: 'modal-dialog-centered'});
   }
 
-  ajouterAutre() {
-    if(this.QuittanceForm.valid) {
-      this.dataVente.infoQuittance.push(this.QuittanceForm.value);
+  // ajouterAutre() {
+  //   if(this.QuittanceForm.valid) {
+  //     this.dataVente.infoQuittance.push(this.QuittanceForm.value);
 
-      this.dataVente.montantTotal += 20000
-      this.venteServ.setTransaction(this.dataVente);
+  //     this.dataVente.montantTotal += 20000
+  //     this.venteServ.setTransaction(this.dataVente);
       
-      this.router.navigate(['/validation']);
-      this.modalRef.hide();
-    }else{
-      alert("Veuillez remplir correctement les champs");
-    }
-  }
+  //     this.router.navigate(['/validation']);
+  //     this.modalRef.hide();
+  //   }else{
+  //     alert("Veuillez remplir correctement les champs");
+  //   }
+  // }
 
   retourTalbleau() {
     this.modalRef.hide();

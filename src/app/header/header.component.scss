@@ -287,6 +287,11 @@ a {
   color: #000;
 }
 
+.lien_actif figcaption {
+  color: black;
+  font-weight: bold;
+}
+
 li:hover {
     background: #f1eff0;
     color: #000;
@@ -314,17 +319,9 @@ figure {
 
 figcaption {
     color: white;
+    font-weight: bold;
 }
 
-figure:hover {
-  justify-content: center;
-  margin-bottom: 0px;
-  font-weight: normal;
-}
-
-figcaption:hover {
-  color: black;
-}
 
 .taille-img {
     width: 25%;

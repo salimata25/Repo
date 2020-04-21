@@ -51,7 +51,7 @@ export class NumeroTimbreComponent implements OnInit {
               this.dataOperation.transactionDate = data.transactionDate.split(" ")[0]
               console.log("dataOperation ",this.dataOperation);
               this.opPrv.setOperation(this.dataOperation);
-              this.router.navigate(['/dossier-timbre']);
+              this.router.navigate(['/consommateur/dossier-timbre']);
             }
           },
           error => {
@@ -67,7 +67,7 @@ export class NumeroTimbreComponent implements OnInit {
   }
 
   retour() {
-    this.router.navigate(['/type-consommation']);
+    this.router.navigate(['/consommateur/type-consommation']);
   }
 
   valider() {

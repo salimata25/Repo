@@ -11,15 +11,15 @@ export class TypeConsommationComponent implements OnInit {
   constructor(private router: Router) { }
 
   retour() {
-    this.router.navigate(['/consommation']);
+    this.router.navigate(['/consommateur/consommation']);
   }
 
   saisirNumero() {
-    this.router.navigate(['/numero-timbre']);
+    this.router.navigate(['/consommateur/numero-timbre']);
   }
 
   scanner() {
-    this.router.navigate(['/scanner']);
+    this.router.navigate(['/consommateur/scanner']);
   }
 
   ngOnInit() {

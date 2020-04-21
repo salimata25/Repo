@@ -18,7 +18,7 @@ export class ConsommationComponent implements OnInit {
   }
 
   retour() {
-    this.router.navigate(['/consommateur']); 
+    this.router.navigate(['/consommateur/list-enregistrements']); 
   }
 
   ngOnInit() {

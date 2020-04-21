@@ -26,7 +26,7 @@ export class DossierTimbreComponent implements OnInit {
   }
 
   retour() {
-    this.router.navigate(['/numero-timbre']);
+    this.router.navigate(['/consommateur/numero-timbre']);
   }
 
   valider() {
@@ -51,7 +51,7 @@ export class DossierTimbreComponent implements OnInit {
             this.message = data.message;
           }else {
             
-            this.router.navigate(['/impression']);
+            this.router.navigate(['/consommateur/impression']);
             
           }
         },

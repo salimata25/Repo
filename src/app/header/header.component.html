@@ -18,7 +18,7 @@
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="#">Paramètres compte</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Déconnexion</a> 
+                  <a class="dropdown-item" href="#">Déconnexion</a>  
                 </div>
               </div>
               
@@ -42,7 +42,7 @@
                 <li class="p-2 menu_item" routerLinkActive="lien_actif"><a routerLink="/consommateur" >
                   <div class="centrer_img">
                     <figure>
-                      <img class="taille-img" src="assets\decoupage\agent_bg_timbre_1.png" alt="Timbre">
+                      <img class="taille-img" [src]="'assets/decoupage/'+imageMenuTimbre" alt="Timbre">
                       <figcaption>Consommation</figcaption>
                     </figure>
                   </div></a>

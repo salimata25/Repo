@@ -114,7 +114,11 @@
 .classPages{
     text-align: center; 
     background-color: #f1efef; 
-    min-height: 800px;
+    min-height: 77vh;
+}
+
+.ligne {
+  min-height: 65vh;
 }
   
 .titre {
@@ -162,9 +166,6 @@
     font-weight: bold;
 }
 
-#imagemenu1, .centrer_img01{
-  background-color: red;
-}
 .bouton_fleche {
     width: 50px;
 }
@@ -263,7 +264,5 @@ h5 {
     font-weight: bold;
 }
 
-.ligne {
-  min-height: 650px;
-}
+
 
