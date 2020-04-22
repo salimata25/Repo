@@ -20,8 +20,24 @@ export class TransactionsProvider extends AppService {
   findTimbre(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modeConnexion = "POSTE TRAVAIL";
     console.log("findTimbre ", body)
     return this.http.post<any>(this._api+"find/timbre", body, { headers: this._headers }).pipe(
+      tap((data:any) => {
+        console.log("Test 3 findTimbre", data)
+      }),
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  findQuittance(body: any): Observable<any> {
+    body.token = this.sessPrv.getTokenAndLogin().token;
+    body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modeConnexion = "POSTE TRAVAIL";
+    console.log("findTimbre ", body)
+    return this.http.post<any>(this._api+"find/quittance", body, { headers: this._headers }).pipe(
       tap((data:any) => {
         console.log("Test 3 findTimbre", data)
       }),
@@ -34,8 +50,24 @@ export class TransactionsProvider extends AppService {
   consommerTimbre(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
-    console.log("consommerTimbre ", body)
+    body.modeConnexion = "POSTE TRAVAIL";
+    console.log("TransactionsProvider consommerTimbre ", body)
     return this.http.post<any>(this._api+"consommer/timbre", body, { headers: this._headers }).pipe(
+      tap((data:any) => {
+        console.log("Test 3 findTimbre", data)
+      }),
+      map(res => {
+        return res;
+      })
+    )
+  }
+
+  consommerQuittance(body: any): Observable<any> {
+    body.token = this.sessPrv.getTokenAndLogin().token;
+    body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modeConnexion = "POSTE TRAVAIL";
+    console.log("TransactionsProvider consommerQuittance ", body)
+    return this.http.post<any>(this._api+"consommer/quittance", body, { headers: this._headers }).pipe(
       tap((data:any) => {
         console.log("Test 3 findTimbre", data)
       }),
@@ -48,6 +80,7 @@ export class TransactionsProvider extends AppService {
   vendreTimbre(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modeConnexion = "POSTE TRAVAIL";
     console.log("vendreTimbre ", body)
     return this.http.post<any>(this._api+"acheter/timbre", body, { headers: this._headers }).pipe(
       tap((data:any) => {
@@ -62,6 +95,7 @@ export class TransactionsProvider extends AppService {
   vendreQuittance(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modeConnexion = "POSTE TRAVAIL";
     console.log("vendreQuittance ", body)
     return this.http.post<any>(this._api+"acheter/quittance", body, { headers: this._headers }).pipe(
       tap((data:any) => {

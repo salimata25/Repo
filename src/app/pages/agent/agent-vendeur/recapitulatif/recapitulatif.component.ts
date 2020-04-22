@@ -16,6 +16,25 @@ export class RecapitulatifComponent implements OnInit {
     ignoreBackdropClick: true
   };
 
+  initTrans = {
+    transactionType: null, //1
+    
+    moyenReception:null, //3
+    emailReception:null,
+    telReception:null,
+
+    montantTotal: null,
+
+    infoQuittance:  [], //2
+    panierTimbre:  [],
+    
+    modePaiement:"CASH",
+    moyenPaiement:"CASH",
+
+    codeServer:null,
+    messageServer:null
+  }
+
   error =  false;
   message =  "";
 
@@ -34,7 +53,7 @@ export class RecapitulatifComponent implements OnInit {
     this.router.navigate(['/vendeur/finalisation']);
   }
 
-  retourAccueil() {
+  retourAccueil() { 
     this.modalRef.hide();
     this.router.navigate(['/vendeur/list-timbres']);
   }
@@ -55,6 +74,7 @@ export class RecapitulatifComponent implements OnInit {
             this.error = true;
             this.message = data.message;
           }else {
+            this.dataVente = this.initTrans;
             
             this.onSelected(1);
             setTimeout(
@@ -87,7 +107,7 @@ export class RecapitulatifComponent implements OnInit {
             this.error = true;
             this.message = data.messageServer;
           }else {
-
+            this.dataVente = this.initTrans;
             this.onSelected(1);
             setTimeout(
               () => {

@@ -1,20 +1,29 @@
-<form [formGroup]="TimbreForm" (ngSubmit)="findTimbre()">
-  <div *ngIf="error" class="alert alert-danger"> {{message}} </div> 
-    <div class="form-group">
-      <label for="numeroTimbre" style="font-weight: bold;">Insérer le numéro de timbre</label>
-      <input type="text" formControlName="numeroTransaction" class="col-sm-4 mx-auto form-control" id="numeroTimbre" placeholder="N° timbre" required>
+<div *ngIf="contenu===0"> 
+  <form [formGroup]="TimbreForm" (ngSubmit)="findTimbre()">
+    <div *ngIf="error" class="alert alert-danger"> {{message}} </div> 
+      <div class="form-group">
+        <label for="numeroTimbre" style="font-weight: bold;">Insérer le numéro de timbre</label>
+        <input type="text" formControlName="numeroTransaction" class="col-sm-4 mx-auto form-control" id="numeroTimbre" placeholder="N° timbre" required>
+      </div>
+
+
+    <div class="d-flex flex-row justify-content-around flex_bouton" style="margin-top: 443px; margin-bottom: 20px;">
+        <button type="submit" class="p-2 btn retour" (click)="retour()">
+          <img class="fleche_gauche"  src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+          Retour
+        </button>
+        <button type="submit" class="p-2 btn valider">
+          Valider
+          <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
+        </button>
     </div>
 
+  </form>
+</div>
 
-  <div class="d-flex flex-row justify-content-around flex_bouton" style="margin-top: 443px; margin-bottom: 20px;">
-      <button type="submit" class="p-2 btn retour" (click)="retour()">
-        <img class="fleche_gauche"  src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-        Retour
-      </button>
-      <button type="submit" class="p-2 btn valider">
-        Valider
-        <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right">
-      </button>
-  </div>
-
-</form>
+<div *ngIf="contenu===1">
+  <figure>
+    <img class="col-sm-6 mx-auto" style=" margin-bottom: 20px; margin-top: 60px;" src="assets/decoupage/insuffisant.PNG" alt="Opération effectuée">
+    <!-- <figcaption style="font-weight: bold; font-size: x-large;">Montant de timbre inssufisant</figcaption> <br> -->
+  </figure>
+</div>

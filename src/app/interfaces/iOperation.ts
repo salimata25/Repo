@@ -16,5 +16,8 @@ export interface iOperation {
     libelleDossier: string;
     receptionRecuConsumer: string;
     moyenReceptionRecuConsumer: string;
+    typeDossier: string;
+    montantDossier: number; 
+    enregistrement: string;
 }
   

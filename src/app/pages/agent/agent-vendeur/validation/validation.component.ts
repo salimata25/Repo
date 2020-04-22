@@ -15,6 +15,7 @@ export class ValidationComponent implements OnInit {
   typeTimbre: "";
   dataVente: any = {};
   QuittanceForm: FormGroup;
+  dataQuittance: any = [];
   somme: 0;
 
   modalRef: BsModalRef;
@@ -22,6 +23,7 @@ export class ValidationComponent implements OnInit {
     this.dataVente = this.venteServ.parseTransaction();
     this.dataTimbre = this.timbreServ.parseTimbre();
     this.typeTimbre = this.dataVente.transactionType;
+    this.dataQuittance = this.dataVente.infoQuittance[0];
 
     this.QuittanceForm = this.formBuilder.group({ 
       firstName: [ '', Validators.required ],
@@ -54,19 +56,16 @@ export class ValidationComponent implements OnInit {
     this.modalRef = this.modalService.show(template, {class: 'modal-dialog-centered'});
   }
 
-  // ajouterAutre() {
-  //   if(this.QuittanceForm.valid) {
-  //     this.dataVente.infoQuittance.push(this.QuittanceForm.value);
-
-  //     this.dataVente.montantTotal += 20000
-  //     this.venteServ.setTransaction(this.dataVente);
+  modifierInfo() {
+    if(this.QuittanceForm.valid) {
+      this.dataVente.infoQuittance = [this.QuittanceForm.value];
       
-  //     this.router.navigate(['/validation']);
-  //     this.modalRef.hide();
-  //   }else{
-  //     alert("Veuillez remplir correctement les champs");
-  //   }
-  // }
+      this.router.navigate(['/vendeur/validation']);
+      this.modalRef.hide();
+    }else{
+      alert("Veuillez remplir correctement les champs");
+    }
+  }
 
   retourTalbleau() {
     this.modalRef.hide();

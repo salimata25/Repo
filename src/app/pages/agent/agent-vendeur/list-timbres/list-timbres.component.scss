@@ -1,0 +1,269 @@
+/***********************************************************************
+ **************************** TYPE OF DEVICES **************************
+ ***********************************************************************/
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media only screen and (max-width: 575.98px) { 
+
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    .titre {
+        font-size: 14px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+
+  }
+  
+  
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 576px) and (max-width: 767.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    .titre {
+        font-size: 15px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+    
+  } 
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+
+    .titre {
+        font-size: 20px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  }
+  
+  /*  Extra large devices (large desktops, 1200px and up) */
+  @media only screen and (min-width: 1025px) { 
+  
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: block;
+    }
+
+    .titre {
+        font-size: 22px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  } 
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.classPages{
+    text-align: center; 
+    background-color: #f1efef; 
+    min-height: 800px;
+}
+  
+.titre {
+    color: #75552e; 
+    font-weight: bolder;
+    line-height: 5px;
+}
+  
+.puce {
+    margin-top: 25px;
+    margin-left: 40px;
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background: #c0911b;
+}
+
+.vente-timbres {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.timbre {
+    background: #e0e0e0;
+    border-radius: 30px;
+    width: 210px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+}
+
+.timbre_passport span {
+    color: white;
+}
+
+.timbre_passport p {
+    color: white;
+}
+
+.timbre_passport button {
+    background: #76552c;
+    color: white;
+    border-radius: 20px;
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bouton_fleche {
+    width: 50px;
+}
+
+.timbre_passport {
+    background: #c0911b;
+    border-radius: 30px;
+    width: 210px;
+    margin-bottom: 10px;
+    margin-right: 30px;
+}
+
+
+.montant {
+    margin-top: 5px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.border-3 {
+    border-style:solid;
+    border-width: 3px;
+    border-color: rgb(196, 194, 194);
+}
+
+.ajouter {
+    background: #c0911b;
+    color: white;
+    font-size: 20px;
+    width: 150px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.fleche {
+    margin-left: 20px;
+    width: 25px;
+}
+
+.fleche_gauche {
+    margin-right: 20px;
+    width: 25px;
+}
+
+form {
+  margin-top: 40px;
+}
+
+input {
+    text-align: center;
+    border-radius: 20px;
+}
+
+h5 {
+    text-align: center;
+}
+
+.retour { 
+    background: #b1b1b1;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.modal-header {
+  background-color: white;
+  text-align: center;
+}
+
+.modal-title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.modal_info {
+  border-radius: 40px;
+}
+
+.valider {
+    background: #c0911b;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.style-timbre {
+    font-weight: bold;
+}
+
+.pointillet {
+    font-weight: bold;
+}
+
+.ligne {
+  min-height: 650px;
+}
+
+#imagemenu1, .centrer_img01{
+  background-color: red;
+}

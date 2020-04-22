@@ -41,7 +41,8 @@ export class DossierTimbreComponent implements OnInit {
     console.log("numeroDossier", this.numeroDossier)
     this.error = false;
     this.spinner.show();
-    this.api.consommerTimbre({numeroTransaction: this.dataOperation.numeroTransaction})
+    if(this.dataOperation.typeDossier.indexOf("Passports") == -1) {
+      this.api.consommerTimbre({numeroTransaction: this.dataOperation.numeroTransaction, typeDossier: this.dataOperation.typeDossier , numeroDossier: this.dataOperation.numeroDossier})
       .subscribe(
         data => {
           console.log("consommerTimbre ",data);
@@ -50,8 +51,12 @@ export class DossierTimbreComponent implements OnInit {
             this.error = true;
             this.message = data.message;
           }else {
-            
-            this.router.navigate(['/consommateur/impression']);
+            this.onSelected(3);
+            setTimeout(
+            () => {
+                this.router.navigate(['/consommateur/impression']);
+              }, 3000
+            );
             
           }
         },
@@ -62,6 +67,36 @@ export class DossierTimbreComponent implements OnInit {
         },
         () => this.spinner.hide()
       );
+    } else {
+      this.api.consommerQuittance({numeroTransaction: this.dataOperation.numeroTransaction, typeDossier: this.dataOperation.typeDossier , numeroDossier: this.dataOperation.numeroDossier})
+        .subscribe(
+          data => {
+            console.log("consommerTimbre ",data);
+            if(data==null || data.status!=0) {
+              console.log('error  ', data);
+              this.error = true;
+              this.message = data.message;
+            }else {
+              this.onSelected(3);
+                setTimeout(
+                  () => {
+                    this.router.navigate(['/consommateur/impression']);
+                  }, 3000
+                );
+              
+              
+              
+            }
+          },
+          error => {
+            console.log('error  ', error)
+            this.error = true;
+            this.message = "Erreur server. veuillez reessayer ulterieurement"
+          },
+          () => this.spinner.hide()
+        );
+
+    }
   }
 
   

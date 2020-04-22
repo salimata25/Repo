@@ -12,6 +12,9 @@ export class ConsommationComponent implements OnInit {
   dataOperation: any = {};
   dataUser: any = {};
 
+  typeDossier = "";
+  montant = 0;
+
   constructor(private router: Router, private opPrv: OperationService, private sessPrv: SessionService ) { 
     this.dataOperation = this.opPrv.parseOperation();
     this.dataUser = this.sessPrv.parseSession();
@@ -22,6 +25,16 @@ export class ConsommationComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  getTypeDossier(typeDossier, montant) {
+    this.typeDossier = typeDossier;
+    this.montant = montant;
+
+    this.dataOperation.montantDossier = this.montant;
+    this.dataOperation.typeDossier = this.typeDossier;
+    console.log("ConsommationComponent dataOperation ",this.dataOperation);
+    this.opPrv.setOperation(this.dataOperation);
   }
 
   fctLibelle(libelle:string){

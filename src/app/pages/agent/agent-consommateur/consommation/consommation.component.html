@@ -1,45 +1,145 @@
 <div class="enregistrement">
-    <div class="d-flex flex-row justify-content-center">
-        <p class="p-2 col-sm-4 banière">Droits de timbre de 10.000 FCFA</p> 
+    <div *ngIf="dataOperation.enregistrement == 'Droits de timbre de 10.000 FCFA'">
+        <div class="d-flex flex-row justify-content-center">
+            <p class="p-2 col-sm-4 banière">Droits de timbre de 10.000 FCFA</p> 
+        </div>
+        
+        <div class="d-flex flex-row flex-wrap justify-content-around"> 
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Délivrance ou propagation de validité des certificats', 10000)">Délivrance ou propagation de validité des certificats</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Mention d\'inscription de gage sur vente à crédit d\'un véhicule', 10000)">Mention d'inscription de gage sur vente à crédit d'un véhicule</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Droit d\'examen pour obtension d\'un permis', 10000)">Droit d'examen pour obtension d'un permis</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance des permis de conduire', 10000)">Délivrance des permis de conduire</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance duplicata de permis de chasse', 10000)">Délivrance duplicata de permis de chasse</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance de permis de construire', 10000)">Délivrance de permis de construire</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance du permis d\'organiser des manifestations', 10000)">Délivrance du permis d'organiser des manifestations</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Récépissés de déclaration de mise à la consommation des remorques et semi-remorques', 10000)">Récépissés de déclaration de mise à la consommation des remorques et semi-remorques</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Renouvellement et duplicata de carte grise', 10000)">Renouvellement et duplicata de carte grise</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Changements de catégorie', 10000)">Changements de catégorie</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Changements de carrosserie', 10000)">Changements de carrosserie</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Changements de source d\'énergie', 10000)">Changements de source d'énergie</a>
+        </div>  
     </div>
-    
-    <div class="d-flex flex-row flex-wrap justify-content-around">
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
-            (click)="fctLibelle('Délivrance ou propagation de validité des certificats')">Délivrance ou propagation de validité des certificats</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
-            (click)="fctLibelle('Mention d\'inscription de gage sur vente à crédit d\'un véhicule')">Mention d'inscription de gage sur vente à crédit d'un véhicule</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Droit d\'examen pour obtension d\'un permis')">Droit d'examen pour obtension d'un permis</a>
+
+    <div *ngIf="dataOperation.enregistrement == 'Timbre de connaissements'">
+        <div class="d-flex flex-row justify-content-center">
+            <p class="p-2 col-sm-4 banière">Timbre de connaissements</p> 
+        </div>
+        
+        <div class="d-flex flex-row flex-wrap justify-content-around"> 
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Timbre de connaissements 25.000 FCFA', 25000)">Timbre de connaissements <br> 25.000 FCFA</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Timbre de connaissements 5.000 FCFA', 5000)">Timbre de connaissements <br> 5.000 FCFA</a>
+        </div>
     </div>
-    <div class="d-flex flex-row flex-wrap justify-content-around ">
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Délivrance des permis de conduire')">Délivrance des permis de conduire</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Délivrance duplicata de permis de chasse')">Délivrance duplicata de permis de chasse</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Délivrance de permis de construire')">Délivrance de permis de construire</a>
+
+    <div *ngIf="dataOperation.enregistrement == 'Actes juridictionnels et arbitraux'">
+        <div class="d-flex flex-row justify-content-center">
+            <p class="p-2 col-sm-4 banière">Actes juridictionnels et arbitraux</p> 
+        </div>
+        
+        <div class="d-flex flex-row flex-wrap justify-content-around"> 
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Tribunaux départementaux 5.000 FCFA', 5000)">Tribunaux départementaux <br> 5.000 FCFA</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Tribunaux régionaux 10.000 FCFA', 10000)">Tribunaux régionaux <br> 10.000 FCFA</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Cours d\'appel 15.000 FCFA', 15000)">Cours d'appel <br> 15.000 FCFA</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Cours suprême 20.000 FCFA', 20000)">Cours suprême <br> 20.000 FCFA</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Tribunaux d\'arbitrage privé 10.000 FCFA', 10000)">Tribunaux d'arbitrage privé <br> 10.000 FCFA</a>
+            <a class="p-2 col-sm-3 " ></a>
+        </div>
     </div>
-    <div class="d-flex flex-row flex-wrap justify-content-around ">
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Délivrance du permis d\'organiser des manifestations')">Délivrance du permis d'organiser des manifestations</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Récépissés de déclaration de mise à la consommation des remorques et semi-remorques')">Récépissés de déclaration de mise à la consommation des remorques et semi-remorques</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Renouvellement et duplicata de carte grise')">Renouvellement et duplicata de carte grise</a>
+
+    <div *ngIf="dataOperation.enregistrement == 'Documents et perceptions diverses'">
+        <div class="d-flex flex-row justify-content-center">
+            <p class="p-2 col-sm-4 banière">Documents et perceptions diverses</p> 
+        </div>
+        
+        <div class="d-flex flex-row flex-wrap justify-content-around"> 
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Mise en circulation de véhiclules automobiles 2.000 FCFA', 2000)">Mise en circulation de véhiclules automobiles <br> 2.000 FCFA</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Mise en circulation de véhiclules de transport public 1.000 FCFA', 1000)">Mise en circulation de véhiclules de transport public <br> 1.000 FCFA</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Visite technique des véhicules 2.000 FCFA', 2000)">Visite technique des véhicules <br> 2.000 FCFA</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Laisser-passer / sauf-conduits 2.000 FCFA', 2000)">Laisser-passer / sauf-conduits <br> 2.000 FCFA</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance carte consulaire 2.000 FCFA', 2000)">Délivrance carte consulaire <br> 2.000 FCFA</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance certificat d\'habitabilité 2.000 FCFA', 2000)">Délivrance certificat d'habitabilité <br> 2.000 FCFA</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance attestation NINEA 2.000 FCFA', 2000)">Délivrance attestation NINEA <br> 2.000 FCFA</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Délivrance quitus fiscal 2.000 FCFA', 2000)">Délivrance quitus fiscal <br> 2.000 FCFA</a>
+        </div>  
     </div>
-    <div class="d-flex flex-row flex-wrap justify-content-around ">
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Changements de catégorie')">Changements de catégorie</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Changements de carrosserie')">Changements de carrosserie</a>
-        <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
-            (click)="fctLibelle('Changements de source d\'énergie')">Changements de source d'énergie</a>
+
+    <div *ngIf="dataOperation.enregistrement == 'Droits de timbre de 20.000 FCFA'">
+        <div class="d-flex flex-row justify-content-center">
+            <p class="p-2 col-sm-4 banière">Droits de timbre de 20.000 FCFA</p> 
+        </div>
+        
+        <div class="d-flex flex-row flex-wrap justify-content-around"> 
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Délivrance permis de chasse', 20000)">Délivrance permis de chasse</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation" 
+                (click)="getTypeDossier('Autorisation de change', 20000)">Autorisation de change</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Autorisation commerce de l\'or', 20000)">Autorisation commerce de l'or</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Demande d\'agrément aux régimes douaniers', 20000)">Demande d'agrément aux régimes douaniers</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Demande d\'agrément en qualité de commissionnaire en douane', 20000)">Demande d'agrément en qualité de commissionnaire en douane</a>
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Permis de port ou de détention d\'armes', 20000)">Permis de port ou de détention d'armes</a>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-around ">
+            <a class="p-2 col-sm-3 premier_lien" routerLink="/consommateur/type-consommation"
+                (click)="getTypeDossier('Autorisation de lotir', 20000)">Autorisation de lotir</a>
+            <a class="p-2 col-sm-3"></a>
+        </div>  
     </div>
 
     <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 61px;">
         <button type="submit" class="p-2 btn retour" (click)="retour()">
-          <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-          Retour
+        <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+        Retour
         </button>
         <p  class="p-2">
         </p>

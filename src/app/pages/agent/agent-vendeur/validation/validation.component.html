@@ -88,7 +88,7 @@
             <th>CIN N°</th>
             <th>N° Tel.</th>
             <th>Montant</th>
-            <th>Action</th>
+            <th>Action</th> 
         </tr>
         </thead>
         <tbody>
@@ -99,7 +99,7 @@
             <td>{{quitance.phone}}</td>
             <td>20 000</td>
             <td>
-                <fa-icon icon="edit" [styles]="{'color': 'blue'}"></fa-icon>
+                <fa-icon icon="edit" (click)="openModal(paramUser)" [styles]="{'color': 'blue'}"></fa-icon>
                 <fa-icon icon="trash-alt" [styles]="{'color': 'red'}"></fa-icon>
             </td>
         </tr>
@@ -170,18 +170,18 @@
       </button>
     </div>
     <div class="modal-body">
-      <form [formGroup]="QuittanceForm" (ngSubmit)="ajouterAutre()">
+      <form [formGroup]="QuittanceForm" (ngSubmit)="modifierInfo()">
         <div class="form-group">
-          <input type="text" formControlName="lastName" class="form-control" id="nom" placeholder="Nom">
+          <input type="text" formControlName="lastName" value="{{dataQuittance.lastName}}" class="form-control" id="nom" placeholder="Nom">
         </div>
         <div class="form-group">
-          <input type="text" formControlName="firstName" class="form-control" id="prenom" placeholder="Prénom">
+          <input type="text" formControlName="firstName" value="{{dataQuittance.firstName}}" class="form-control" id="prenom" placeholder="Prénom">
         </div>
         <div class="form-group">
-          <input type="text" formControlName="nin" class="form-control" id="cni" placeholder="CNI N° (NIN du tuteur pour mineur)">
+          <input type="text" formControlName="nin" value="{{dataQuittance.nin}}" class="form-control" id="cni" placeholder="CNI N° (NIN du tuteur pour mineur)">
         </div>
         <div class="form-group">
-          <input type="tel" formControlName="phone" class="form-control" id="tel" placeholder="N° Tel">
+          <input type="tel" formControlName="phone" value="{{dataQuittance.phone}}" class="form-control" id="tel" placeholder="N° Tel">
         </div>
         <div class="d-flex">
           <button type="submit" class="p-2 mr-auto btn retour" (click)="retourTalbleau()">

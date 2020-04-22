@@ -76,6 +76,12 @@ export class ImpressionComponent implements OnInit {
       <html>
         <head>
           <style>
+          fieldset.ticket{
+            margin: 0 auto; text-align:center;
+          }
+          fieldset.info_ticket{
+            margin: 0 auto; text-align:left;
+          }
             //........Customized style.......
             // table.report-container {
             //   page-break-after:always;
