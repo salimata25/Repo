@@ -1,0 +1,94 @@
+<div *ngIf="dataVente.transactionType=='Timbres pour passeport'">
+    <div class="d-flex flex-row justify-content-around">
+    
+        <form id="imprimer" class="p-2 col-sm-3">
+            <fieldset class="ticket">
+                <!-- <img src="assets\decoupage\impot_domaine.png" alt=""> <br> -->
+                <p style="margin-top: 20px; line-height: 5px; font-size: small; margin-left: 10px; margin-right: 10px;">République du Sénégal</p>
+                <p style="font-size: small; line-height: 5px; margin-left: 10px; margin-right: 10px;">UN PEUPLE - UN BUT - UNE FOIS</p>
+                <p style="line-height: 5px;">-------------</p>
+                <p style="line-height: 5px; margin-left: 20px; margin-right: 20px;">MINISTERE DES FINANCES ET DU BUDJET</p>
+                <p style="line-height: 2px;">-------------</p>
+                <img style="width: 200px;"  src="assets\decoupage\logo-dgid.png" alt=""> <br>
+                <p style="line-height: 20px;">QUITTANCE</p>
+                <p style="line-height: 5px;">N° &nbsp;: &nbsp;{{dataVente.reponseQuittance[0].numeroTransaction}}</p>
+                <p style="line-height: 5px;">Date &nbsp;:&nbsp; {{dateVente}}</p>
+                <p style="line-height: 5px;">Heure &nbsp;:&nbsp; {{heureVente}}</p>
+                <qrcode [qrdata]="dataVente.reponseQuittance[0].textQrCode" [width]="256" [errorCorrectionLevel]="'ERROR'"></qrcode>
+
+                <div class="col-sm-11 mx-auto info_ticket">
+
+                    <p style="line-height: 20px; text-align: start;">Bureau de &nbsp;: &nbsp;&nbsp; Liberté 6</p>
+                    <p style="line-height: 5px; text-align: start;">Nom &nbsp;: &nbsp;&nbsp;{{dataVente.reponseQuittance[0].lastName}}</p>
+                    <p style="line-height: 5px; text-align: start;">Prénom &nbsp;: &nbsp;&nbsp;{{dataVente.reponseQuittance[0].firstName}}</p>
+                    <p style="line-height: 5px; text-align: start;">Payement &nbsp;: &nbsp;&nbsp;NUMERAIRE </p>
+                    <p style="line-height: 5px; text-align: start;">Montant &nbsp;: &nbsp;&nbsp;{{dataVente.montantTotal}} FCFA</p>
+                    <p style="line-height: 20px; text-align: start;">Nature &nbsp;: &nbsp;&nbsp;TIMBRE PASSPORT </p>
+                    
+                </div><!-- <p style="font-size: small; margin-bottom: 60px; margin-left: 15px; margin-right: 15px; font-weight: bold;">ce timbre fiscal électrinique à été consommé pour le paiement de la taxe associée à la délivrance des permis de conduire</p> -->
+            </fieldset>
+        </form>
+    
+        <div class="p-2 col-sm-7 envoyer_mail">
+                <hr class="col-sm-10 float-left" color="#e4ae0e">
+                <button  class="btn envoyer" (click)="print()">
+                <span style="font-size: large; font-weight: bold;" class="p-2">Imprimer</span> 
+                <fa-icon class="p-2" icon="arrow-right" [styles]="{'color': '#e4ae0e'}"></fa-icon> 
+                </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="dataVente.transactionType==='Timbres pour fiscal' || dataVente.transactionType==='Droits d\'enregistrement' || dataVente.transactionType==='Mutation de véhicule'">
+    <div class="d-flex flex-row justify-content-around">
+    
+        <form id="imprimer" class="p-2 col-sm-3">
+            <fieldset class="ticket">
+                <!-- <img src="assets\decoupage\impot_domaine.png" alt=""> <br> -->
+                <p style="margin-top: 20px; line-height: 5px; font-size: small; margin-left: 10px; margin-right: 10px;">République du Sénégal</p>
+                <p style="font-size: small; line-height: 5px; margin-left: 10px; margin-right: 10px;">UN PEUPLE - UN BUT - UNE FOIS</p>
+                <p style="line-height: 5px;">-------------</p>
+                <p style="line-height: 5px; margin-left: 20px; margin-right: 20px;">MINISTERE DES FINANCES ET DU BUDJET</p>
+                <p style="line-height: 2px;">-------------</p>
+                <img style="width: 250px;"  src="assets/decoupage/logo-dgid.png" alt=""> <br>
+                <p style="line-height: 20px;">TIMBRE FISCAL ELECTRONIQUE</p>
+                <p style="line-height: 5px;">N° &nbsp;: &nbsp;{{dataVente.reponseTimbre[0].numeroTransaction}}</p>
+                <p style="line-height: 5px;">Montant &nbsp;: &nbsp;&nbsp;{{dataVente.reponseTimbre[0].prixU}} FCFA</p>
+                <p style="line-height: 5px;">Date &nbsp;:&nbsp; {{dateVente}}</p>
+                <p style="line-height: 5px;">Heure &nbsp;:&nbsp; {{heureVente}}</p><br>
+                <qrcode [qrdata]="dataVente.reponseTimbre[0].textQrCode" [width]="256" [errorCorrectionLevel]="'ERROR'"></qrcode>
+                <!-- <p style="margin-top: 20px; line-height: 5px;">------------------------------------------</p> -->
+                <hr  width="80%"  style="font-weight: bolder; border-top: 2px dashed black; margin-top: 20px;">
+                <div class="col-sm-11 mx-auto" style="margin-top: 20px; margin-bottom: 20px; text-align: start; margin-left: 30%; margin-right: 25%;">
+                    
+                    <p style="line-height: 5px; text-align: start;">Justificatif de paiement</p>
+                    <p style="line-height: 5px; text-align: start;">A conserver</p>
+                    <p style="line-height: 10px;">&nbsp;&nbsp; </p>
+                    <p style="line-height: 5px; text-align: start;">Code marchand &nbsp;: &nbsp;&nbsp;{{dataVente.codeVendeur}}</p>
+                    <p style="line-height: 5px; text-align: start;">Date &nbsp;:&nbsp; {{dateVente}} à {{heureVente}}</p>
+                    <p style="line-height: 5px; text-align: start;">Montant &nbsp;: &nbsp;&nbsp;{{dataVente.reponseTimbre[0].prixU}} FCFA</p>
+                    <p style="line-height: 5px; text-align: start;">Transaction &nbsp;: &nbsp;&nbsp;{{dataVente.reponseTimbre[0].numeroTransaction}} </p>
+                    
+                </div><!-- <p style="font-size: small; margin-bottom: 60px; margin-left: 15px; margin-right: 15px; font-weight: bold;">ce timbre fiscal électrinique à été consommé pour le paiement de la taxe associée à la délivrance des permis de conduire</p> -->
+            </fieldset>
+        </form>
+    
+        <div class="p-2 col-sm-7 envoyer_mail">
+                <hr class="col-sm-10 float-left" color="#e4ae0e">
+                <button  class="btn envoyer" (click)="print()">
+                <span style="font-size: large; font-weight: bold;" class="p-2">Imprimer</span> 
+                <fa-icon class="p-2" icon="arrow-right" [styles]="{'color': '#e4ae0e'}"></fa-icon> 
+                </button>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-around" style="margin-bottom: 20px; ">
+<button type="submit" class="p-2 btn retour" (click)="retour()">
+  <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right"> 
+  Retour
+</button>
+<p  class="p-2">
+</p>
+</div>
+

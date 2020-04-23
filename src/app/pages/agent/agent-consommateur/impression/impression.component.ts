@@ -76,108 +76,19 @@ export class ImpressionComponent implements OnInit {
       <html>
         <head>
           <style>
-          fieldset.ticket{
-            margin: 0 auto; text-align:center;
-          }
-          fieldset.info_ticket{
-            margin: 0 auto; text-align:left;
-          }
-            //........Customized style.......
-            // table.report-container {
-            //   page-break-after:always;
-            // }
-            // thead.report-header {
-            //   display:table-header-group;
-            // }
-            // tfoot.report-footer {
-            //   display:table-footer-group;
-            //   display: block;
-            //   position: fixed;
-            //   bottom: 0; left: 0; right: 0;
-            // }
-            // td.report-content-cell * table {
-            //   border-collapse: collapse;
-            // }
-            // td.report-content-cell * table {
-            //   border: 1px solid black;
-            // }
-            // td.report-content-cell * th {
-            //   border: 1px solid black;
-            // }
-            // td.report-content-cell * td {
-            //   border: 1px solid black;
-            // }    
-
-            //             /*
-            // jksdddfjsfhjfhjghfjzhfjfjfhjfhjfjfhjhfjhf
-            // jksdddfjsfhjfhjghfjzhfjfjfhjfhjfjfhjhfjhf
-            // jksdddfjsfhjfhjghfjzhfjfjfhjfhjfjfhjhfjhf
-            // jksdddfjsfhjfhjghfjzhfjfjfhjfhjfjfhjhfjhf
-            // */
-            // main *{
-            //   margin: 10px;
-            // }
-            // main img {
-            //   height: 100px;
-            // }
-            // main .clearfix:after {
-            //   content: "";
-            //   display: table;
-            //   clear: both;
-            // }
-            // main #company {
-            //   float: right;
-            //   text-align: right;
-            // }
-            // main #client {
-            //   padding-left: 6px;
-            //   float: left;
-            // }
-            // main .name {
-            //   font-size: 18px;
-            //   font-weight: normal;
-            // }
-            // main div.name {
-            //   margin-bottom: 15px;
-            // }
-            // main #invoice {
-            //   float: right;
-            //   text-align: right;
-            // }
-            // main table {
-            //   width: 99%;
-            //   border-collapse: collapse;
-            //   border-spacing: 0;
-            //   margin-bottom: 20px;
-            //   border-bottom: 1px solid #FFFFFF;
-            // }
-            // main table th, main table td {
-            //   padding: 20px;
-            //   background: #EEEEEE;
-            //   border-bottom: 1px solid #FFFFFF;
-            //   font-size: 1.2em;
-            //   text-align: right;
-            //   border: 1px solid black;
-            // }
-            // main table tfoot td {
-            //   padding: 10px 20px;
-            //   background: #FFFFFF;
-            //   border-bottom: none;
-            //   font-size: 1.2em;
-            //   white-space: nowrap;
-            //   border-top: 1px solid #AAAAAA;
-            // }
-            // main table tfoot tr:last-child td {
-            //   font-size: 1.4em;
-            // }
-            // main table tfoot tr td {
-            //   border: none;
-            // }
+            
+            fieldset.ticket{
+              margin: 0 auto; text-align:center;
+            }
+            fieldset.info_ticket{
+              margin: 0 auto; text-align:left;
+            }
+            
                       
-                      </style>
-                    </head>
-                    <body onload="window.print();window.close()">${printContents}</body>
-                  </html>`
+          </style>
+        </head>
+        <body onload="window.print();window.close()">${printContents}</body>
+      </html>`
     );
     popupWin.document.close();
   }

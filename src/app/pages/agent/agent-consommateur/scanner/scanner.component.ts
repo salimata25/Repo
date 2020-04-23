@@ -11,7 +11,7 @@ export class ScannerComponent implements OnInit {
   constructor(private router: Router) { }
 
   retour() {
-    this.router.navigate(['/type-consommation']);
+    this.router.navigate(['/consommateur/type-consommation']);
   }
 
   ngOnInit() {

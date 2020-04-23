@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OperationService } from '../../../../services/operationService';
 
 @Component({
   selector: 'app-type-consommation',
@@ -8,10 +9,18 @@ import { Router } from '@angular/router';
 })
 export class TypeConsommationComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  dataOperation: any = {};
+  constructor(private router: Router, private opPrv: OperationService) { 
+    this.dataOperation = this.opPrv.parseOperation();
+  }
 
   retour() {
-    this.router.navigate(['/consommateur/consommation']);
+    if(this.dataOperation.montantDossier == 0) {
+      this.router.navigate(['/consommateur/list-enregistrements']);
+    }else {
+      this.router.navigate(['/consommateur/consommation']);
+    }
+    
   }
 
   saisirNumero() {

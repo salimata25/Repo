@@ -1,4 +1,4 @@
-<div></div>
+<div *ngIf="section===0">
   <div style="margin-top: 20px;">
     <div class="p-2 d-flex flex-row flex-wrap justify-content-center">
         <span class="p-2 col-sm-3">N° de timbre :</span>
@@ -97,9 +97,9 @@
       </button>
     </div>
   </div>
+</div>
 
-
-<div *ngIf="contenu===3">
+<div *ngIf="section===1">
   <figure>
     <img class="col-sm-6 mx-auto" style=" margin-bottom: 20px; margin-top: 60px;" src="assets/decoupage/reussite.PNG" alt="Opération effectuée">
     <!-- <figcaption style="font-weight: bold; font-size: x-large;">Montant de timbre inssufisant</figcaption> <br> -->

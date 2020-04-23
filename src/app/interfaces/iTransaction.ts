@@ -14,6 +14,8 @@ export interface iTransaction {
 
     infoQuittance: QuittanceModel[]; //2
     panierTimbre: TimbreModel[];
+    reponseTimbre: [];
+    reponseQuittance: [];
     
     modePaiement:string;
     moyenPaiement:string
@@ -22,7 +24,9 @@ export interface iTransaction {
     codeAutorisationPaiement: number;
 
     codeServer:number;
-    messageServer:string    
+    messageServer:string   
+    
+    codeVendeur: string;
     
 }
 

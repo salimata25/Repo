@@ -12,6 +12,7 @@ import { SessionService } from '../../../../services/sessionService';
   styleUrls: ['./dossier-timbre.component.scss']
 })
 export class DossierTimbreComponent implements OnInit {
+  section = 0;
   contenu = 0;
   error =  false;
   message =  "";
@@ -51,7 +52,7 @@ export class DossierTimbreComponent implements OnInit {
             this.error = true;
             this.message = data.message;
           }else {
-            this.onSelected(3);
+            this.getSection(1);
             setTimeout(
             () => {
                 this.router.navigate(['/consommateur/impression']);
@@ -77,7 +78,7 @@ export class DossierTimbreComponent implements OnInit {
               this.error = true;
               this.message = data.message;
             }else {
-              this.onSelected(3);
+              this.getSection(1);
                 setTimeout(
                   () => {
                     this.router.navigate(['/consommateur/impression']);
@@ -99,6 +100,9 @@ export class DossierTimbreComponent implements OnInit {
     }
   }
 
+  getSection(section) {
+    this.section = section;
+  }
   
   onSelected (contenu) {
     this.contenu = contenu; 

@@ -23,6 +23,18 @@ export class ListEnregistrementsComponent implements OnInit {
       this.dataOperation.typeDossier = "Passports";
     }
 
+    if(this.enregistrement == "Pari mutuel") {
+      this.dataOperation.typeDossier = "Pari mutuel"
+    }
+
+    if(this.enregistrement == "Timbre de dimension") {
+      this.dataOperation.typeDossier = "Timbre de dimension"
+    }
+
+    if(this.enregistrement == "Domaines privé non affecté de l'état") {
+      this.dataOperation.typeDossier = "Domaines privé non affecté de l'état"
+    }
+
     this.dataOperation.montantDossier = this.montant;
     this.dataOperation.enregistrement = this.enregistrement;
     console.log("dataOperation ",this.dataOperation);

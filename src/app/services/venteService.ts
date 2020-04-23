@@ -21,12 +21,16 @@ export class VenteService {
 
     infoQuittance:  [], //2
     panierTimbre:  [],
+    reponseTimbre: [],
+    reponseQuittance: [],
     
     modePaiement:null,
     moyenPaiement:null,
 
     codeServer:null,
-    messageServer:null
+    messageServer:null,
+
+    codeVendeur: null
   }
 
   constructor() {

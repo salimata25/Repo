@@ -47,6 +47,29 @@ export class NumeroTimbreComponent implements OnInit {
             }else{
               if(this.dataOperation.montantDossier === data.prixU) {
                 //stock
+                this.dataOperation.codeVendeur = data.codeVendeur.substring(2,data.codeVendeur.length)
+                this.dataOperation.expirationDate = data.expirationDate
+                this.dataOperation.libelle = data.libelle
+                this.dataOperation.numero = data.numero.substring(1,data.numero.length)
+                this.dataOperation.numeroTransaction = data.numeroTransaction
+                this.dataOperation.prixU = data.prixU
+                this.dataOperation.quantite = data.quantite
+                this.dataOperation.transactionDate = data.transactionDate.split(" ")[0]
+                console.log("dataOperation ",this.dataOperation);
+                this.opPrv.setOperation(this.dataOperation);
+                this.router.navigate(['/consommateur/dossier-timbre']);
+              } else {
+                this.message = "Le montant est insuffisant";
+                this.onSelected(1);
+                setTimeout(
+                  () => {
+                    this.onSelected(0);
+                  }, 3000
+                );
+              }
+
+              if(this.dataOperation.montantDossier === 0) {
+                //stock
                 this.dataOperation.codeVendeur = data.codeVendeur.substring(1,data.codeVendeur.length)
                 this.dataOperation.expirationDate = data.expirationDate
                 this.dataOperation.libelle = data.libelle

@@ -15,6 +15,7 @@ import { NumeroTimbreComponent } from '../pages/agent/agent-consommateur/numero-
 import { ImpressionComponent } from '../pages/agent/agent-consommateur/impression/impression.component';
 import { ScannerComponent } from '../pages/agent/agent-consommateur/scanner/scanner.component';
 import { ListEnregistrementsComponent } from '../pages/agent/agent-consommateur/list-enregistrements/list-enregistrements.component';
+import { ImpressionVenteComponent } from '../pages/agent/agent-vendeur/impression-vente/impression-vente.component';
 
 
 
@@ -32,7 +33,8 @@ import { ListEnregistrementsComponent } from '../pages/agent/agent-consommateur/
         {path: 'list-timbres', component: ListTimbresComponent},
         {path: 'validation', component: ValidationComponent},
         {path: 'finalisation', component: FinalisationComponent},
-        {path: 'recapitulatif', component: RecapitulatifComponent}
+        {path: 'recapitulatif', component: RecapitulatifComponent},
+        {path: 'impression', component: ImpressionVenteComponent},
        ]},
       {path: 'consommateur', component: AgentConsommateurComponent,
        children: [

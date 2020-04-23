@@ -1,0 +1,200 @@
+/***********************************************************************
+ **************************** TYPE OF DEVICES **************************
+ ***********************************************************************/
+
+/*  Extra small devices (portrait phones, less than 576px) 
+  Mobile
+*/
+@media only screen and (max-width: 575.98px) { 
+
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+  
+    .titre {
+        font-size: 14px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+  
+  }
+  
+  
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 576px) and (max-width: 767.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+  
+    .titre {
+        font-size: 15px;
+        margin-top: 23px;
+        margin-left: 5px;
+    }
+    
+  } 
+  
+  /*  Medium devices (tablets, 768px and up) 
+    Diminuer La taille
+  */
+  @media only screen and (min-width: 768px) and (max-width: 1024.98px) { 
+    
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: none;
+    }
+  
+    .titre {
+        font-size: 20px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  }
+  
+  /*  Extra large devices (large desktops, 1200px and up) */
+  @media only screen and (min-width: 1025px) { 
+  
+    .displayMinimalMobile{
+      display: none;
+    }
+    .displayMobile{
+      display: none;
+    }
+    .displayMinimalDesktop{
+      display: none;
+    }
+    .displayDesktop{
+      display: block;
+    }
+  
+    .titre {
+        font-size: 22px;
+        margin-top: 22px;
+        margin-left: 5px;
+    }
+    
+  }
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.classPages{
+    text-align: center; 
+    background-color: #f1efef; 
+  }
+  
+  .titre {
+    color: #75552e;
+    font-weight: bolder;
+    line-height: 5px;
+  }
+  
+  .puce_titre {
+    margin-top: 25px;
+    margin-left: 40px;
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    background: #c0911b;
+  }
+
+  .ticket {
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.info_ticket {
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+span {
+    font-size: small;
+    line-height: 10px;
+    text-align: start;
+}
+
+fieldset img {
+    margin-top: 20px;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.envoyer_mail {
+    text-align: start;
+    margin-top: 80px;
+}
+
+hr {
+    height: 2px;
+    text-align: start;
+}
+
+input {
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: -1px 2px 10px 3px rgba(0, 0, 0, 0.3) inset;
+    // box-shadow: -1px 2px 2px 2px  #b1b1b1 inset;
+}
+
+.envoyer {
+    background: #3e3e3e;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.retour { 
+    background: #b1b1b1;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.fleche_gauche {
+    margin-right: 20px;
+    width: 25px;
+}

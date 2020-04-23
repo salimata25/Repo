@@ -42,6 +42,7 @@ export class ListTimbresComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private modalService: BsModalService, private router: Router, private timbreServ: TimbreService, private venteServ: VenteService) {
     this.dataTimbre = this.timbreServ.parseTimbre();
+    this.venteServ.deleteTransaction();
     this.dataVente = this.venteServ.parseTransaction();
     console.log("AgentVendeurComponent dataVente ", this.dataVente)
     this.QuittanceForm = this.formBuilder.group({ 
@@ -129,13 +130,13 @@ export class ListTimbresComponent implements OnInit {
   }
 
   droitMutation() { 
-    this.dataTimbre.libelle = "Droits de mutation";
-    this.dataTimbre.type = "Droits de mutation";
+    this.dataTimbre.libelle = "Mutation de véhicule";
+    this.dataTimbre.type = "Mutation de véhicule";
     this.dataTimbre.quantite = 1;
     console.log("dataTimbre ",this.dataTimbre);
     this.timbreServ.setTimbre(this.dataTimbre);
 
-    this.dataVente.transactionType = "Droits de mutation";
+    this.dataVente.transactionType = "Mutation de véhicule";
     this.venteServ.setTransaction(this.dataVente);
 
     this.saisirMontant(1);

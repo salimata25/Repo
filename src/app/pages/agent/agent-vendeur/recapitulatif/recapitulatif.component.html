@@ -4,7 +4,7 @@
               <p style="font-size: 30px; margin-top: 15px; font-weight: bold;" class="p-2 ">Récapitulatif</p>
           </div>
           <hr  width="99%" color="#ebe7e7" size="3">
-          <div *ngIf="dataVente.transactionType==='Timbres pour fiscal' || dataVente.transactionType==='Droits d\'enregistrement' || dataVente.transactionType==='Droits de mutation'">
+          <div *ngIf="dataVente.transactionType==='Timbres pour fiscal' || dataVente.transactionType==='Droits d\'enregistrement' || dataVente.transactionType==='Mutation de véhicule'">
             <div class="recapitulatif">
                 <p style="font-weight: bold;">Achat de timbre pour le montant de : </p><br>
                 <p style="color: #c0911b; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
@@ -112,11 +112,11 @@
           <figure>
             <img class="col-sm-2 mx-auto" style=" margin-bottom: 20px; margin-top: 60px;" src="assets/decoupage/success.png" alt="Opération effectuée">
             <figcaption style="font-weight: bold; font-size: x-large;">OPERATION EFFECTUEE</figcaption> <br>
-            <p *ngIf="dataVente.moyenReception === 'email' && dataVente.transactionType=='Timbres pour passeport'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
-            <p *ngIf="dataVente.moyenReception === 'sms' && dataVente.transactionType=='Timbres pour passeport'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p>
-            <p *ngIf="dataVente.moyenReception === 'email' && dataVente.transactionType !== 'Timbres pour passeport'" 
+            <!-- <p *ngIf="dataVente.moyenReception === 'email' && dataVente.transactionType==='QUITTANCE POUR PASSEPORT'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
+            <p *ngIf="dataVente.moyenReception === 'sms' && dataVente.transactionType==='QUITTANCE POUR PASSEPORT'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p> -->
+            <p *ngIf="dataVente.moyenReception === 'email'" 
                 style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">Le justificatif a été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
-            <p *ngIf="dataVente.moyenReception === 'sms' && dataVente.transactionType !== 'Timbres pour passeport'" 
+            <p *ngIf="dataVente.moyenReception === 'sms'" 
                 style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">Le justificatif a été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p>
           </figure>
         </div>

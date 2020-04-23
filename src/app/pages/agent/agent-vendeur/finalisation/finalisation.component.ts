@@ -22,7 +22,7 @@ export class FinalisationComponent implements OnInit {
   telReception: string;
 
 
-  constructor(private router: Router, private timbreServ: TimbreService, private venteServ: VenteService, ) { 
+  constructor(private router: Router, private timbreServ: TimbreService, private venteServ: VenteService ) { 
     this.dataTimbre = this.timbreServ.parseTimbre();
     this.dataVente = this.venteServ.parseTransaction();
     this.typeTimbre = this.dataVente.transactionType;

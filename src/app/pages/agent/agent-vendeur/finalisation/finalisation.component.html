@@ -8,12 +8,12 @@
      <p style="margin-bottom: 30px; margin-top: 20px;">Montant global de votre achat :</p>
      <p style="color: #76552c; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
      <p style="color: #76552c; font-size: 20px; font-weight: bold;">{{dataVente.transactionType}}</p> <br>
-     <p *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'">Réception du justificatif :</p>
+     <p *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Mutation de véhicule'">Réception du justificatif :</p>
      <p *ngIf="typeTimbre=='Timbres pour passeport'">Réception de la quittance et du justificatif :</p>
 
      <div class="form-check">
         <input class="form-check-input"  type="radio" name="envoiQuittance" id="email" value="option1" (click)="parEmail()">
-        <label *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'" class="form-check-label" for="email">
+        <label *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Mutation de véhicule'" class="form-check-label" for="email">
           Envoyer justificatif par <span style="font-weight: bold;">E-mail</span>.
         </label>
         <label *ngIf="typeTimbre=='Timbres pour passeport'" class="form-check-label" for="email">
@@ -36,7 +36,7 @@
      </div>
      <div class="form-check" style="margin-bottom: 70px;">
         <input class="form-check-input" type="radio" name="envoiQuittance" id="sms" value="option2" (click)="parSMS()">
-        <label *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Droits de mutation'" class="form-check-label" for="sms">
+        <label *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Mutation de véhicule'" class="form-check-label" for="sms">
           Envoyer justificatif par <span style="font-weight: bold;">SMS</span>.
         </label>
         <label *ngIf="typeTimbre=='Timbres pour passeport'" class="form-check-label" for="sms">

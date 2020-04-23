@@ -26,6 +26,8 @@ import { FooterModule } from '../../footer/footer.module';
 import { ScannerComponent } from './agent-consommateur/scanner/scanner.component';
 import { ListTimbresComponent } from './agent-vendeur/list-timbres/list-timbres.component';
 import { ListEnregistrementsComponent } from './agent-consommateur/list-enregistrements/list-enregistrements.component';
+import { ImpressionVenteComponent } from './agent-vendeur/impression-vente/impression-vente.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 @NgModule({
   imports: [ 
@@ -37,6 +39,7 @@ import { ListEnregistrementsComponent } from './agent-consommateur/list-enregist
     ChartsModule,
     HeaderModule,
     FooterModule,
+    QRCodeModule,
     RouterModule.forChild([
       // {path: 'validation', component: ValidationComponent},
       // {path: 'finalisation', component: FinalisationComponent},
@@ -63,7 +66,8 @@ import { ListEnregistrementsComponent } from './agent-consommateur/list-enregist
     ImpressionComponent,
     ScannerComponent,
     ListTimbresComponent,
-    ListEnregistrementsComponent
+    ListEnregistrementsComponent,
+    ImpressionVenteComponent
   ],
   providers: [
     AgentAuthGuard,
