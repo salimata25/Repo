@@ -15,7 +15,7 @@ export class TypeConsommationComponent implements OnInit {
   }
 
   retour() {
-    if(this.dataOperation.montantDossier == 0) {
+    if(this.dataOperation.montantDossier == 0 || this.dataOperation.enregistrement == "Passports") {
       this.router.navigate(['/consommateur/list-enregistrements']);
     }else {
       this.router.navigate(['/consommateur/consommation']);

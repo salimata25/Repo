@@ -1,15 +1,19 @@
-<div class="choisir">
+<div class="choisir" style="min-height: 50vh;">
   <div class="d-flex flex-row flex-wrap justify-content-center" >
       <button class="p-2 btn col-sm-3 choix" type="button" (click)="saisirNumero()" >N° de timbre</button>
       <button class="p-2 btn col-sm-3 choix" type="button" (click)="scanner()">Scan Qr code</button>
   </div>
  
-  <div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 333px;">
-    <button type="submit" class="p-2 btn retour" (click)="retour()">
-      <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
-      Retour
-    </button>
-    <p  class="p-2">
-    </p>
-  </div>
 </div>
+
+<div class="d-flex justify-content-around" style="margin-bottom: 20px; margin-top: 20px;">
+  <button type="submit" class="p-2 btn retour" (click)="retour()">
+    <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
+    Retour
+  </button>
+  <p  class="p-2">
+  </p>
+</div>
+
+
+

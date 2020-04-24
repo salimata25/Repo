@@ -32,7 +32,7 @@
       <p class="pointillet">----------------</p>
       <button type="button" class="btn text-center ajouter" (click)="ajouterTimbre(10000)">
           Ajouter
-          <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" >
+          <img class="fleche" src="assets\decoupage\fleche.PNG" alt="arrow right" > 
       </button>
   </div>
   <div class="p-2 border-3 timbre_passport">
@@ -67,7 +67,7 @@
 </div>
 
 <div *ngIf="contenu===1">
-  <form >
+  <form class="ajout_montant">
     <div *ngIf="error" class="alert alert-danger"> {{message}} </div> 
       <div class="form-group">
         <label for="montant" style="font-weight: bold;">Veuillez inérer le montant</label>

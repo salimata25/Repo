@@ -52,13 +52,22 @@ export class ValidationComponent implements OnInit {
   ngOnInit() {
   }
 
-  openModal(template: TemplateRef<any>) {
+  openModal(template: TemplateRef<any>, item) {
+   console.log("quittance info", item) 
+    this.QuittanceForm = this.formBuilder.group({ 
+      firstName: [ item.firstName, Validators.required ],
+      lastName: [ item.lastName, Validators.required ],
+      phone: [ item.phone, Validators.required ],
+      nin: [ item.nin, Validators.required ]
+    })
     this.modalRef = this.modalService.show(template, {class: 'modal-dialog-centered'});
   }
 
   modifierInfo() {
     if(this.QuittanceForm.valid) {
       this.dataVente.infoQuittance = [this.QuittanceForm.value];
+
+      this.venteServ.setTransaction(this.dataVente);
       
       this.router.navigate(['/vendeur/validation']);
       this.modalRef.hide();

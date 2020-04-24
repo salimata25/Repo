@@ -15,11 +15,17 @@ export class FinalisationComponent implements OnInit {
   dataQuittance: any = {};
   EmailForm: FormGroup;
   SmsForm: FormGroup;
-  isChecked = false;
+  emailChecked = false;
+  smsChecked = false;
   typeTimbre: string;
-
+  message = "";
+  errorEmail = false;
+  errorTel = false;
   emailReception: string;
   telReception: string;
+  confirmTel: string;
+  confirmEmail: string;
+  telSaisie: string;
 
 
   constructor(private router: Router, private timbreServ: TimbreService, private venteServ: VenteService ) { 
@@ -37,7 +43,9 @@ export class FinalisationComponent implements OnInit {
   }
 
   parEmail() {
-    this.isChecked = true;
+    this.emailChecked = true;
+    this.smsChecked = false;
+    this.errorEmail = false;
     this.dataVente.moyenReception = "email";
     
     console.log("dataVente ",this.dataVente);
@@ -45,29 +53,55 @@ export class FinalisationComponent implements OnInit {
   }
 
   parSMS() {
-    this.isChecked = true;
+    this.smsChecked = true;
+    this.emailChecked = false;
+    this.errorEmail = false;
     this.dataVente.moyenReception = "sms";
     
     console.log("dataVente ",this.dataVente);
     this.venteServ.setTransaction(this.dataVente);
   }
 
+  onKey(event: KeyboardEvent) {
+    this.telSaisie = (event.target as HTMLInputElement).value;
+    console.log("telephone", this.timbreServ);
+  }
+
+  // onKeyConfirm(event: KeyboardEvent) {
+  //   if((event.target as HTMLInputElement).value !== this.telSaisie) {
+  //     this.message = "Veuillez confirmer le numéro de téléphone";
+  //   }
+    
+  // }
+
   retour() {
     this.router.navigate(['/vendeur/validation']);
   }
 
   valider () {
+  
     if(this.dataVente.moyenReception === "email") {
-      this.dataVente.emailReception = this.emailReception;
+      if(this.emailReception === this.confirmEmail) {
+        this.dataVente.emailReception = this.emailReception;
+        console.log("dataVente ",this.dataVente);
+        this.venteServ.setTransaction(this.dataVente);
+        this.router.navigate(['/vendeur/recapitulatif']);
+      }else {
+        this.errorEmail = true;
+        this.message = "Veuillez confirmer l'email";
+      }
     }else {
-      this.dataVente.telReception = this.telReception;
+      if(this.telReception === this.confirmTel) {
+        this.dataVente.telReception = this.telReception;
+        console.log("dataVente ",this.dataVente);
+        this.venteServ.setTransaction(this.dataVente);
+        this.router.navigate(['/vendeur/recapitulatif']);
+      }else {
+        this.errorEmail = true;
+        this.message = "Veuillez confirmer le numéro de téléphone";
+      }
     }
     
-    this.dataVente.modePaiement = "CACH";
-    this.dataVente.moyenPaiement = "CACH";
-    console.log("dataVente ",this.dataVente);
-    this.venteServ.setTransaction(this.dataVente);
-    this.router.navigate(['/vendeur/recapitulatif']);
   }
 
   ngOnInit() {

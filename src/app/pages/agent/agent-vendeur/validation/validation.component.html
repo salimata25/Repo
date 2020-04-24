@@ -92,15 +92,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let quitance of dataVente.infoQuittance">
-            <td>{{quitance.lastName}}</td> 
-            <td>{{quitance.firstName}}</td>
-            <td>{{quitance.nin}}</td>
-            <td>{{quitance.phone}}</td>
+        <tr *ngFor="let quittance of dataVente.infoQuittance">
+            <td>{{quittance.lastName}}</td> 
+            <td>{{quittance.firstName}}</td>
+            <td>{{quittance.nin}}</td>
+            <td>{{quittance.phone}}</td>
             <td>20 000</td>
             <td>
-                <fa-icon icon="edit" (click)="openModal(paramUser)" [styles]="{'color': 'blue'}"></fa-icon>
-                <fa-icon icon="trash-alt" [styles]="{'color': 'red'}"></fa-icon>
+                <fa-icon icon="edit" (click)="openModal(paramUser,quittance)" [styles]="{'color': 'blue'}"></fa-icon>
             </td>
         </tr>
         <tr >
@@ -160,7 +159,7 @@
         <img class="fleche"  src="assets\decoupage\fleche.PNG" alt="arrow right">
       </button>
   </div>
-</div>
+</div> 
 
   <ng-template #paramUser>
     <div class="modal-header">
@@ -172,16 +171,16 @@
     <div class="modal-body">
       <form [formGroup]="QuittanceForm" (ngSubmit)="modifierInfo()">
         <div class="form-group">
-          <input type="text" formControlName="lastName" value="{{dataQuittance.lastName}}" class="form-control" id="nom" placeholder="Nom">
+          <input type="text" formControlName="lastName" value="" class="form-control" id="nom" placeholder="Nom">
         </div>
         <div class="form-group">
-          <input type="text" formControlName="firstName" value="{{dataQuittance.firstName}}" class="form-control" id="prenom" placeholder="Prénom">
+          <input type="text" formControlName="firstName" value="" class="form-control" id="prenom" placeholder="Prénom">
         </div>
         <div class="form-group">
-          <input type="text" formControlName="nin" value="{{dataQuittance.nin}}" class="form-control" id="cni" placeholder="CNI N° (NIN du tuteur pour mineur)">
+          <input type="text" formControlName="nin" value="" class="form-control" id="cni" placeholder="CNI N° (NIN du tuteur pour mineur)">
         </div>
         <div class="form-group">
-          <input type="tel" formControlName="phone" value="{{dataQuittance.phone}}" class="form-control" id="tel" placeholder="N° Tel">
+          <input type="tel" formControlName="phone" value="" class="form-control" id="tel" placeholder="N° Tel">
         </div>
         <div class="d-flex">
           <button type="submit" class="p-2 mr-auto btn retour" (click)="retourTalbleau()">

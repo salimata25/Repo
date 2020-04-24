@@ -8,46 +8,48 @@
             <div class="recapitulatif">
                 <p style="font-weight: bold;">Achat de timbre pour le montant de : </p><br>
                 <p style="color: #c0911b; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
-                <table id="table" class="table">
-                    <thead>
-                        <th>Libellé</th>
-                        <th>Quantité</th>
-                        <th>Montant</th>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let timbre of dataVente.panierTimbre">
-                          <td>{{timbre.libelle}}</td>
-                          <td>{{timbre.quantite}}</td>
-                          <td>{{timbre.prixTotal}} XOF</td>
-                        </tr>
-                        <tr >
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="margin-bottom: 284px;">
-                  <!-- <div *ngIf="dataVente.moyenReception == 'email'">
-                    <span style="width: 20px; margin-right: 20px;">Envoi de timbre par mail :</span>
-                    <span style="width: 20px; font-weight: bold;">{{dataVente.emailReception}}</span>
+                <div style="height: 40vh;">
+                  <table id="table" class="table">
+                      <thead>
+                          <th>Libellé</th>
+                          <th>Quantité</th>
+                          <th>Montant</th>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let timbre of dataVente.panierTimbre">
+                            <td>{{timbre.libelle}}</td>
+                            <td>{{timbre.quantite}}</td>
+                            <td>{{timbre.prixTotal}} XOF</td>
+                          </tr>
+                          <tr >
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <div >
+                    <!-- <div *ngIf="dataVente.moyenReception == 'email'">
+                      <span style="width: 20px; margin-right: 20px;">Envoi de timbre par mail :</span>
+                      <span style="width: 20px; font-weight: bold;">{{dataVente.emailReception}}</span>
+                    </div>
+                    <div *ngIf="dataVente.moyenReception == 'sms'">
+                      <span style="font-size: larger; margin-right: 30vh;">Envoi de timbre par SMS :</span>
+                      <span style="font-size: larger; font-weight: bold;">{{dataVente.telReception}}</span>
+                    </div> -->
+                      <div *ngIf="dataVente.moyenReception == 'email'" class="form-group row" style="font-size: larger;">
+                        <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par mail :</label>
+                        <div class="col-sm-6">
+                          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.emailReception}}" style="font-size: larger; font-weight: bold; color: black;">
+                        </div>
+                      </div>
+                      <div *ngIf="dataVente.moyenReception == 'sms'" class="form-group row" style="font-size: larger;">
+                        <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par SMS :</label>
+                        <div class="col-sm-6">
+                          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.telReception}}" style="font-size: larger; font-weight: bold; color: black;">
+                        </div>
+                      </div>
                   </div>
-                  <div *ngIf="dataVente.moyenReception == 'sms'">
-                    <span style="font-size: larger; margin-right: 30vh;">Envoi de timbre par SMS :</span>
-                    <span style="font-size: larger; font-weight: bold;">{{dataVente.telReception}}</span>
-                  </div> -->
-                    <div *ngIf="dataVente.moyenReception == 'email'" class="form-group row" style="font-size: larger;">
-                      <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par mail :</label>
-                      <div class="col-sm-6">
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.emailReception}}" style="font-size: larger; font-weight: bold; color: black;">
-                      </div>
-                    </div>
-                    <div *ngIf="dataVente.moyenReception == 'sms'" class="form-group row" style="font-size: larger;">
-                      <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par SMS :</label>
-                      <div class="col-sm-6">
-                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.telReception}}" style="font-size: larger; font-weight: bold; color: black;">
-                      </div>
-                    </div>
                 </div>
                 <div class="d-flex flex-row flex-wrap justify-content-around" style="margin-bottom: 20px;">
                     <button type="submit" class="p-2 btn retour" (click)="retour()">
@@ -62,39 +64,41 @@
             </div>
           </div>
 
-          <div *ngIf="dataVente.transactionType=='Timbres pour passeport'">
+          <div *ngIf="dataVente.transactionType=='Timbres pour passeport'" >
             <div class="recapitulatif">
                 <p style="font-weight: bold;">Achat de timbre pour le montant de : </p><br>
                 <p style="color: #c0911b; font-size: 40px; font-weight: bold;">{{dataVente.montantTotal}} FCFA</p>
-                <table id="table" class="table">
-                    <thead>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Montant</th>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let quitance of dataVente.infoQuittance">
-                            <td>{{quitance.lastName}}</td>
-                            <td>{{quitance.firstName}}</td>
-                            <td>{{dataVente.montantTotal}} XOF</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="margin-bottom: 246px;">
-                  <div *ngIf="dataVente.moyenReception == 'email'" class="form-group row" style="font-size: larger;">
-                    <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par mail :</label>
-                    <div class="col-sm-6">
-                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.emailReception}}" style="font-size: larger; font-weight: bold; color: black;">
+                <div style="height: 40vh;">
+                  <table id="table" class="table">
+                      <thead>
+                          <th>Nom</th>
+                          <th>Prénom</th>
+                          <th>Montant</th>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let quitance of dataVente.infoQuittance">
+                              <td>{{quitance.lastName}}</td>
+                              <td>{{quitance.firstName}}</td>
+                              <td>{{dataVente.montantTotal}} XOF</td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  <div >
+                    <div *ngIf="dataVente.moyenReception == 'email'" class="form-group row" style="font-size: larger;">
+                      <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par mail :</label>
+                      <div class="col-sm-6">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.emailReception}}" style="font-size: larger; font-weight: bold; color: black;">
+                      </div>
                     </div>
-                  </div>
-                  <div *ngIf="dataVente.moyenReception == 'sms'" class="form-group row" style="font-size: larger;">
-                    <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par SMS :</label>
-                    <div class="col-sm-6">
-                      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.telReception}}" style="font-size: larger; font-weight: bold; color: black;">
+                    <div *ngIf="dataVente.moyenReception == 'sms'" class="form-group row" style="font-size: larger;">
+                      <label for="staticEmail" class="col-sm-4 col-form-label" style="font-size: larger; font-style: italic;">Envoi de timbre par SMS :</label>
+                      <div class="col-sm-6">
+                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{dataVente.telReception}}" style="font-size: larger; font-weight: bold; color: black;">
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="d-flex flex-row flex-wrap justify-content-around" style="margin-bottom: 20px; margin-top: 100px;">
+                <div class="d-flex flex-row flex-wrap justify-content-around" style="margin-bottom: 20px; ">
                     <button type="submit" class="p-2 btn retour" (click)="retour()">
                       <img class="fleche_gauche" src="assets\decoupage\fleche_gauche.PNG" alt="arrow right">
                       Retour
@@ -112,12 +116,17 @@
           <figure>
             <img class="col-sm-2 mx-auto" style=" margin-bottom: 20px; margin-top: 60px;" src="assets/decoupage/success.png" alt="Opération effectuée">
             <figcaption style="font-weight: bold; font-size: x-large;">OPERATION EFFECTUEE</figcaption> <br>
-            <!-- <p *ngIf="dataVente.moyenReception === 'email' && dataVente.transactionType==='QUITTANCE POUR PASSEPORT'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
-            <p *ngIf="dataVente.moyenReception === 'sms' && dataVente.transactionType==='QUITTANCE POUR PASSEPORT'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p> -->
-            <p *ngIf="dataVente.moyenReception === 'email'" 
+            <div *ngIf="dataVente.moyenReception === 'email'">
+              <p  *ngIf="dataVente.transactionType==='Timbres pour passeport'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
+              <p  *ngIf="dataVente.transactionType==='Timbres pour fiscal' || dataVente.transactionType==='Droits d\'enregistrement' || dataVente.transactionType==='Mutation de véhicule'" 
                 style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">Le justificatif a été envoyé par mail à l'adresse <span style="font-weight: bold;">{{dataVente.emailReception}}</span></p>
-            <p *ngIf="dataVente.moyenReception === 'sms'" 
+            </div>
+            <div *ngIf="dataVente.moyenReception === 'sms'">
+              <p  *ngIf="dataVente.transactionType==='Timbres pour passeport'" style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">La quittance et le justificatif ont été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p>
+              <p  *ngIf="dataVente.transactionType==='Timbres pour fiscal' || dataVente.transactionType==='Droits d\'enregistrement' || dataVente.transactionType==='Mutation de véhicule'" 
                 style="text-align: center; font-size: large; margin-bottom: 10px; margin-top: 10px;">Le justificatif a été envoyé par SMS au <span style="font-weight: bold;">{{dataVente.telReception}}</span></p>
+            </div>
+            
           </figure>
         </div>
         <!-- <ng-template #paramUser class="modal-dialog-centered">

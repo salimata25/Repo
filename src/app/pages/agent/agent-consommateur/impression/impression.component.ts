@@ -62,7 +62,7 @@ export class ImpressionComponent implements OnInit {
   }
 
   retour() {
-    this.router.navigate(['/consommateur/dossier-timbre']);
+    this.router.navigate(['/consommateur/list-enregistrements']);
   }
 
   ngOnInit() {
@@ -78,10 +78,41 @@ export class ImpressionComponent implements OnInit {
           <style>
             
             fieldset.ticket{
+              border: none
               margin: 0 auto; text-align:center;
             }
             fieldset.info_ticket{
               margin: 0 auto; text-align:left;
+            }
+
+            .ticket {
+              border: 0px solid black;
+            }
+
+            .ticket img {
+              margin-top: 30px;
+              margin-bottom: 20px;
+              width: 130px;
+            }
+
+            .ticket p {
+              margin-left: 25%; 
+              margin-right: 25%;
+              margin-top: 30px;
+              margin-bottom: 60px; 
+            }
+
+            .info_ticket legend {
+              font-size: 20px;
+            }
+
+            .info_ticket span {
+              line-height: 30px;
+              font-size: 20px;
+            }
+
+            .parag {
+              font-size: 18px;
             }
             
                       

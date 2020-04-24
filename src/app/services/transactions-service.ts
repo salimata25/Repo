@@ -20,6 +20,8 @@ export class TransactionsProvider extends AppService {
   findTimbre(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
     body.modeConnexion = "POSTE TRAVAIL";
     console.log("findTimbre ", body)
     return this.http.post<any>(this._api+"find/timbre", body, { headers: this._headers }).pipe(
@@ -35,6 +37,8 @@ export class TransactionsProvider extends AppService {
   findQuittance(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
     body.modeConnexion = "POSTE TRAVAIL";
     console.log("findTimbre ", body)
     return this.http.post<any>(this._api+"find/quittance", body, { headers: this._headers }).pipe(
@@ -50,6 +54,8 @@ export class TransactionsProvider extends AppService {
   consommerTimbre(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
     body.modeConnexion = "POSTE TRAVAIL";
     console.log("TransactionsProvider consommerTimbre ", body)
     return this.http.post<any>(this._api+"consommer/timbre", body, { headers: this._headers }).pipe(
@@ -65,6 +71,8 @@ export class TransactionsProvider extends AppService {
   consommerQuittance(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
     body.modeConnexion = "POSTE TRAVAIL";
     console.log("TransactionsProvider consommerQuittance ", body)
     return this.http.post<any>(this._api+"consommer/quittance", body, { headers: this._headers }).pipe(
@@ -80,6 +88,8 @@ export class TransactionsProvider extends AppService {
   vendreTimbre(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
     body.modeConnexion = "POSTE TRAVAIL";
     console.log("vendreTimbre ", body)
     return this.http.post<any>(this._api+"acheter/timbre", body, { headers: this._headers }).pipe(
@@ -95,6 +105,8 @@ export class TransactionsProvider extends AppService {
   vendreQuittance(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
     body.modeConnexion = "POSTE TRAVAIL";
     console.log("vendreQuittance ", body)
     return this.http.post<any>(this._api+"acheter/quittance", body, { headers: this._headers }).pipe(
@@ -110,6 +122,9 @@ export class TransactionsProvider extends AppService {
   envoyerMail(body: any): Observable<any> {
     body.token = this.sessPrv.getTokenAndLogin().token;
     body.login = this.sessPrv.getTokenAndLogin().login;
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
+    body.modeConnexion = "POSTE TRAVAIL";
     console.log("findTimbre ", body)
     return this.http.post<any>(this._api+"envoi/recu", body, { headers: this._headers }).pipe(
       tap((data:any) => {
@@ -123,6 +138,9 @@ export class TransactionsProvider extends AppService {
   
   listTransactionUsagerGlobal(body: any): Observable<any> {
     body.token = this.sessPrv.getTheToken();
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
+    body.modeConnexion = "POSTE TRAVAIL";
     console.log("listTransactionUsagerGlobal ", body)
     return this.http.post<any>(this._api+"listTransactionUsagerGlobal", body, { headers: this._headers }).pipe(
       tap((data:any) => {
@@ -136,6 +154,9 @@ export class TransactionsProvider extends AppService {
   
   listTransactionTfeGlobal(body: any): Observable<any> {
     body.token = this.sessPrv.getTheToken();
+    body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
+    body.modeConnexion = "POSTE TRAVAIL";
     console.log("listTransactionTfeGlobal ", body)
     return this.http.post<any>(this._api+"listTransactionTfeGlobal", body, { headers: this._headers }).pipe(
       tap((data:any) => {
@@ -149,7 +170,10 @@ export class TransactionsProvider extends AppService {
   
   listTransactionQuittances(body: any): Observable<any> {
   body.token = this.sessPrv.getTheToken();
-  console.log("listTransactionQuittances ", body)
+  body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
+    body.modeConnexion = "POSTE TRAVAIL";
+    console.log("listTransactionQuittances ", body)
   return this.http.post<any>(this._api+"listTransactionQuittances", body, { headers: this._headers }).pipe(
     tap((data:any) => {
       console.log("Test 3 listTransactionQuittances", data)
@@ -162,7 +186,10 @@ export class TransactionsProvider extends AppService {
 
 listTransactionTimbres(body: any): Observable<any> {
   body.token = this.sessPrv.getTheToken();
-  console.log("listTransactionTimbres ", body)
+  body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
+    body.modeConnexion = "POSTE TRAVAIL";
+    console.log("listTransactionTimbres ", body)
   return this.http.post<any>(this._api+"listTransactionTimbres", body, { headers: this._headers }).pipe(
     tap((data:any) => {
       console.log("Test 3 listTransactionTimbres", data)
@@ -175,7 +202,10 @@ listTransactionTimbres(body: any): Observable<any> {
 
 dashboardTotalForAgent(): Observable<any> {
   let body:any = {token:this.sessPrv.getTheToken()};
-  console.log("dashboardTotalForAgent ", body)
+  body.modePaiement = "CASH";
+    body.moyenPaiement = "CASH";
+    body.modeConnexion = "POSTE TRAVAIL";
+    console.log("dashboardTotalForAgent ", body)
   return this.http.post<any>(this._api+"dashboard-total-for-agent", body, { headers: this._headers }).pipe(
     tap((data:any) => {
       console.log("Test dashboardTotalForAgent ", data)

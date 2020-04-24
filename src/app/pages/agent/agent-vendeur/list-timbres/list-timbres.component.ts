@@ -111,7 +111,7 @@ export class ListTimbresComponent implements OnInit {
       
       this.router.navigate(['/vendeur/validation']);
       this.modalRef.hide();
-    }else{
+    }else{ 
       alert("Veuillez remplir correctement les champs");
     }
   }

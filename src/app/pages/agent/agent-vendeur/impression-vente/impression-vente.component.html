@@ -1,4 +1,4 @@
-<div *ngIf="dataVente.transactionType=='Timbres pour passeport'">
+<div *ngIf="dataVente.transactionType=='Timbres pour passeport'"> 
     <div class="d-flex flex-row justify-content-around">
     
         <form id="imprimer" class="p-2 col-sm-3">
@@ -9,14 +9,14 @@
                 <p style="line-height: 5px;">-------------</p>
                 <p style="line-height: 5px; margin-left: 20px; margin-right: 20px;">MINISTERE DES FINANCES ET DU BUDJET</p>
                 <p style="line-height: 2px;">-------------</p>
-                <img style="width: 200px;"  src="assets\decoupage\logo-dgid.png" alt=""> <br>
+                <img style="width: 300px;"  src="assets\decoupage\logo-dgid.png" alt=""> <br>
                 <p style="line-height: 20px;">QUITTANCE</p>
                 <p style="line-height: 5px;">N° &nbsp;: &nbsp;{{dataVente.reponseQuittance[0].numeroTransaction}}</p>
                 <p style="line-height: 5px;">Date &nbsp;:&nbsp; {{dateVente}}</p>
                 <p style="line-height: 5px;">Heure &nbsp;:&nbsp; {{heureVente}}</p>
                 <qrcode [qrdata]="dataVente.reponseQuittance[0].textQrCode" [width]="256" [errorCorrectionLevel]="'ERROR'"></qrcode>
 
-                <div class="col-sm-11 mx-auto info_ticket">
+                <div class="col-sm-11 mx-auto" style="margin-top: 20px; margin-bottom: 20px; text-align: start; margin-left: 25%; margin-right: 25%;">
 
                     <p style="line-height: 20px; text-align: start;">Bureau de &nbsp;: &nbsp;&nbsp; Liberté 6</p>
                     <p style="line-height: 5px; text-align: start;">Nom &nbsp;: &nbsp;&nbsp;{{dataVente.reponseQuittance[0].lastName}}</p>
@@ -50,7 +50,7 @@
                 <p style="line-height: 5px;">-------------</p>
                 <p style="line-height: 5px; margin-left: 20px; margin-right: 20px;">MINISTERE DES FINANCES ET DU BUDJET</p>
                 <p style="line-height: 2px;">-------------</p>
-                <img style="width: 250px;"  src="assets/decoupage/logo-dgid.png" alt=""> <br>
+                <img style="width: 300px;"  src="assets/decoupage/logo-dgid.png" alt=""> <br>
                 <p style="line-height: 20px;">TIMBRE FISCAL ELECTRONIQUE</p>
                 <p style="line-height: 5px;">N° &nbsp;: &nbsp;{{dataVente.reponseTimbre[0].numeroTransaction}}</p>
                 <p style="line-height: 5px;">Montant &nbsp;: &nbsp;&nbsp;{{dataVente.reponseTimbre[0].prixU}} FCFA</p>

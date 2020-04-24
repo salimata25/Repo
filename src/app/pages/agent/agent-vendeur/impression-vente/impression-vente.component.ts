@@ -34,7 +34,9 @@ export class ImpressionVenteComponent implements OnInit {
       qr.toDataURL()
   }
 
-  
+  retour() {
+    this.router.navigate(['/vendeur/list-timbres']);
+  }
 
   print(): void {
     let printContents, popupWin;

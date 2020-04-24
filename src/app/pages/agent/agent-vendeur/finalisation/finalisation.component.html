@@ -23,14 +23,16 @@
             <div class="form-group row">
               <label for="inputEmail" class="col-sm-3 col-form-label">Saisir l'adresse mail :</label>
               <div class="col-sm-7">
-                <input type="email" [(ngModel)]="emailReception" ng-disabled="isChecked=='false'" class="form-control" id="emailReception" name="emailReception">
+                <input type="email" [(ngModel)]="emailReception" [disabled]="!emailChecked" class="form-control" id="emailReception" name="emailReception">
               </div>
             </div>
             <div class="form-group row">
               <label for="confirmEmail" class="col-sm-3 col-form-label">Confimer l'adresse mail :</label>
               <div class="col-sm-7">
-                <input type="email" class="form-control" id="confirmEmail">
+                <input type="email" [(ngModel)]="confirmEmail" [disabled]="!emailChecked" class="form-control" id="confirmEmail" name="confirmEmail">
+                <div *ngIf="errorEmail" style="margin-top: 10px;" class="alert alert-danger"> {{message}} </div>
               </div>
+              
             </div>
           </form>
      </div>
@@ -39,21 +41,23 @@
         <label *ngIf="typeTimbre==='Timbres pour fiscal' || typeTimbre==='Droits d\'enregistrement' || typeTimbre==='Mutation de véhicule'" class="form-check-label" for="sms">
           Envoyer justificatif par <span style="font-weight: bold;">SMS</span>.
         </label>
-        <label *ngIf="typeTimbre=='Timbres pour passeport'" class="form-check-label" for="sms">
+        <label *ngIf="typeTimbre=='Timbres pour passeport'" class="form-check-label" for="sms"> 
           Envoyer quittance et justificatif par <span style="font-weight: bold;">SMS</span>.
-      </label>
+        </label>
         <form>  
             <div class="form-group row">
               <label for="inputTel" class="col-sm-3 col-form-label">Saisir le N° de téléphone :</label>
               <div class="col-sm-7">
-                <input type="tel" [(ngModel)]="telReception" class="form-control" id="telReception" name="telReception">
+                <input type="tel" [(ngModel)]="telReception" [disabled]="!smsChecked"  class="form-control" id="telReception" name="telReception">
               </div>
             </div>
             <div class="form-group row">
               <label for="confirmTel" class="col-sm-3 col-form-label">Confimer le N° de téléphone :</label>
               <div class="col-sm-7">
-                <input type="tel" class="form-control" id="confirmTel">
+                <input type="tel" [disabled]="!smsChecked" [(ngModel)]="confirmTel"  class="form-control" id="confirmTel" name="confirmTel">
+                <div *ngIf="errorTel" style="margin-top: 10px;" class="alert alert-danger"> {{message}} </div>
               </div>
+              
             </div>
           </form>
       </div>

@@ -137,12 +137,25 @@
     margin-bottom: 20px;
 }
 
+.ticket p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.parag {
+  font-size: small;
+}
+
 
 .info_ticket {
     border: 1px solid black;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: start;
+}
+
+.info_ticket legend {
+  font-size: 15px;
 }
 
 span {
